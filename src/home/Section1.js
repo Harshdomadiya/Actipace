@@ -1,16 +1,15 @@
 import React from "react";
-import bg1 from "./bg1.jpg";
-import logo from "./acticipace_logo.png";
-import Heading1 from "./Heading1.png";
-import HomeEmg from "./HomeEmg.png";
-import Clip from "./Clip.png";
-import image1 from "./Image1.png";
-import Frame851 from "./Frame851.png";
-import image2 from "./Image2.png";
-import Frame840 from "./Frame840.png";
-import Background from "./Background.png";
-import Background1 from "./Background(1).png";
-import Container from "./Container.png";
+import bg1 from "./image/bg1.jpg";
+import Heading1 from "./image/Heading1.png";
+import HomeEmg from "./image/HomeEmg.png";
+import Clip from "./image/Clip.png";
+import image1 from "./image/Image1.png";
+import Frame851 from "./image/Frame851.png";
+import image2 from "./image/Image2.png";
+import Frame840 from "./image/Frame840.png";
+import Background from "./image/Background.png";
+import Background1 from "./image/Background(1).png";
+import Container from "./image/Container.png";
 
 function Section1() {
   return (
@@ -34,6 +33,7 @@ function Section1() {
           <div class="flex items-center justify-center  h-50vh absolute -top-11">
             <div class="flex items-center justify-center h-50vh absolute  left-1/3 -top-16">
               {/* green errows over center image */}
+              {/* harsh */}
               <img src={Clip} className=" w-10px h-10 rounded-xl"></img>
             </div>
             {/* black window over green image */}
@@ -43,6 +43,7 @@ function Section1() {
             {/* green image */}
             <img src={bg1} className=" w-1120px h-60 rounded-xl"></img>
           </div>
+          {/* harsh */}
           {/* actipace total security image */}
           <div className="flex items-center  justify-center h-10 bottom-0 absolute">
             <div className="flex items-center  justify-center h-10 bottom-1/3 absolute">
@@ -56,25 +57,28 @@ function Section1() {
         </div>
       </div>
       {/* level up  your quality  of work */}
-      <div className="flex ">
-        <div className="absolute flex items-end justify-end my-96">
-          <div className=" flex justify-end items-end">
-            <div>
-              <div className="absolute flex items-center justify-center top-2 right-5">
-                <img src={Container} alt="" className="w-1/3" />
-              </div>
-              <img
-                src={Background}
-                alt=""
-                className="w-1/2 flex items-center justify-center top-2 right-5"
-              />
-            </div>
-            <div>
-              <img src={Background1} alt="" className="w-40 h-96" />
-            </div>
-          </div>
-        </div>
+      <div className="flex items-end justify-end ">
         <img src={Frame840} alt="" className="w-full h-13 -my-14" />
+      </div>
+
+      {/* harsh */}
+      <div className="flex items-end  justify-end  ">
+        {/* <div className=" flex justify-end items-end"> */}
+
+        <div className="absolute left-1/3">
+          <img src={Background} alt="" className="w-8/12  left-10" />
+        </div>
+
+        <div>
+          {/* light green pillar  */}
+          <img src={Background1} alt="" className="w-72 h-96" />
+        </div>
+        <div className="absolute right-96">
+          {/* level up your quality work */}
+          <img src={Container} alt="" className=" w-96 h-96" />
+        </div>
+
+        {/* </div> */}
       </div>
     </>
   );

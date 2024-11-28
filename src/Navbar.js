@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "./acticipace_logo.png";
-import Heading1 from "./Heading1.png";
+import logo from "./home/image/acticipace_logo.png";
 
 function Navbar() {
   return (
