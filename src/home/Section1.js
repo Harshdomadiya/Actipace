@@ -18,14 +18,15 @@ function Section1() {
         {/* awepofjweaof naew f */}
         <img src={Heading1} alt="" className="w-2/3 h-13 top-14 left-16" />
       </div>
-      <div className="my-10">
+      <div className="my-10 mx-80">
         We believe everyone has the right to be safe online, which is why we
-        offer our <br />
+        offer our
+      </div>
+      <div className="mx-96 -my-10">
         award-winning <u> free antivirus </u> to millions of people around the
         world.
       </div>
-
-      <button className="bg-[#31BF5C] text-white font-Roboto py-2 px-2 mx-10 my-6 top-10 left-10 rounded-3xl">
+      <button className=" bg-[#31BF5C] text-white font-Roboto py-2 mx-96   px-12 my-14  rounded-3xl">
         Free Download
       </button>
       <div>
@@ -60,7 +61,6 @@ function Section1() {
       <div className="flex items-end justify-end ">
         <img src={Frame840} alt="" className="w-full h-13 -my-14" />
       </div>
-
       {/* harsh */}
       <div className="flex items-end  justify-end  ">
         {/* <div className=" flex justify-end items-end"> */}

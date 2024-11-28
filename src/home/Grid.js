@@ -37,16 +37,15 @@ function Grid() {
       <div className="w-1/2 mx-80 my-20">
         <img src={Section3} className="w-full"></img>
       </div>
-      <div className="-my-10 ">
+      <div className=" mx-96">
         <button className="bg-[#31BF5C] text-white font-Roboto py-3 px-3 mx-12 rounded-md">
           Start now - It's free
         </button>
       </div>
-      <div className=" mx-80 my-16 ">
-        <img src={secondaryarrow} className="w-3 mx-80 "></img>
+      <div className=" mx-80 my-12 mx-80">
+        <img src={secondaryarrow} className="w-3 mx-80 my-10 "></img>
       </div>
-      {/* </div> */}
-      <div className=" -my-10">
+      <div className="my-5 top-2 ">
         <div className="font-Inter ">No credit card required</div>
         <div>Instant access</div>
       </div>

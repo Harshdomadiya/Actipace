@@ -11,12 +11,12 @@ function Navbar() {
         <div className="flex items-center">
           <ul className="container flex space-x-4 ml-20 ">
             <li>
-              <a href="#" className="hover:text-gray-200">
+              <a href="/" className="hover:text-gray-200">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-200">
+              <a href="/product" className="hover:text-gray-200">
                 Product
               </a>
             </li>{" "}

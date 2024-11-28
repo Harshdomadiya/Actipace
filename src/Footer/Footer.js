@@ -3,22 +3,20 @@ import fecebook from "./fecebook.png";
 import insta from "./insta.png";
 import twitter from "./twitter.png";
 import youtube from "./youtube.png";
+import flag from "./flag.png";
+import actipace from "./Layer_1.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-20 my-20">
+    <footer className="bg-gray-900  text-white">
       <div className="container mx-auto px-2">
         <div className="flex flex-col md:flex-row justify-around">
           <div className="mb-8 md:mb-0">
             <a href="/" className="text-2xl font-bold">
-              <span className="text-blue-500">a</span>ctipace
+              <img src={actipace}></img>
             </a>
             <div className="flex items-center mt-4">
-              <img
-                src="india-flag.svg"
-                alt="India Flag"
-                className="w-6 h-6 mr-2"
-              />
+              <img src={flag} alt="India Flag" className="w-6 h-6 mr-2" />
               <span>India (English)</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,18 +33,22 @@ const Footer = () => {
                 />
               </svg>
             </div>
-            <div className="flex mt-4">
+            <div className="flex mt-4 -mx-4">
               <a href={fecebook} className="mr-4">
-                <i className="fab fa-facebook"></i>
+                {/* <i className="fab fa-facebook">fsfefe</i> */}
+                <img src={fecebook}></img>
               </a>
               <a href="#" className="mr-4">
                 <i className="fab fa-instagram"></i>
+                <img src={insta}></img>
               </a>
               <a href="#" className="mr-4">
                 <i className="fab fa-twitter"></i>
+                <img src={twitter}></img>
               </a>
               <a href="#" className="mr-4">
                 <i className="fab fa-youtube"></i>
+                <img src={youtube}></img>
               </a>
             </div>
           </div>
@@ -97,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 -my-10">
           <p>&copy; Copyright 2024 Actipace Security - All Rights Reserved</p>
         </div>
       </div>

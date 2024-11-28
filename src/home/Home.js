@@ -7,8 +7,6 @@ import Grid from "./Grid";
 function Home() {
   return (
     <div>
-      {/* <Header1 /> */}
-      {/* <Navbar /> */}
       <Section1 />
       <Grid />
     </div>
