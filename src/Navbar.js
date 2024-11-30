@@ -22,17 +22,17 @@ function Navbar() {
             </li>{" "}
              
             <li>
-              <a href="#" className="hover:text-gray-200">
+              <a href="/login" className="hover:text-gray-200">
                 Dealer Registration
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-200">
+              <a href="/support" className="hover:text-gray-200">
                 Support
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-200">
+              <a href="/about" className="hover:text-gray-200">
                 About
               </a>
             </li>
@@ -47,7 +47,7 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-200">
+              <a href="contact" className="hover:text-gray-200">
                 Contact
               </a>
             </li>

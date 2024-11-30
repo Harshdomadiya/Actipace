@@ -10,23 +10,25 @@ import Frame840 from "./image/Frame840.png";
 import Background from "./image/Background.png";
 import Background1 from "./image/Background(1).png";
 import Container from "./image/Container.png";
+import actipace_a from "./image/actipace-a.png";
 
 function Section1() {
   return (
     <>
       <div className="flex items-center justify-center top-20 ">
-        {/* awepofjweaof naew f */}
-        <img src={Heading1} alt="" className="w-2/3 h-13 top-14 left-16" />
+        {/* Free antivirus is your ... heading*/}
+        <img src={Heading1} alt="" className="w-2/3 h-13  mx-20 " />
+        <img src={actipace_a} alt="" className="w-1/6" />
       </div>
-      <div className="my-10 mx-80">
+      <div className=" mx-80 -my-5">
         We believe everyone has the right to be safe online, which is why we
         offer our
       </div>
-      <div className="mx-96 -my-10">
+      <div className="mx-80 my-10">
         award-winning <u> free antivirus </u> to millions of people around the
         world.
       </div>
-      <button className=" bg-[#31BF5C] text-white font-Roboto py-2 mx-96   px-12 my-14  rounded-3xl">
+      <button className=" bg-[#31BF5C] text-white font-Roboto py-2 mx-96   px-12 my-10  rounded-3xl">
         Free Download
       </button>
       <div>

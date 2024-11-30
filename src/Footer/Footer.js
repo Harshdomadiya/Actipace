@@ -8,7 +8,7 @@ import actipace from "./Layer_1.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900  text-white">
+    <footer className="bg-gray-900 py-16 w-full h-96 text-white">
       <div className="container mx-auto px-2">
         <div className="flex flex-col md:flex-row justify-around">
           <div className="mb-8 md:mb-0">
