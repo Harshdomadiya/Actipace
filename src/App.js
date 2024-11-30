@@ -13,12 +13,18 @@ import Signup from "./Dealer-Registation/Signup";
 import ResetPassword from "./Dealer-Registation/ResetPassword";
 import NewPassword from "./Dealer-Registation/NewPassword";
 import Contact from "./Contact/Contact";
+import Award from "./Award/Award";
+// import About from "./About/About";
+
+import Price from "./Price/Price";
+import ExtraPage from "./ExtraPage/ExtraPage";
 function App() {
   return (
     <Router>
       <Header1 />
       <Navbar />
       <Routes>
+        {/* <Footer className="absolute bottom-0 w-full" />  */}
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
         {/* <Route path="/about" element={<About />} /> */}
@@ -28,8 +34,13 @@ function App() {
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/newpassword" element={<NewPassword />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/award" element={<Award />} />
+        <Route path="/extrapage" element={<ExtraPage />} />
+        <Route path="/price" element={<Price />} />
+        {/* <Route path="/contact" element={<ContactPage />} />  */}
       </Routes>
-      <Footer className="absolute bottom-0 w-full" /> 
+      <Footer className="absolute bottom-0 w-full" />
     </Router>
   );
 }
