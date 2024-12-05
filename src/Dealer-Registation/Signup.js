@@ -43,12 +43,12 @@ const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault(); // Prevent form submission refresh
     // Here you can validate inputs before navigation
-    navigate("/"); // Navigate to the home page
+     // Navigate to the home page
   };
   return (
     <div className="flex items-center justify-center min-h-screen bg-green-50">
-      <div className="w-96 h-7/8 p-8 bg-white rounded-lg shadow-md">
-        <img src={actipace} className="mx-24"></img>
+      <div className="w-96 h-7/8 p-8 bg-white rounded-lg shadow-md my-[50px]">
+        <img src={actipace} className="mx-24 "></img>
         <form className="w-full" onSubmit={handleSignup}>
           <div className="bg-[#D1ECF1] h-18 my-5 py-5 rounded-xl">
             <h2 className="text-center text-xs font-semibold text-gray-700 mb-4">
@@ -86,7 +86,7 @@ const Signup = () => {
               id="mobile"
               type="text"
               value={numer}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setNumber(e.target.value)}
               placeholder="Mobile No"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />
@@ -129,7 +129,7 @@ const Signup = () => {
               id="address"
               type="text"
               value={address}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setAddress(e.target.value)}
               placeholder="Address"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />
@@ -148,7 +148,7 @@ const Signup = () => {
                 id="city"
                 type="text"
                 value={city}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setCity(e.target.value)}
                 placeholder="City"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -164,7 +164,7 @@ const Signup = () => {
                 id="state"
                 type="text"
                 value={state}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setState(e.target.value)}
                 placeholder="State"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -184,7 +184,7 @@ const Signup = () => {
                 id="country"
                 type="text"
                 value={country}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setCuntry(e.target.value)}
                 placeholder="Country"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -200,7 +200,7 @@ const Signup = () => {
                 id="pinCode"
                 type="number"
                 value={PINcode}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setPINcode(e.target.value)}
                 placeholder="PIN Code"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -231,7 +231,7 @@ const Signup = () => {
               id="code"
               type="text"
               value={code}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setCode(e.target.value)}
               placeholder="Code"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />

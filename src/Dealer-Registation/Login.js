@@ -31,7 +31,8 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault(); // Prevent form submission refresh
     // Here you can validate inputs before navigation
-    navigate("/"); // Navigate to the home page
+    console.log(email,code,password);
+    //navigate("/"); // Navigate to the home page
   };
   return (
     <div className="flex items-center justify-center min-h-screen bg-green-50">

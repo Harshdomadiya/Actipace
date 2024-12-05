@@ -6,9 +6,9 @@ import Grid from "./Grid";
 
 function Home() {
   return (
-    <div>
+    <div className="relative">
       <Section1 />
-      <Grid />
+      <Grid className="relative"/>
     </div>
   );
 }

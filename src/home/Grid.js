@@ -15,7 +15,7 @@ function Grid() {
   return (
     <>
       {/* <div className="grid grid-cols-1"> */}
-      <div className="grid  grid-cols-3 gap-3 w-1/2  container mx-80 my-10 px-4">
+      <div className="grid  grid-cols-3 gap-8 w-[1000px]  container mx-64  px-4">
         <img src={Border1}></img>
         <img src={Border2}></img>
         <img src={Border3}></img>
@@ -23,38 +23,38 @@ function Grid() {
         <img src={Border5}></img>
         <img src={Border6}></img>
       </div>
-      <div className="w-2/3 container mx-64 px-4">
+      <div className="w-2/3 container mx-48 px-4">
         <img src={SectionErrow} className="w-24"></img>
       </div>
-      <div>
-        <div className=" w-3/5 container mx-64 px-4">
-          <img src={Section}></img>
-          <div className="w-full h-full -mx-10 -my-10">
+      <div className="relative h-[800px]">
+        <div className="flex items-center justify-center flex-col">
+          <img src={Section} className="w-[1100px]"></img>
+          <div className="absolute mr-[250px] mt-[700px]">
             <img src={Section2}></img>
           </div>
         </div>
       </div>
-      <div className="w-1/2 mx-80 my-20">
-        <img src={Section3} className="w-full"></img>
+
+      <div>
+        <div className="flex items-center justify-center w-full">
+          <img src={Section3} className="w-[1000px]"></img>
+        </div>
+        <div className="flex  flex-col items-center gap-4 mt-[30px] mb-[30px]">
+          <div className="">
+            <button className="bg-[#31BF5C] text-white font-Roboto py-3 px-3  rounded-md">
+              Start now - It's free
+            </button>
+          </div>
+          <div >
+            <img src={secondaryarrow} className=""></img>
+          </div>
+          <div className="flex justify-center flex-col items-center text-[11px]">
+            <div className="font-Inter ">No credit card required</div>
+            <div>Instant access</div>
+          </div>
+        </div>
       </div>
-      <div className="flex justify-center -my-10">
-        <button className="bg-[#31BF5C] text-white font-Roboto py-3 px-3 mx-12 rounded-md">
-          Start now - It's free
-        </button>
-      </div>
-      <div className="my-12 mx-96">
-        <img src={secondaryarrow} className="w-3 mx-60 my-10 "></img>
-      </div>
-      <div className="my-5 flex justify-center">
-        <div className="font-Inter ">No credit card required</div>
-        {/* <br /> */}
-        {/* <div>Instant access</div> */}
-      </div>
-      <div className="my-5 flex justify-center">
-        {/* <div className="font-Inter ">No credit card required</div> */}
-        {/* <br /> */}
-        <div>Instant access</div>
-      </div>
+      
     </>
   );
 }

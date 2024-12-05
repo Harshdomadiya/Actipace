@@ -3,13 +3,13 @@ import logo from "./home/image/acticipace_logo.png";
 
 function Navbar() {
   return (
-    <nav className="bg-white text-[#071D2B]">
-      <div className="container mx-auto flex justify-between ">
-        <div className="my-10">
-          <img src={logo} alt="" className="w-44 h-8 absolute top-14 left-16" />
-        </div>
-        <div className="flex items-center">
-          <ul className="container flex space-x-4 ml-20 ">
+    <nav className="bg-white text-[#071D2B] w-full">
+      <div className="container mx-auto flex justify-between w-[1200px] h-[80px] items-center">
+        
+          <img src={logo} alt="" className="w-[174px] h-[34px]" />
+       
+        <div className="flex">
+          <ul className="container flex space-x-6 font-medium ">
             <li>
               <a href="/" className="hover:text-gray-200">
                 Home
@@ -53,7 +53,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <button className="bg-[#31BF5C] text-white font-Roboto py-2 px-2 mx-10 my-6 left-10">
+        <button className="bg-[#31BF5C] text-white font-Roboto w-[157.34px] h-[48px]">
           Free Download
         </button>
       </div>
