@@ -1,40 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import eye from "./image/eye.png";
 import actipace from "./image/actipace.png";
 import emogy from "./image/emogy.png";
+import RefreshIcon from "@mui/icons-material/Refresh"
+// import icons from "./captcha/icons8-refresh-16.png"
 
 import { useNavigate } from "react-router-dom";
+import { apiConnector } from "../../services/Apiconnector";
+import { categories } from "../../services/Api";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const Signup = () => {
+
+  const randomString  =  Math.random().toString(36).slice(8);
+  const [captch,setCaptch] = useState(randomString);
+  const [text,setText] = useState("");
+
+
+  const refreshString = (e) =>{
+    e.preventDefault();
+    setText("");
+    setCaptch(Math.random().toString(36).slice(8))
+}
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here, e.g., send data to a server
-    // console.log({ firstName, lastName, email, message });
-    // Reset form fields
-    setNumber("");
-    setCuntry("");
-    setAddress("");
-    setCity("");
-    setPINcode("");
-    setState("");
-    setEmail("");
-    setCode("");
-    setPassword("");
-  };
-
-  const [email, setEmail] = useState("");
-  const [code, setCode] = useState("");
-  const [password, setPassword] = useState("");
-  const [numer, setNumber] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCuntry] = useState("");
-  const [PINcode, setPINcode] = useState("");
+  const [formData,setformData] = useState({email:"",otp:"",password:"",mobileNo:"",address:"",city:"",state:"",country:"",pincode:""})
 
   const [showPassword, setShowPassword] = useState(false);
+
+  function changehandler(event) {
+    setformData(prevFormData =>{
+      return {
+        ...prevFormData,
+        [event.target.name]:event.target.value
+      }
+    })
+  }
+
+  const [flag,setFlag] = useState(true);
+  const [f1,setf1] = useState(false);
 
   // Function to toggle password visibility
   const togglePasswordVisibility = () => {
@@ -42,12 +47,58 @@ const Signup = () => {
   };
   const handleSignup = (e) => {
     e.preventDefault(); // Prevent form submission refresh
-    // Here you can validate inputs before navigation
-     // Navigate to the home page
+
+    //captcha verification
+    if(captch !== text)
+    {
+        alert("wrong captcha")
+        setText("");
+        setCaptch(Math.random().toString(36).slice(8))
+        return;
+    }
+    //api call sending email
+    const backendcalling = async () =>{
+      const toastId = toast.loading("loading....")
+      try{
+          // console.log(categories.OTPSENDER_API);
+          // console.log(formData)
+         
+          const result = await axios.post(categories.OTPSENDER_API,formData);
+          console.log(result.data)
+          setFlag(false);
+          toast.success(`${result.data.message}`,{id:toastId});
+      }catch(e){
+          toast.error(e.response.data.message,{id:toastId});
+          return;
+      }
+    }
+    backendcalling();
   };
+
+  const handleSsignup=(e) =>{
+    e.preventDefault();
+    console.log(formData);
+    const backendcalling = async () =>{
+      const toastId = toast.loading("loading....")
+      try{
+          // console.log(categories.OTPSENDER_API);
+          // console.log(formData)
+         
+          const result = await axios.post(categories.SIGNUP_API,formData);
+          console.log(result.data)
+          navigate("/login")
+          toast.success(`${result.data.message}`,{id:toastId});
+      }catch(e){
+          toast.error(e.response.data.message,{id:toastId});
+          return;
+      }
+    }
+    backendcalling();
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-green-50">
-      <div className="w-96 h-7/8 p-8 bg-white rounded-lg shadow-md my-[50px]">
+      {flag ?( <>
+        <div className="w-96 h-7/8 p-8 bg-white rounded-lg shadow-md my-[50px]">
         <img src={actipace} className="mx-24 "></img>
         <form className="w-full" onSubmit={handleSignup}>
           <div className="bg-[#D1ECF1] h-18 my-5 py-5 rounded-xl">
@@ -67,8 +118,9 @@ const Signup = () => {
             <input
               id="email"
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={changehandler}
               placeholder="Email"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />
@@ -85,8 +137,9 @@ const Signup = () => {
             <input
               id="mobile"
               type="text"
-              value={numer}
-              onChange={(e) => setNumber(e.target.value)}
+              name="mobileNo"
+              value={formData.mobileNo}
+              onChange={changehandler}
               placeholder="Mobile No"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />
@@ -99,19 +152,22 @@ const Signup = () => {
           >
             Password
           </label>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-3 items-center">
+            <div className="w-full">
             <input
               id="password"
               type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={changehandler}
               placeholder="Password"
-              className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
+              className="w-full px-4 py-2  text-sm border rounded-l-md focus:ring focus:ring-green-200 focus:outline-none border-r-0"
             />
+            </div>
             <button
               type="button"
               onClick={togglePasswordVisibility}
-              className=" cursor-auto inset-y-0 right-2    text-sm text-green-600"
+              className=" cursor-auto inset-y-0 right-2 text-sm text-green-600 "
             >
               <img src={eye} className="w-9 h-9 my-2"></img>
             </button>
@@ -128,8 +184,9 @@ const Signup = () => {
             <input
               id="address"
               type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
+              name="address"
+              value={formData.address}
+              onChange={changehandler}
               placeholder="Address"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />
@@ -147,8 +204,9 @@ const Signup = () => {
               <input
                 id="city"
                 type="text"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
+                name="city"
+              value={formData.city}
+              onChange={changehandler}
                 placeholder="City"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -163,8 +221,9 @@ const Signup = () => {
               <input
                 id="state"
                 type="text"
-                value={state}
-                onChange={(e) => setState(e.target.value)}
+                name="state"
+              value={formData.state}
+              onChange={changehandler}
                 placeholder="State"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -183,8 +242,9 @@ const Signup = () => {
               <input
                 id="country"
                 type="text"
-                value={country}
-                onChange={(e) => setCuntry(e.target.value)}
+                name="country"
+              value={formData.country}
+              onChange={changehandler}
                 placeholder="Country"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -199,8 +259,9 @@ const Signup = () => {
               <input
                 id="pinCode"
                 type="number"
-                value={PINcode}
-                onChange={(e) => setPINcode(e.target.value)}
+                name="pincode"
+              value={formData.pincode}
+              onChange={changehandler}
                 placeholder="PIN Code"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -208,15 +269,11 @@ const Signup = () => {
           </div>
 
           {/* Captcha */}
-          <div className="mb-4">
-            <img
-              src="https://via.placeholder.com/150x50"
-              alt="captcha"
-              className="mb-2"
-            />
-            <button className="text-sm text-green-600 hover:underline">
-              Refresh Captcha
-            </button>
+          <div className="mb-4 flex gap-3">
+              <div className="bg-green-500 text-white px-5 py-2 rounded-md w-[100px]">{captch}</div>
+              <button startIcon={<RefreshIcon/>} onClick={(e)=>refreshString(e)}>
+                  {/* <img src={icons}/> */}
+              </button>
           </div>
 
           {/* Enter Code */}
@@ -230,12 +287,13 @@ const Signup = () => {
             <input
               id="code"
               type="text"
-              value={code}
-              onChange={(e) => setCode(e.target.value)}
+              value={text}
+              onChange={(e) => setText(e.target.value)}
               placeholder="Code"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
             />
           </div>
+          {/* <Captcha/> */}
 
           {/* Register Button */}
           <button
@@ -246,7 +304,7 @@ const Signup = () => {
           </button>
         </form>
 
-        {/* Login Link */}
+       
         <p className="mt-4 text-center text-sm text-gray-500">
           Already a user?{" "}
           <a href="/login" className="text-green-600 hover:underline">
@@ -255,12 +313,50 @@ const Signup = () => {
         </p>
       </div>
 
-      {/* Chat Icon */}
+     
       <div className="absolute bottom-4 right-4">
         <button className="w-10 h-10 flex items-center justify-center text-white">
           <img src={emogy}></img>
         </button>
+      </div> </>)
+      :( <>
+        <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
+        <img src={actipace} className="mx-28 my-4"></img>
+        <h2 className="text-center text-xs font-sm text-gray-700">
+          Access and manage your instances from
+          <br />
+          this actipace account.
+        </h2>
+        <form className="mt-6" onSubmit={handleSsignup}>
+          
+          <div className="mb-6">
+            <label
+              htmlFor="code"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Enter Otp
+            </label>
+            <input
+              id="code"
+              type="text"
+              name="otp"
+              value={formData.otp}
+              onChange={changehandler}
+              placeholder="otp"
+              className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300"
+          >
+            Login
+          </button>
+        </form>
+        
       </div>
+      </>)}
+      
     </div>
   );
 };

@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  user_id   Int      @id @default(autoincrement()) // Primary key                    // Unique identifier for the user
+  email     String   @unique                      // Email field, unique constraint
+  mobileNo  String   @unique                      // Mobile number field, unique constraint
+  address   String                                // Address field
+  city      String                                // City field
+  state     String                                // State field
+  country   String                                // Country field
+  pincode   String                                // Pincode field
+  password  String 
+  token     String? @unique
+  resetPasswordExpires DateTime?                               // Password field, should be hashed in production
+  purchases  Purchase[]
+  createdAt DateTime @default(now())              // Timestamp for record creation
+  updatedAt DateTime @updatedAt                   // Timestamp for record updates
+}
+
+model Otp {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  otp        String?  // Store the OTP temporarily
+  otpExpires DateTime? // Optional: To set OTP expiration
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Software {
+  software_id Int          @id @default(autoincrement())
+  name        String
+  description String?
+  softwarePlans SoftwarePlan[]
+  purchases   Purchase[]
+}
+
+model SoftwarePlan {
+  plan_id    Int      @id @default(autoincrement())
+  software   Software @relation(fields: [software_id], references: [software_id])
+  software_id Int
+  devices    Int
+  year       Int
+  price      Decimal
+  purchases  Purchase[]
+}
+
+model Purchase {
+  purchase_id Int          @id @default(autoincrement())
+  user        User         @relation(fields: [user_id], references: [user_id])
+  user_id     Int
+  software    Software     @relation(fields: [software_id], references: [software_id])
+  software_id Int
+  softwarePlan  SoftwarePlan   @relation(fields: [plan_id], references: [plan_id])
+  plan_id     Int
+  paymentId  String?
+  orderId    String?
+  purchase_date DateTime  @default(now())
+  expiresAt  DateTime?
+}
+

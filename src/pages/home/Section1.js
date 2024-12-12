@@ -11,7 +11,8 @@ import Background from "./image/Background.png";
 import Background1 from "./image/Background(1).png";
 import Container from "./image/Container.png";
 import actipace_a from "./image/actipace-a.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { IoGridSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function Section1() {
   return (
@@ -29,11 +30,12 @@ function Section1() {
              </p>
           </div>
           <div>
-          
-          <button className=" bg-[#31BF5C] text-white font-Roboto rounded-[400px] w-[200px] h-[50px]">
-          <FontAwesomeIcon icon="fa-solid fa-rocket"  className="bg-red-950"/>
+          <Link to={"/signup"}>
+          <button className=" bg-[#31BF5C] text-white font-Roboto rounded-[400px] w-[200px] h-[50px] flex justify-center items-center gap-3 text-[14px] hover:scale-95 transition-all duration-200">
+            {/* <IoGridSharp className="w-[25px] h-[25px]"/> */}
             Free Download
           </button>
+          </Link>
           </div>
         </div>
         
