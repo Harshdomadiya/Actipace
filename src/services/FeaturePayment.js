@@ -1,8 +1,9 @@
 import toast from "react-hot-toast";
-import { apiConnector } from "./Apiconnector";
 import { categories } from "./Api";
 import axios from "axios";
-import rzp from "../services/rzp.webp"
+
+
+
 
 
 function loadScript(src){
@@ -19,18 +20,24 @@ function loadScript(src){
     })  
 }
 
-export async function buycourse(data,token) {
+export async function buycourse(data,navigate) {
+   // console.log(localStorage.getItem('token'))
     const toastId = toast.loading("loading...")
     try{
+        
         const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
         if(!res){
             toast.error("Razorpay SDK failure")
         }
 
-        const orderResponse = await axios.post(categories.CAPTUREPAYMENT_API,data);
-        console.log(orderResponse)
-        if(!orderResponse){
-            throw new Error(orderResponse.data.message)
+        const orderResponse = await axios.post(categories.CAPTUREPAYMENT_API,data,{
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        });
+
+       // console.log("fe..",orderResponse);
+        if(!orderResponse.data.success){
+            toast.error(orderResponse.data.reasponse.data.message);
+            //throw new Error(orderResponse.data.message)
         }
 
         const options = {
@@ -46,38 +53,48 @@ export async function buycourse(data,token) {
             handler: function(response){
                 //verifypayment
                 console.log("hello");
-                verifyPayment(response,token);
+                verifyPayment(response);
             }
 
         }
 
         const paymentObject = new window.Razorpay(options);
         paymentObject.open();
+        //return link;
         
     }catch(e){
-        console.log("PAYMENT IN ERROR....",e);
-        console.log("could not make payment")
-
+        // console.log("PAYMENT IN ERROR....",e);
+        // console.log("could not make payment")
+        toast.error(e.response.data.message)
+        // navigate("/login")
+        
     } 
     toast.dismiss(toastId)
 }
 
-async function verifyPayment(response,token) {
+
+async function verifyPayment(response) {
+
+
     const toastId = toast.loading("loading..")
     try{
-        console.log("verify")
-        console.log(response);
-        const reasponse = await axios.post(categories.VERIFYSIGNATURE_API,response);
-        console.log(reasponse);
+        const reasponse = await axios.post(categories.VERIFYSIGNATURE_API,response,{
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        });
+        //console.log(reasponse.data)
 
         if(!reasponse.data.success){
             throw new Error(reasponse.data.message);
         }
         toast.success("payment Successfull")
+        window.location.reload();
+        
+        //return response;
 
     }catch(e){
         console.log("PAYMENT VERIFY ERROR....",e);
-        console.log("could not verify paymnet")
+        //console.log("could not verify paymnet")
     }
     toast.dismiss(toastId)
+    
 }

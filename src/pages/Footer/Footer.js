@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-around">
           <div className="mb-8 md:mb-0">
             <a href="/" className="text-2xl font-bold">
-              <img src={actipace}></img>
+              <img src={actipace} alt=""></img>
             </a>
             <div className="flex items-center mt-4">
               <img src={flag} alt="India Flag" className="w-6 h-6 mr-2" />
@@ -36,19 +36,19 @@ const Footer = () => {
             <div className="flex mt-4 -mx-4">
               <a href={fecebook} className="mr-4">
                 {/* <i className="fab fa-facebook">fsfefe</i> */}
-                <img src={fecebook}></img>
+                <img src={fecebook} alt=""></img>
               </a>
-              <a href="#" className="mr-4">
+              <a href="/" className="mr-4">
                 <i className="fab fa-instagram"></i>
-                <img src={insta}></img>
+                <img src={insta} alt=""></img>
               </a>
-              <a href="#" className="mr-4">
+              <a href="/" className="mr-4">
                 <i className="fab fa-twitter"></i>
-                <img src={twitter}></img>
+                <img src={twitter} alt=""></img>
               </a>
-              <a href="#" className="mr-4">
+              <a href="/" className="mr-4">
                 <i className="fab fa-youtube"></i>
-                <img src={youtube}></img>
+                <img src={youtube} alt=""></img>
               </a>
             </div>
           </div>
@@ -66,13 +66,13 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Support</h3>
             <ul className=" font-Helvetic text-sm mb-4">
               <li>
-                <a href="#">Customer Service</a>
+                <a href="/">Customer Service</a>
               </li>
               <li>
-                <a href="#">FAQs</a>
+                <a href="/">FAQs</a>
               </li>
               <li>
-                <a href="#">Renewals</a>
+                <a href="/">Renewals</a>
               </li>
             </ul>
           </div>
@@ -81,19 +81,19 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">About</h3>
             <ul className=" font-Helvetic text-sm mb-4">
               <li>
-                <a href="#">About</a>
+                <a href="/about">About</a>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <a href="/">Careers</a>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <a href="/">Contact Us</a>
               </li>
               <li>
-                <a href="#">Your Privacy</a>
+                <a href="/">Your Privacy</a>
               </li>
               <li>
-                <a href="#">Download</a>
+                <a href="/">Download</a>
               </li>
             </ul>
           </div>

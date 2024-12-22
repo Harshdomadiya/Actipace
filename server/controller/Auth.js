@@ -173,7 +173,7 @@ exports.LoginOtp = async (req,res) =>{
 
     }catch(e){
 
-        console.log("error in sending otp in login",e.message)
+        //console.log("error in sending otp in login",e.message)
         return res.status(502).json({
             success:false,
             message:e.message
@@ -197,7 +197,7 @@ exports.Login = async(req,res) =>{
         }
 
         const user = await prisma.otp.findUnique({where:{email}});
-        console.log(user)
+       // console.log(user)
 
         if (!user) throw new Error('User not found');
 
@@ -206,7 +206,7 @@ exports.Login = async(req,res) =>{
         if (new Date() > user.otpExpires) throw new Error('OTP expired');
 
         const info = await prisma.user.findUnique({where:{email}});
-        console.log(info)
+        //console.log(info)
 
         const payload = {
             email:info.email,
@@ -214,7 +214,7 @@ exports.Login = async(req,res) =>{
         }
 
         const token = jwt.sign(payload,process.env.JWT_SECRET,{
-            expiresIn:"2h",
+            expiresIn:"2d",
         });
 
 
@@ -235,7 +235,7 @@ exports.Login = async(req,res) =>{
         })
 
     }catch(error){
-        console.log(error.message);
+        //console.log(error.message);
         return res.status(402).json({
             success:false,
             message:error.message

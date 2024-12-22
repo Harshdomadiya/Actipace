@@ -1,31 +1,33 @@
 import React, { useState } from "react";
-import eye from "./image/eye.png";
 import actipace from "./image/actipace.png";
-import { useNavigate } from "react-router-dom";
+
 import emogy from "./image/emogy.png";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { categories } from "../../services/Api";
 
 const ResetPassword = () => {
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here, e.g., send data to a server
-    // console.log({ firstName, lastName, email, message });
-    // Reset form fields
-
-    setEmail("");
-  };
 
   const [email, setEmail] = useState("");
 
-  const handleNewPassword = (e) => {
-    e.preventDefault(); // Prevent form submission refresh
-    // Here you can validate inputs before navigation
-    navigate("/newpassword"); // Navigate to the home page
+  const handleNewPassword =async (e) => {
+    e.preventDefault();
+    const id =toast.loading("loading.....");
+    try{
+        const payload ={email}
+        const response = await axios.post(categories.RESETPASSWORDTOKEN_API,payload)
+        toast.success(response.data.message,{autoClose: 5000});
+        setEmail("");
+        //console.log(response)
+    }catch(e){
+       toast.error(e.response.data.message)
+    }
+    toast.remove(id);
   };
   return (
     <div className="flex -my-20 items-center justify-center min-h-screen bg-green-50">
       <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
-        <img src={actipace} className="mx-24 my-4"></img>
+        <img src={actipace} alt="" className="mx-24 my-4"></img>
         <h2 className="text-center text-md font-bold text-gray-700">
           Forgot Password
         </h2>
@@ -62,7 +64,7 @@ const ResetPassword = () => {
       </div>
       <div className="absolute bottom-14 right-4">
         <button className="w-10 h-10 flex items-center justify-center text-white">
-          <img src={emogy}></img>
+          <img src={emogy} alt=""></img>
         </button>
       </div>
     </div>

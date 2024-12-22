@@ -9,11 +9,13 @@ require("dotenv").config();
 exports.resetPasswordToken = async(req,res) =>{
     try{
 
-        const email = req.body.email
+        const {email} = req.body
+        console.log(email)
 
-        const user = await prisma.user.findUnique({where:{email}});
+        const User = await prisma.user.findUnique({where:{email}});
+        console.log(User)
 
-        if(!user){
+        if(!User){
             return res.status(401).json({
                 success:false,
                 message:"your email is not registered with us"
@@ -26,11 +28,11 @@ exports.resetPasswordToken = async(req,res) =>{
                                     where:{email},
                                     data:{
                                         token:token,
-                                        resetPasswordExpires:new Date(Date.now() + 5 * 60 * 1000),
+                                        resetPasswordExpires:new Date(Date.now() + 10 * 60 * 1000),
                                         }
                                 })
         
-        const url = `http://localhost:3000/update-password/${token}`;
+        const url = `http://localhost:3000/newpassword/${token}`;
 
         await mailSender(email,"Password Reset Link",`Password Reset Link: ${url}`)
 
@@ -54,7 +56,7 @@ exports.resetPassword = async(req,res) =>{
 
         const {password,confirmPassword,token} = req.body
 
-        if(password !== confirmPassword){
+        if(password === confirmPassword){
             return res.status(401).json({
                 success:false,
                 message:"password not matching"
@@ -77,7 +79,8 @@ exports.resetPassword = async(req,res) =>{
             })
         }
 
-        const hashpassword = await bcrypt.hash(password,10);
+        const saltRounds = 10;
+        const hashpassword = await bcrypt.hash(password, saltRounds);
 
         await prisma.user.update({
             where:{token:token},

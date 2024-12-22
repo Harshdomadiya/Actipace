@@ -7,6 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum PaymentStatus {
+  SUCCESS
+  FAILED
+  PENDING
+}
+
 model User {
   user_id   Int      @id @default(autoincrement()) // Primary key                    // Unique identifier for the user
   email     String   @unique                      // Email field, unique constraint
@@ -61,7 +67,8 @@ model Purchase {
   plan_id     Int
   paymentId  String?
   orderId    String?
-  purchase_date DateTime  @default(now())
+  purchase_date DateTime?  
   expiresAt  DateTime?
+  status        PaymentStatus @default(PENDING)
 }
 

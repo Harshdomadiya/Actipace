@@ -16,7 +16,7 @@ exports.getplan =async (req,res) =>{
         })
 
     }catch(e){
-        console.log(e);
+        //console.log(e);
         return res.status(500).json({
             success:false,
             message:"error in amount sending"

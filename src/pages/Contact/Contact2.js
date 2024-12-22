@@ -1,41 +1,78 @@
 import React from "react";
-import address from "./image/address.png";
-import contact from "./image/contact.png";
-import email from "./image/email.png";
-import Group72 from "./image/Group72.png";
-import number1 from "./image/number.png";
-import share from "./image/share.png";
-import text from "./image/text.png";
-import vector from "./image/Vector.png";
+import ContInfo from "./image/Group 76.svg"
+import Contact from "./image/Symbol.svg"
+import email from "./image/Symbol-2.svg"
+import location from "./image/Symbol-3.svg"
+import share from "./image/Symbol-4.svg"
+import facebook from "./image/Link.svg"
+import twi from "./image/Link-2.svg"
+import picsart from "./image/Link-3.svg"
+import v from "./image/Link-4.svg"
 function Contact2() {
   return (
     <div className="">
-      <div className="-mx-80">
-        <img src={vector} className="absolute -my-2"></img>
-        <img src={contact} className=""></img>
-      </div>
-      <h6 className="text-xs -mx-60">
-        Get in touch and we'll get back to you as soon as we
-        <br />
-        can. We look forward to hearing from you!
-      </h6>
-      <div className="-mx-32">
-        <div className="w-3/4 h-2/3 -mx-32">
-          <img src={number1} className=""></img>
-        </div>
-        <div className="w-3/4 h-2/3 -my-10 -mx-32">
-          <img src={email}></img>
-        </div>{" "}
-        <div className="w-3/4 h-2/3 -mx-32">
-          <img src={address}></img>
-        </div>{" "}
-        <div className="w-3/4 h-2/3 -my-10 -mx-32">
-          <img src={share}></img>
-        </div>
-        <div className="w-1/2 h-2/3 my-32 ">
-          {/* <img src={number1}></img>  */}
-        </div>
-      </div>
+      <div className="w-[400px]">
+                        <img
+                            src={ContInfo}
+                            alt="Contact Information"
+                            className="w-[300px] mb-4"
+                        />
+                        <p className="text-[#071D2B] font-normal text-[14px]">
+                            Get in touch and we’ll get back to you as soon as we can. We look
+                            forward to hearing from you!
+                        </p>
+
+
+                        <div className="mt-8 space-y-3 text-[#071D2B]">
+                            {/* Phone Number */}
+                            <div className="p-4 bg-white rounded-[4px] shadow-custom flex items-center h-[70px]">
+                                <div className="text-green-500 text-xs mr-4">
+                                    <img src={Contact} alt=""/>
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-[1rem] ">Phone Number</h3>
+                                    <p className=" text-xs">+(536) 84 95 62 45</p>
+                                </div>
+                            </div>
+                            {/* Email Address */}
+                            <div className="p-4 bg-white rounded-[4px] shadow-custom flex items-center h-[70px]">
+                                <div className="text-green-500 text-xl mr-4">
+                                    <img src={email} alt=""/>
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold text-[1rem] ">Email Address</h3>
+                                    <p className=" text-xs">Name@gmail.com</p>
+                                </div>
+                            </div>
+                            {/* Local Address */}
+                            <div className="p-4 bg-white rounded-[4px] shadow-custom flex items-center h-[70px]">
+                                <div className="text-green-500 text-xl mr-4">
+                                   <img src={location} alt=""/>
+                                </div>
+                                <div>
+                                    <h3 className="font-semibold  text-[1rem] ">Local Address</h3>
+                                    <p className=" text-xs">Dhaka-1506 Bangladesh</p>
+                                </div>
+                            </div>
+                            {/* Social Share */}
+                            <div className="p-4 bg-white rounded-[4px] shadow-custom flex items-center h-[70px]">
+                                <div className="text-green-500 text-xl mr-4">
+                                    <img src={share} alt=""/>
+                                </div>
+                                <div className="flex-col">
+                                    <div>
+                                        <h3 className="font-semibold  text-[1rem]">Share</h3>
+                                    </div>
+                                    <div className="flex space-x-2">
+                                        <img src={facebook} alt=""/>
+                                        <img src={twi} alt=""/>
+                                        <img src={picsart} alt=""/>
+                                        <img src={v} alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     </div>
   );
 }

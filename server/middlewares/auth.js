@@ -6,33 +6,33 @@ exports.auth = async (req,res,next) =>{
     try{
 
         //console.log(req.body);
-        const {token} = req.body;
-       const  token1 = JSON.stringify(token);
-        console.log(token1);
-        if(!token1)
+        const authHeader = req.header('Authorization');
+        //console.log(authHeader);
+        if(!authHeader)
         {
             return res.status(401).json({
                 success:false,
                 message:"token is missing"
             })
         }
+        const token = authHeader.split(' ')[1]; // Extract token
 
         try{
 
-            const decode = jwt.verify(token1,process.env.JWT_SECRET);
-            console.log(decode);
+            const decode = jwt.verify(token,process.env.JWT_SECRET);
+            //console.log(decode);
             req.user = decode;
 
         }catch(e){
             return res.status(401).json({
                 success:false,
-                message:"error in verifying token"
+                message:"Please LogIn......  First"
             })
         }
         next();
 
     }catch(e){
-        console.log(e.message)
+        //console.log(e.message)
         return res.status(401).json({
             success:false,
             message:"error in auth middleware"

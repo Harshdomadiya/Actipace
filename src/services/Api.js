@@ -10,4 +10,5 @@ export const categories = {
     CAPTUREPAYMENT_API : BASE_URL + "/capturePayment",
     VERIFYSIGNATURE_API : BASE_URL + "/verifySignature",
     GETPLAN_API : BASE_URL + "/getplan",
+    CHECKPLAN:BASE_URL + "/checkplan"
 }

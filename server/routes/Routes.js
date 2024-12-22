@@ -4,6 +4,7 @@ const { resetPasswordToken, resetPassword } = require('../controller/resetpasswo
 const { capturePayment, verifySignature } = require('../controller/payment');
 const { auth } = require('../middlewares/auth');
 const { getplan } = require('../controller/Plan');
+const { checkplan } = require('../controller/checkplan');
 const router = express.Router();
 
 router.post("/otpsender",otpSender);
@@ -15,9 +16,11 @@ router.post("/resetPasswordToken",resetPasswordToken);
 router.post("/resetPassword",resetPassword);
 
 
-router.post("/capturePayment",capturePayment);
-router.post("/verifySignature",verifySignature);
+router.post("/capturePayment",auth,capturePayment);
+router.post("/verifySignature",auth,verifySignature);
 
 router.post("/getplan",getplan);
+
+router.post("/checkplan",auth,checkplan);
 
 module.exports = router;

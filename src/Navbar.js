@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./pages/home/image/acticipace_logo.png";
-// import { IoGridSharp } from "react-icons/io5";
+import { IoGridSharp } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
@@ -58,9 +58,9 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link to = {"/signup"}>
+        <Link to = {"/price"}>
         <button className="bg-[#31BF5C] text-white font-Roboto w-[157.34px] h-[48px] flex justify-center items-center text-[14px] gap-2">
-        {/* <IoGridSharp className="w-[25px] h-[25px]"/> */}
+        <IoGridSharp className="w-[25px] h-[25px]"/>
           Free Download
         </button>
         </Link>

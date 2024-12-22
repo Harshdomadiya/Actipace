@@ -16,28 +16,28 @@ function Grid() {
     <>
       {/* <div className="grid grid-cols-1"> */}
       <div className="grid  grid-cols-3 gap-8 w-[1000px]  container mx-64  px-4">
-        <img src={Border1}></img>
-        <img src={Border2}></img>
-        <img src={Border3}></img>
-        <img src={Border4}></img>
-        <img src={Border5}></img>
-        <img src={Border6}></img>
+        <img src={Border1} alt=""></img>
+        <img src={Border2} alt=""></img>
+        <img src={Border3} alt=""></img>
+        <img src={Border4} alt=""></img>
+        <img src={Border5} alt=""></img>
+        <img src={Border6} alt=""></img>
       </div>
       <div className="w-2/3 container mx-48 px-4">
-        <img src={SectionErrow} className="w-24"></img>
+        <img src={SectionErrow} alt="" className="w-24"></img>
       </div>
       <div className="relative h-[800px]">
         <div className="flex items-center justify-center flex-col">
-          <img src={Section} className="w-[1100px]"></img>
+          <img src={Section} alt="" className="w-[1100px]"></img>
           <div className="absolute mr-[250px] mt-[700px]">
-            <img src={Section2}></img>
+            <img src={Section2} alt=""></img>
           </div>
         </div>
       </div>
 
       <div>
         <div className="flex items-center justify-center w-full">
-          <img src={Section3} className="w-[1000px]"></img>
+          <img src={Section3} alt="" className="w-[1000px]"></img>
         </div>
         <div className="flex  flex-col items-center gap-4 mt-[30px] mb-[30px]">
           <div className="">
@@ -46,7 +46,7 @@ function Grid() {
             </button>
           </div>
           <div >
-            <img src={secondaryarrow} className=""></img>
+            <img src={secondaryarrow} alt="" className=""></img>
           </div>
           <div className="flex justify-center flex-col items-center text-[11px]">
             <div className="font-Inter ">No credit card required</div>

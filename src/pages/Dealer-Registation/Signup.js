@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import eye from "./image/eye.png";
 import actipace from "./image/actipace.png";
 import emogy from "./image/emogy.png";
-import RefreshIcon from "@mui/icons-material/Refresh"
+import { Button } from '@mui/material';
+import RefreshIcon from '@mui/icons-material/Refresh';
 // import icons from "./captcha/icons8-refresh-16.png"
 
 import { useNavigate } from "react-router-dom";
-import { apiConnector } from "../../services/Apiconnector";
+
 import { categories } from "../../services/Api";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -39,8 +40,7 @@ const Signup = () => {
   }
 
   const [flag,setFlag] = useState(true);
-  const [f1,setf1] = useState(false);
-
+  
   // Function to toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -64,7 +64,7 @@ const Signup = () => {
           // console.log(formData)
          
           const result = await axios.post(categories.OTPSENDER_API,formData);
-          console.log(result.data)
+          //console.log(result.data)
           setFlag(false);
           toast.success(`${result.data.message}`,{id:toastId});
       }catch(e){
@@ -77,7 +77,7 @@ const Signup = () => {
 
   const handleSsignup=(e) =>{
     e.preventDefault();
-    console.log(formData);
+    //console.log(formData);
     const backendcalling = async () =>{
       const toastId = toast.loading("loading....")
       try{
@@ -85,7 +85,7 @@ const Signup = () => {
           // console.log(formData)
          
           const result = await axios.post(categories.SIGNUP_API,formData);
-          console.log(result.data)
+          //console.log(result.data)
           navigate("/login")
           toast.success(`${result.data.message}`,{id:toastId});
       }catch(e){
@@ -99,7 +99,7 @@ const Signup = () => {
     <div className="flex items-center justify-center min-h-screen bg-green-50">
       {flag ?( <>
         <div className="w-96 h-7/8 p-8 bg-white rounded-lg shadow-md my-[50px]">
-        <img src={actipace} className="mx-24 "></img>
+        <img src={actipace} alt="" className="mx-24 "></img>
         <form className="w-full" onSubmit={handleSignup}>
           <div className="bg-[#D1ECF1] h-18 my-5 py-5 rounded-xl">
             <h2 className="text-center text-xs font-semibold text-gray-700 mb-4">
@@ -169,7 +169,7 @@ const Signup = () => {
               onClick={togglePasswordVisibility}
               className=" cursor-auto inset-y-0 right-2 text-sm text-green-600 "
             >
-              <img src={eye} className="w-9 h-9 my-2"></img>
+              <img src={eye} alt="" className="w-9 h-9 my-2"></img>
             </button>
           </div>
 
@@ -271,9 +271,16 @@ const Signup = () => {
           {/* Captcha */}
           <div className="mb-4 flex gap-3">
               <div className="bg-green-500 text-white px-5 py-2 rounded-md w-[100px]">{captch}</div>
-              <button startIcon={<RefreshIcon/>} onClick={(e)=>refreshString(e)}>
+              <Button
+                      startIcon={<RefreshIcon />}
+                      onClick={(e)=>refreshString(e)}
+                      variant="contained"
+                      color="green"
+                    >
+                      {/* Refresh */}
+                    </Button>
                   {/* <img src={icons}/> */}
-              </button>
+             
           </div>
 
           {/* Enter Code */}
@@ -316,12 +323,12 @@ const Signup = () => {
      
       <div className="absolute bottom-4 right-4">
         <button className="w-10 h-10 flex items-center justify-center text-white">
-          <img src={emogy}></img>
+          <img src={emogy} alt=""></img>
         </button>
       </div> </>)
       :( <>
         <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
-        <img src={actipace} className="mx-28 my-4"></img>
+        <img src={actipace} alt="" className="mx-28 my-4"></img>
         <h2 className="text-center text-xs font-sm text-gray-700">
           Access and manage your instances from
           <br />

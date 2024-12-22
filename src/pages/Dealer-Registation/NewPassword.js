@@ -1,30 +1,47 @@
 import React, { useState } from "react";
-import eye from "./image/eye.png";
+
 import actipace from "./image/actipace.png";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import emogy from "./image/emogy.png";
+import axios from "axios";
+import { categories } from "../../services/Api";
+import toast from "react-hot-toast";
+
 
 const NewPassword = () => {
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setNewPassword("");
-    setConfirmPassword("");
-  };
+  const {token} = useParams();
+ 
 
   const [newpassword, setNewPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
 
-  const handleNewPassword = (e) => {
-    e.preventDefault(); // Prevent form submission refresh
-    // Here you can validate inputs before navigation
-    navigate("/login"); // Navigate to the home page
+  const handleNewPassword = async (e) => {
+    e.preventDefault(); 
+    const id = toast.loading();// Prevent form submission refresh
+    try{
+      
+      const payload = {
+        token,               // Ensure this matches the backend's `req.body.token`
+        password: newpassword, // Rename to match backend field
+        confirmPassword: confirmpassword, // Rename to match backend field
+    };
+
+        const response = await axios.post(categories.RESETPASSWORD_API,payload)
+        //console.log("res....",response)
+        toast.success(response.data.message)
+    }catch(e){
+        //console.log(e)
+        toast.error(e.response.data.message)
+    }
+    toast.remove(id);
+    setNewPassword("");
+    setConfirmPassword("");
+   // navigate("/login"); // Navigate to the home page
   };
   return (
     <div className="flex -my-20 items-center justify-center min-h-screen bg-green-50">
       <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
-        <img src={actipace} className="mx-24 my-4"></img>
+        <img src={actipace} alt="" className="mx-24 my-4"></img>
         <h2 className="text-center text-md font-bold text-gray-700">
           New Password
         </h2>
@@ -71,7 +88,7 @@ const NewPassword = () => {
       </div>
       <div className="absolute bottom-14 right-4">
         <button className="w-10 h-10 flex items-center justify-center text-white">
-          <img src={emogy}></img>
+          <img src={emogy} alt=""></img>
         </button>
       </div>
     </div>

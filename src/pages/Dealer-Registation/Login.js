@@ -6,17 +6,18 @@ import emogy from "./image/emogy.png";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { categories } from "../../services/Api";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { setToken } from "../../slice/AuthSlice";
+import { useRecoilState } from "recoil";
+import {TokenAtoms} from "../../Atoms";
 
 
 const Login = () => {
   const navigate = useNavigate();
+  const [token,setToken] = useRecoilState(TokenAtoms)
+  console.log("tooooo",token);
 
-    const {token} = useSelector((state) => state.auth)
+   // const {token} = useSelector((state) => state.auth)
     //console.log(token);
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
   
 
   const [formData,setData] = useState({email:"",password:"",otp:""})
@@ -40,13 +41,13 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault(); 
-    console.log(formData);
+    //console.log(formData);
 
     const backendcalling = async () =>{
       const toastId = toast.loading("loading....")
       try{
           const result = await axios.post(categories.OTPLOGIN_API,formData);
-          console.log(result.data)
+          //console.log(result.data)
           setFlag(false);
           toast.success(`${result.data.message}`,{id:toastId});
       }catch(e){
@@ -59,17 +60,17 @@ const Login = () => {
   
   const handleSsignup = (e)=>{
     e.preventDefault(); 
-    console.log(formData);
+    //console.log(formData);
     const backendcalling = async () =>{
       const toastId = toast.loading("loading....")
       try{
           const result = await axios.post(categories.LOGIN_API,formData);
-          setToken(JSON.stringify(result.data.token))
-          dispatch(setToken(JSON.stringify(result.data.token)))
-          console.log("api token",result.data.token);
-          console.log("slice tokne",token)
-          localStorage.setItem("token",JSON.stringify(result.data.token));
-          console.log("storage token",localStorage.getItem("token"));
+          setToken(result.data.token)
+          //dispatch(setToken(JSON.stringify(result.data.token)))
+          //console.log("api token",result.data.token);
+          //console.log("slice tokne",token)
+          localStorage.setItem('token',result.data.token);
+          //console.log("storage token",localStorage.getItem("token"));
           
           toast.success(`${result.data.message}`,{id:toastId});
       }catch(e){
@@ -84,7 +85,7 @@ const Login = () => {
     <div className="flex items-center justify-center min-h-screen bg-green-50">
       {flag ?<>
           <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
-          <img src={actipace} className="mx-28 my-4"></img>
+          <img src={actipace} alt="" className="mx-28 my-4"></img>
           <h2 className="text-center text-xs font-sm text-gray-700">
             Access and manage your instances from
             <br />
@@ -130,7 +131,7 @@ const Login = () => {
                   onClick={togglePasswordVisibility}
                   className=" cursor-auto inset-y-0 right-2    text-sm text-green-600"
                 >
-                  <img src={eye} className="w-9 h-9 my-2"></img>
+                  <img src={eye} alt="" className="w-9 h-9 my-2"></img>
                 </button>
               </div>
             </div>
@@ -157,12 +158,12 @@ const Login = () => {
         </div>
         <div className="absolute bottom-4 right-4">
           <button className="w-10 h-10 flex items-center justify-center text-white">
-            <img src={emogy}></img>
+            <img src={emogy} alt=""></img>
           </button>
         </div>
       </>:<>
       <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
-        <img src={actipace} className="mx-28 my-4"></img>
+        <img src={actipace} alt="" className="mx-28 my-4"></img>
         <h2 className="text-center text-xs font-sm text-gray-700">
           Access and manage your instances from
           <br />

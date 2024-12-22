@@ -9,20 +9,20 @@ function ExtraPage() {
   return (
     <div>
         <div className='ml-20'>
-            <img src={section}/>
+            <img src={section} alt=""/>
         </div>
         <div className='ml-20'>
         <div className='grid grid-cols-2 gap-6'>
         <div>
-            <img src={bg1} className='w-3/4 h-3/2 top-592 left-300 radius-16'/>
+            <img src={bg1} alt="" className='w-3/4 h-3/2 top-592 left-300 radius-16'/>
         </div>
 
         <div className='grid grid-cols-1 gap-6'>
         <div>
-            <img src={bg2} className='w-3/4 h-3/2 top-592 left-300 radius-16'/>
+            <img src={bg2}  alt="" className='w-3/4 h-3/2 top-592 left-300 radius-16'/>
         </div>
         <div>
-            <img src={bg3} className='w-3/4 h-3/2 top-592 left-300 radius-16'/>
+            <img src={bg3} alt="" className='w-3/4 h-3/2 top-592 left-300 radius-16'/>
         </div>
         </div>
         </div>
@@ -33,10 +33,10 @@ function ExtraPage() {
       
         <div className='ml-56'>
         <div>
-            <img src={Frame861} className='w-1/2 h-1/2 top-1616 ml-56'/>
+            <img src={Frame861} alt="" className='w-1/2 h-1/2 top-1616 ml-56'/>
         </div>
         <div>
-            <img src={Frame860} className='w-1/2 h-1/2 top-1616 ml-56'/>
+            <img src={Frame860} alt="" className='w-1/2 h-1/2 top-1616 ml-56'/>
         </div>
         </div>
        

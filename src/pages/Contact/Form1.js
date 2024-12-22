@@ -1,46 +1,30 @@
 import React, { useState } from "react";
-import address from "./image/address.png";
-import contact from "./image/contact.png";
-import email from "./image/email.png";
-import Group72 from "./image/Group72.png";
-import number1 from "./image/number.png";
-import share from "./image/share.png";
-import text from "./image/text.png";
-import { useNavigate } from "react-router-dom";
-import Contact2 from "./Contact2";
+
+
+
 function Form1() {
-  const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here, e.g., send data to a server
-    // console.log({ firstName, lastName, email, message });
-    // Reset form fields
-
-    setEmail("");
-    setComment("");
-    setName("");
-    setNumber("");
-  };
-
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [comment, setComment] = useState("");
 
   const handleContact = (e) => {
-    e.preventDefault(); // Prevent form submission refresh
+    e.preventDefault();
+    setEmail("");
+    setComment("");
+    setName("");
+    setNumber(""); // Prevent form submission refresh
     // Here you can validate inputs before navigation
     // navigate("/newpassword"); // Navigate to the home page
   };
   return (
-    <div>
-      {" "}
-      <div className="flex -my-20 items-center justify-self-center min-h-scree">
-        <div className="mx-40"></div>
-        <div className="w-full left-4 max-w-sm p-10 bg-white rounded-lg shadow-md">
+    <div className="">
+      <div className="flex items-center h-[600px]">
+        <div className=""></div>
+        <div className="h-[546px] w-[576px] p-10 bg-white rounded-lg mt-8 mr-10">
           <form>
             <div className="grid grid-cols-2 gap-4">
-              <div className="mb-4">
+              <div className="mb-4 flex flex-col gap-2">
                 <label
                   htmlFor="dealerCode"
                   className="block text-sm font-medium text-gray-700"
@@ -53,10 +37,10 @@ function Form1() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Your Email"
-                  className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm border focus:ring focus:ring-green-200 focus:outline-none"
+                  className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px] h-[50px]"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-4 flex flex-col gap-2">
                 <label
                   htmlFor="dealerCode"
                   className="block text-sm font-medium text-gray-700"
@@ -69,11 +53,11 @@ function Form1() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your Email"
-                  className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm border  focus:ring focus:ring-green-200 focus:outline-none"
+                  className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px] h-[50px]"
                 />
               </div>
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col gap-2">
               <label
                 htmlFor="dealerCode"
                 className="block text-sm font-medium text-gray-700"
@@ -86,10 +70,10 @@ function Form1() {
                 value={number}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your Email"
-                className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm border   focus:ring focus:ring-green-200 focus:outline-none"
+                className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px] h-[50px]"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col gap-4">
               <label
                 htmlFor="dealerCode"
                 className="block text-sm font-medium text-gray-700"
@@ -102,12 +86,12 @@ function Form1() {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder=""
-                className="w-full h-24 px-4 py-2 mt-2 bg-[#F3F4F6] text-sm border  focus:ring focus:ring-green-200 focus:outline-none"
+                className="w-full h-[160px]  bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px]"
               />
             </div>
             <button
               onClick={handleContact}
-              className="w-full px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300"
+              className="px-4 py-2 text-white bg-green-500 rounded-[4px] hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300 w-[170px] h-[50px]"
             >
               Submit Message
             </button>

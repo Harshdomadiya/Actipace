@@ -1,32 +1,40 @@
 import React from "react";
-import Frame840 from "./image/Frame 840.png";
-import TopPC from "./image/TopPC.png";
-import para1 from "./image/para1.png";
-import para2 from "./image/para2.png";
-import para3 from "./image/para3.png";
+import Frame from "./image/Frame 840.svg";
 
 function Award() {
-  return (
-    <div>
-      <div className="">
-        <div className="w-1/3 absolute my-32 mx-96 ">
-          <img src={para2} className="" />
+    return (
+        <div className="h-[90vh]">
+
+            <section
+                className="relative h-1/2 md:h-1/2 bg-cover bg-center flex items-center justify-center text-center"
+                style={{
+                  backgroundImage: `url('${Frame}')`, // Dynamic URL 
+                }}
+            >
+                <div className="bg-[#071D2B] bg-opacity-[20%] w-full h-full absolute top-0 left-0"></div>
+                <div className="relative z-10 text-white px-4">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5">
+                        Awards & Recognition
+                    </h1>
+                    <p className="font-normal text-l max-w-3xl mx-auto px-4 w-[670px]">
+                        We know the importance of what we protect. That’s why we welcome outside
+                        evaluations of all our products – so you don’t just have to take our word for it.
+                    </p>
+                </div>
+            </section>
+
+
+            <section className="py-16 sm:py-24 bg-white text-center flex flex-col items-center justify-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                    Top PC and Mac security awards
+                </h2>
+                <p className="font-normal text-l max-w-3xl mx-4 md:mx-auto">
+                    Our flagship security software keeps getting faster and easier to use, while
+                    still giving best-in-class protection that won’t slow you down.
+                </p>
+            </section>
         </div>
-        <div className="w-1/3 absolute my-56 mx-96 ">
-          <img src={para3} className="" />
-        </div>
-        <img src={Frame840} className=" " />
-      </div>
-      <div className=" my-24 mx-80 w-3/7    ">
-        <img src={TopPC} classname="" />
-        Our flagship security software keeps getting faster and easier to use,
-        while
-        <div className="mx-10">
-          still giving best-in-class protection that won’t slow you down.
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default Award;

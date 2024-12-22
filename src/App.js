@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import {Suspense,lazy} from "react"
 import "./App.css";
 import Navbar from "./Navbar";
@@ -39,7 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} /> 
         <Route path="/resetpassword" element={<ResetPassword />} />
-        <Route path="/newpassword" element={<NewPassword />} />
+        <Route path="/newpassword/:token" element={<NewPassword />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/award" element={<Award />} />
