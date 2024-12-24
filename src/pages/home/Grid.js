@@ -10,6 +10,7 @@ import SectionErrow from "./image/SectionErrow.png";
 import Section2 from "./image/Section2.png";
 import Section3 from "./image/Section3.png";
 import secondaryarrow from "./image/secondaryarrow.png";
+import { Link } from "react-router-dom";
 
 function Grid() {
   return (
@@ -41,9 +42,9 @@ function Grid() {
         </div>
         <div className="flex  flex-col items-center gap-4 mt-[30px] mb-[30px]">
           <div className="">
-            <button className="bg-[#31BF5C] text-white font-Roboto py-3 px-3  rounded-md">
+            <Link to="/extrapage"><button className="bg-[#31BF5C] text-white font-Roboto py-3 px-3  rounded-md">
               Start now - It's free
-            </button>
+            </button></Link>
           </div>
           <div >
             <img src={secondaryarrow} alt="" className=""></img>

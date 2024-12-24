@@ -30,7 +30,7 @@ function Section1() {
              </p>
           </div>
           <div>
-          <Link to={"/price"}>
+          <Link to={"/extrapage"}>
           <button className=" bg-[#31BF5C] text-white font-Roboto rounded-[400px] w-[200px] h-[50px] flex justify-center items-center gap-3 text-[14px] hover:scale-95 transition-all duration-200">
             <IoGridSharp className="w-[25px] h-[25px]"/>
             Free Download

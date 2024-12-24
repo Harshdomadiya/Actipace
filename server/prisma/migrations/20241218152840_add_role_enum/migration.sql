@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE `purchase` ADD COLUMN `status` ENUM('SUCCESS', 'FAILED', 'PENDING') NOT NULL DEFAULT 'PENDING';

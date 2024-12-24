@@ -73,13 +73,13 @@ const Login = () => {
           //console.log("storage token",localStorage.getItem("token"));
           
           toast.success(`${result.data.message}`,{id:toastId});
+          navigate("/price")
       }catch(e){
           toast.error(e.response.data.message,{id:toastId});
           return;
       }
     }
     backendcalling();
-    navigate("/price")
   }
   return (
     <div className="flex items-center justify-center min-h-screen bg-green-50">

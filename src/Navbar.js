@@ -58,7 +58,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <Link to = {"/price"}>
+        <Link to = {"/extrapage"}>
         <button className="bg-[#31BF5C] text-white font-Roboto w-[157.34px] h-[48px] flex justify-center items-center text-[14px] gap-2">
         <IoGridSharp className="w-[25px] h-[25px]"/>
           Free Download

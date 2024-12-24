@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 py-16 w-full h-96 text-white">
       <div className="container mx-auto px-2">
-        <div className="flex flex-col md:flex-row justify-around">
-          <div className="mb-8 md:mb-0">
+        <div className="flex  justify-around">
+          <div className="mb-8 md:mb-0 h-[200px] w-[200px] flex flex-col items-center justify-between">
             <a href="/" className="text-2xl font-bold">
               <img src={actipace} alt=""></img>
             </a>
@@ -64,7 +64,7 @@ const Footer = () => {
 
           <div className="mb-8 md:mb-0">
             <h3 className="text-lg font-bold mb-4">Support</h3>
-            <ul className=" font-Helvetic text-sm mb-4">
+            <ul className=" font-Helvetic text-sm mb-4 flex flex-col gap-2">
               <li>
                 <a href="/">Customer Service</a>
               </li>
@@ -79,7 +79,7 @@ const Footer = () => {
 
           <div className="mb-8 md:mb-0">
             <h3 className="text-lg font-bold mb-4">About</h3>
-            <ul className=" font-Helvetic text-sm mb-4">
+            <ul className=" font-Helvetic text-sm mb-4 flex flex-col gap-2">
               <li>
                 <a href="/about">About</a>
               </li>
@@ -98,8 +98,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-
-        <div className="text-center mt-8 -my-10">
+        <div className="w-full flex justify-center items-center mt-8">
+          <div className="w-[1280px] bg-[#0E2C40] h-[1px]"></div>
+        </div>
+        <div className="text-center mt-5">
           <p>&copy; Copyright 2024 Actipace Security - All Rights Reserved</p>
         </div>
       </div>
