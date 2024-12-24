@@ -25,12 +25,12 @@ const signup = require("./routes/Routes");
 app.use("/api/v1",signup);
 
 //Serve the static files from the React app
-// app.use(express.static(path.join(__dirname, "..",'build')));
+app.use(express.static(path.join(__dirname, "..",'build')));
 
-// // Catch-all route to serve the React app for any unknown routes
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, "..",'build', 'index.html'));
-// });
+// Catch-all route to serve the React app for any unknown routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, "..",'build', 'index.html'));
+});
 
 
 app.listen(PORT,()=>{
