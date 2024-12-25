@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.d4101efc.css",
-    "main.js": "/static/js/main.5784c5b3.js",
-    "static/js/567.3a1d9086.chunk.js": "/static/js/567.3a1d9086.chunk.js",
+    "main.css": "/static/css/main.4e99b781.css",
+    "main.js": "/static/js/main.2ab2b04d.js",
+    "static/js/917.19a43f8e.chunk.js": "/static/js/917.19a43f8e.chunk.js",
+    "static/js/61.78320779.chunk.js": "/static/js/61.78320779.chunk.js",
     "static/js/453.3ff124d9.chunk.js": "/static/js/453.3ff124d9.chunk.js",
+    "static/js/573.9ae11887.chunk.js": "/static/js/573.9ae11887.chunk.js",
     "static/media/Frame 840.svg": "/static/media/Frame 840.f82b31693c3cb802550635642c592521.svg",
     "static/media/Frame840.png": "/static/media/Frame840.67296a1b521969d11ef5.png",
     "static/media/comp.svg": "/static/media/comp.42bf2760c9925dad8e6ad5c2f5b2b55c.svg",
+    "static/media/Home.svg": "/static/media/Home.e7c09255d0c2becef016c872ba5836ef.svg",
     "static/media/Frame 848.png": "/static/media/Frame 848.9dacf3c8edfd082029b2.png",
     "static/media/Frame851.png": "/static/media/Frame851.7e8114997ba27676bc97.png",
     "static/media/acticipace_logo.png": "/static/media/acticipace_logo.d6cc9601f16b42b6f0e0.png",
     "static/media/Section.png": "/static/media/Section.9824884b0c7105d46b95.png",
-    "static/media/HomeEmg.png": "/static/media/HomeEmg.7bacfcdb4574b6242ef3.png",
     "static/media/Group 78.svg": "/static/media/Group 78.7cb6c6ebf3c1e4d08c9dc3f3a642267e.svg",
     "static/media/Container.png": "/static/media/Container.815e3e030895cc0640ef.png",
     "static/media/Frame 857.svg": "/static/media/Frame 857.35e4fbb356df0c7c31800c929a563a4a.svg",
@@ -19,8 +21,8 @@
     "static/media/Section1.png": "/static/media/Section1.d9002040ad0ae5098cb5.png",
     "static/media/Image1.png": "/static/media/Image1.f75f7d3ed3c3a8ccc41f.png",
     "static/media/Group 77.svg": "/static/media/Group 77.d2f2d7e636b668d26f6138f56a6f4f88.svg",
+    "static/media/cleanup_bg.jpg.svg": "/static/media/cleanup_bg.jpg.0674632e5b1eb2ee61cdf6c250d4828a.svg",
     "static/media/Heading1.png": "/static/media/Heading1.e2ce76bc7a1c21d96f9b.png",
-    "static/media/bg1.jpg": "/static/media/bg1.d670a07764089dffb06f.jpg",
     "static/media/Section3.png": "/static/media/Section3.0096a06fe7814c2e4cbe.png",
     "static/media/Border3.png": "/static/media/Border3.0b44e83aa44706fed7c6.png",
     "static/media/Border2.png": "/static/media/Border2.23be701d6c53cfe34eb0.png",
@@ -29,6 +31,7 @@
     "static/media/actipace-a.png": "/static/media/actipace-a.329f0339c8a5bd88b00b.png",
     "static/media/Border5.png": "/static/media/Border5.e29daae338551e77367a.png",
     "static/media/Border4.png": "/static/media/Border4.7e1fe347b1fee4408f24.png",
+    "static/media/Group 79.svg": "/static/media/Group 79.2e62925827286706c0c489b7be1eb376.svg",
     "static/media/Background.png": "/static/media/Background.5aeca62cb1f6a12fbce2.png",
     "static/media/Group 76.svg": "/static/media/Group 76.e598d4b042c5a6a71e08c9ace0360e03.svg",
     "static/media/icon-2.svg": "/static/media/icon-2.f9431024dabe91f23e3b591cddbe9847.svg",
@@ -50,13 +53,15 @@
     "static/media/Link-4.svg": "/static/media/Link-4.c0502dfa74a2ce610c560b275470ffcd.svg",
     "index.html": "/index.html",
     "static/media/Link.svg": "/static/media/Link.bc813ac975982e29a6751921a1686124.svg",
-    "main.d4101efc.css.map": "/static/css/main.d4101efc.css.map",
-    "main.5784c5b3.js.map": "/static/js/main.5784c5b3.js.map",
-    "567.3a1d9086.chunk.js.map": "/static/js/567.3a1d9086.chunk.js.map",
-    "453.3ff124d9.chunk.js.map": "/static/js/453.3ff124d9.chunk.js.map"
+    "main.4e99b781.css.map": "/static/css/main.4e99b781.css.map",
+    "main.2ab2b04d.js.map": "/static/js/main.2ab2b04d.js.map",
+    "917.19a43f8e.chunk.js.map": "/static/js/917.19a43f8e.chunk.js.map",
+    "61.78320779.chunk.js.map": "/static/js/61.78320779.chunk.js.map",
+    "453.3ff124d9.chunk.js.map": "/static/js/453.3ff124d9.chunk.js.map",
+    "573.9ae11887.chunk.js.map": "/static/js/573.9ae11887.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4101efc.css",
-    "static/js/main.5784c5b3.js"
+    "static/css/main.4e99b781.css",
+    "static/js/main.2ab2b04d.js"
   ]
 }
