@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import sec1 from "./image/Section1.png";
 
@@ -12,16 +12,21 @@ import { MdOutlineHorizontalRule } from "react-icons/md";
 import { FaPlus } from "react-icons/fa";
 import { ImCross } from "react-icons/im"; 
 import { FaCheck } from "react-icons/fa";
-
+// import toast from "react-hot-toast";
+// import head from "./image/Group 79.svg"
+import faq from "./faq"
+import head from "./image/Group 79.svg"
+import { FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 
 function Price() {
 
   // i need token here
     const navigate  = useNavigate();
 
-    const [ft,setft] = useState("");
-    const [fI,setfI] = useState("");
-    const [fL,setfL] = useState("");
+    // const [ft,setft] = useState("");
+    // const [fI,setfI] = useState("");
+    // const [fL,setfL] = useState("");
 
     const [LiteD,SetLiteD] = useState(1);
     const [LiteY,SetLiteY] = useState(1);
@@ -29,122 +34,142 @@ function Price() {
     const [TotalY,SetTotalY] = useState(1);
     const [InterD,SetInterD] = useState(1);
     const [InterY,SetInterY] = useState(1);
-    const [amountA,setamountA] = useState()
-    const [amountB,setamountB] = useState()
-    const [amountC,setamountC] = useState()
+    const [amountA,setamountA] = useState(0)
+    const [amountB,setamountB] = useState(0)
+    const [amountC,setamountC] = useState(0)
 
-    let checkplanA = useRef();
-    let checkplanB = useRef();
-    let checkplanC = useRef();
+    // let checkplanA = useRef();
+    // let checkplanB = useRef();
+    // let checkplanC = useRef();
 
-    useEffect(()=>{
+  //   useEffect(()=>{
         
-           checkplanA.current = async () =>{
-            try{
-                const payload = {
-                  software_id:1
-                }
+  //          checkplanA.current = async () =>{
+  //           try{
+  //               const payload = {
+  //                 software_id:1
+  //               }
 
-                const data = await axios.post(categories.CHECKPLAN,payload,{
-                                              headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-                                              });
-                                              //console.log("data",data)
-                if (data.data.success) {
-                  const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
-                  //console.log(data.data.response.expiresAt);
-                  const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
-                  const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
-                  //console.log("exp",expirationTimeInUTC)
-                  if(data.data.success &&  expirationTimeInUTC > Date.now() )
-                  {
-                      setft(data.data.response.software.description)
-                  }
-                  else{
-                    setft("");
-                  }
+  //               const data = await axios.post(categories.CHECKPLAN,payload,{
+  //                                             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+  //                                             });
+  //                                             //console.log("data",data)
+  //               if (data.data.success) {
+  //                 const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
+  //                 //console.log(data.data.response.expiresAt);
+  //                 const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
+  //                 const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
+  //                 //console.log("exp",expirationTimeInUTC)
+  //                 if(data.data.success &&  expirationTimeInUTC > Date.now() )
+  //                 {
+  //                     setft(data.data.response.software.description)
+  //                 }
+  //                 else{
+  //                   setft("");
+  //                 }
                   
-                }
-              }catch(e){
+  //               }
+  //             }catch(e){
                 
-            }
+  //           }
                 
-          }
+  //         }
 
-          checkplanA.current();
-    },[])
+  //         checkplanA.current();
+  //   },[])
 
 
-    useEffect(()=>{
+  //   useEffect(()=>{
       
-       checkplanB.current = async () =>{
-          try{
-                const payload = {
-                  software_id:2
-                }
+  //      checkplanB.current = async () =>{
+  //         try{
+  //               const payload = {
+  //                 software_id:2
+  //               }
 
-                const data = await axios.post(categories.CHECKPLAN,payload,{
-                                            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-                                            });
-                  //console.log("data2",data);
-                  if (data.data.success) {
-                    const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
+  //               const data = await axios.post(categories.CHECKPLAN,payload,{
+  //                                           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+  //                                           });
+  //                 //console.log("data2",data);
+  //                 if (data.data.success) {
+  //                   const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
 
-                    const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
-                    const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
+  //                   const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
+  //                   const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
 
-                  if(data.data.success &&  expirationTimeInUTC > Date.now())
-                  {
-                      setfI(data.data.response.software.description)
-                  }
-                  else{
-                    setfI("")
-                  }
-                //toast.error(data.data.message)
-              }   
+  //                 if(data.data.success &&  expirationTimeInUTC > Date.now())
+  //                 {
+  //                     setfI(data.data.response.software.description)
+  //                 }
+  //                 else{
+  //                   setfI("")
+  //                 }
+  //               //toast.error(data.data.message)
+  //             }   
             
-          }catch(e){
-              //console.log(e);
-          }
+  //         }catch(e){
+  //             //console.log(e);
+  //         }
 
-      }
-      checkplanB.current();
-  },[])
+  //     }
+  //     checkplanB.current();
+  // },[])
 
-    useEffect(()=>{
+  //   useEffect(()=>{
       
-        checkplanC.current = async () =>{
-          try{
-              const payload = {
-                software_id:3
-              }
+  //       checkplanC.current = async () =>{
+  //         try{
+  //             const payload = {
+  //               software_id:3
+  //             }
 
-              const data = await axios.post(categories.CHECKPLAN,payload,{
-                                            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-                                            });
+  //             const data = await axios.post(categories.CHECKPLAN,payload,{
+  //                                           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+  //                                           });
 
-              if (data.data.success) {
-                const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
-                //console.log(data.data.response.expiresAt)
-                const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
-                const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
-                //console.log("exp",expirationTimeInUTC)
-                if(data.data.success &&  expirationTimeInUTC > Date.now())
-                {
-                    setfL(data.data.response.software.description)
-                }
-                else{
-                  setfL("");
-                }
-              }  
-            }catch(e){
-              //console.log(e);
-          }
+  //             if (data.data.success) {
+  //               const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
+  //               //console.log(data.data.response.expiresAt)
+  //               const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
+  //               const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
+  //               //console.log("exp",expirationTimeInUTC)
+  //               if(data.data.success &&  expirationTimeInUTC > Date.now())
+  //               {
+  //                   setfL(data.data.response.software.description)
+  //               }
+  //               else{
+  //                 setfL("");
+  //               }
+  //             }  
+  //           }catch(e){
+  //             //console.log(e);
+  //         }
          
-        }
+  //       }
 
-        checkplanC.current();
+  //       checkplanC.current();
       
-    },[])
+  //   },[])
+  //const [currency, setCurrency] = useState("INR");
+
+  // async function getExchangeRate() {
+  //   const apiKey = '526d1b2a015cacdbfeba76ee'; // Replace with your API key
+  //   const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/INR`;
+  
+  //   try {
+  //     const response = await axios.get(url);
+  //     const usdRate = response.data.conversion_rates.USD;
+  //     //console.log(typeof(usdRate));
+  //     return usdRate;
+  //   } catch (error) {
+  //     toast.error('Error fetching exchange rates:', error.message);
+  //   }
+  // }
+
+  // const handleCurrencyChange = (event) => {
+  //   setCurrency(event.target.value);
+  //   console.log("Selected currency:", event.target.value);
+  // };
 
     useEffect(()=>{
       const data = {
@@ -155,7 +180,13 @@ function Price() {
       const amountfetch = async ()=>{
         try{
         const amount = await axios.post(categories.GETPLAN_API,data)
-        setamountA(amount.data.amount.price)
+          // if(currency === "USD")
+          // {
+          //     const value=getExchangeRate();
+          //     setamountA(Number(amount.data.amount.price)*value)
+          // }else{
+            setamountA(Number(amount.data.amount.price))
+         // }
         }catch(e){
           //console.log(e);
         }
@@ -211,7 +242,7 @@ function Price() {
         await buycourse(data,navigate);
        // window.location.reload();
     }
-    const handleBuyB = async(e)=>{
+    const handleBuyB = async()=>{
       const data = {
         device:InterD,
         year:InterY,
@@ -222,7 +253,7 @@ function Price() {
       await buycourse(data,navigate);
       //window.location.reload();
     }
-    const handleBuyC = async(e)=>{
+    const handleBuyC = async()=>{
       const data = {
         device:LiteD,
         year:LiteY,
@@ -234,39 +265,18 @@ function Price() {
       //window.location.reload();
     }
 
-
-    const handleDT = async(e)=>{
-        checkplanA.current();
-        if(ft){
-
-        const anchor = document.createElement("a");
-        anchor.href=ft;
-        anchor.download="file.zip";
-        anchor.click();
-      } 
-    }
     
-    const handleDI = async(e)=>{
-      checkplanB.current();
-      if(fI){
-      const anchor = document.createElement("a");
-        anchor.href=fI;
-        anchor.download="file.zip";
-        anchor.click();
-      }
-    }
-    
-    const handleDL = async(e)=>{
-      checkplanC.current();
-      if(fL){
+    // const handleDL = async(e)=>{
+    //   checkplanC.current();
+    //   if(fL){
 
       
-        const anchor = document.createElement("a");
-        anchor.href=fL;
-        anchor.download="file.zip";
-        anchor.click();
-      }
-    }
+    //     const anchor = document.createElement("a");
+    //     anchor.href=fL;
+    //     anchor.download="file.zip";
+    //     anchor.click();
+    //   }
+    // }
 
    function DeviceSetP(Device,SetDevice) {
       if(Device === 3){
@@ -317,6 +327,21 @@ function Price() {
       SetYear(Year-1);
   }
 
+  const [openCategory, setOpenCategory] = useState(null);
+          
+          const [openQuestion, setOpenQuestion] = useState(null);
+  
+          const toggleCategory = (category) => {
+              setOpenCategory(openCategory === category ? null : category);
+              console.log("category", category);
+              setOpenQuestion(null);
+          };
+  
+          const toggleQuestion = (questionIndex) => {
+              setOpenQuestion(openQuestion === questionIndex ? null : questionIndex);
+          };
+  
+
   return (
     <div className="w-full">
       <div className="flex items-center justify-center container mt-[50px]">
@@ -324,9 +349,22 @@ function Price() {
         <img src={actipace_a} alt="" className="w-1/6 absolute ml-[1260px]" />
       </div>
 
-
-      <div className="w-full h-[850px]  flex justify-center items-center gap-[40px] mt-[60px]">
-        <div className="w-[345px] h-[790px] flex flex-col shadow-2xl">
+      {/* <div className="currency-selector">
+      {/* <label htmlFor="currency" className="block text-sm font-medium text-gray-700">
+        Select Currency
+      </label> */}
+      {/* <select
+        id="currency"
+        value={currency}
+        onChange={handleCurrencyChange}
+        className="mt-1 block w-full p-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      >
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="USD">USD - US Dollar</option>
+      </select> */}
+    {/* </div> */} 
+      <div className="w-full h-[850px]  flex justify-center items-center gap-[40px] mt-[50px]">
+        <div className="w-[320px] h-[790px] flex flex-col shadow-2xl">
             <div className="bg-[#31BF5C] h-[5px]"></div>
             <div className="text-[24px] mt-[15px] ml-[15px] font-bold">Total Security</div>
             <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter">{amountB} ₹</div>
@@ -351,13 +389,9 @@ function Price() {
             
             
             </div>
-            {
-               (ft === "")?<div className="w-ful  flex justify-center items-center mt-[30px]">
-                <button className="w-[305px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={handleBuyA}>BUY NOW</button>
-              </div>:<div className="w-ful  flex justify-center items-center mt-[30px]">
-                <button className="w-[305px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={handleDT}>Download</button>
-            </div>
-            }
+            <div className="w-ful  flex justify-center items-center mt-[30px]">
+                <button className="w-[280px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={()=>handleBuyA()}>BUY NOW</button>
+              </div>
             
             <div className="text-[12px] flex flex-col ml-[20px] mt-[30px] gap-[5px] font-[200px]">
               <p className="text-[#071D2B] text-[14px] font-normal flex items-center gap-2"><FaCheck className="w-[12px] h-[12px] text-[#31BF5C]"/> Real Time Protection</p>
@@ -381,7 +415,7 @@ function Price() {
         </div>
         
         
-        <div className="w-[345px] h-[790px] flex flex-col shadow-2xl">
+        <div className="w-[320px] h-[790px] flex flex-col shadow-2xl">
             <div className="bg-[#31BF5C] h-[5px]"></div>
             <div className="text-[24px] mt-[15px] ml-[15px] font-bold">Internet Security</div>
             <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter">{amountC} ₹</div>
@@ -408,13 +442,9 @@ function Price() {
             
             
             </div>
-            {
-               (fI === "")?<div className="w-ful  flex justify-center items-center mt-[30px]">
-                <button className="w-[305px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={handleBuyB}>BUY NOW</button>
-              </div>:<div className="w-ful  flex justify-center items-center mt-[30px]">
-                <button className="w-[305px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={handleDI}>Download</button>
-            </div>
-            }
+           <div className="w-ful  flex justify-center items-center mt-[30px]">
+                <button className="w-[280px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={()=>handleBuyB()}>BUY NOW</button>
+              </div>
             <div className="text-[12px] flex flex-col ml-[20px] mt-[30px] gap-[5px] font-[200px]">
               <p className="text-[#071D2B] text-[14px] font-normal flex items-center gap-2"><FaCheck className="w-[12px] h-[12px] text-[#31BF5C]"/> Real Time Protection</p>
               <p className="text-[#071D2B] text-[14px] font-normal flex items-center gap-2"><FaCheck className="w-[12px] h-[12px] text-[#31BF5C]"/> Ransomware Protection</p>
@@ -436,7 +466,7 @@ function Price() {
             
         </div>
         
-        <div className="w-[345px] h-[790px] flex flex-col shadow-2xl">
+        <div className="w-[320px] h-[790px] flex flex-col shadow-2xl">
             <div className="bg-[#31BF5C] h-[5px]"></div>
             <div className="text-[24px] mt-[15px] ml-[15px] font-bold">Basic Defense</div>
             <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter">{amountA} ₹</div>
@@ -461,13 +491,10 @@ function Price() {
             
             
             </div>
-            {
-               (fL === "")?<div className="w-ful  flex justify-center items-center mt-[30px]">
-                <button className="w-[305px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={handleBuyC}>BUY NOW</button>
-              </div>:<div className="w-ful  flex justify-center items-center mt-[30px]">
-                <button className="w-[305px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={handleDL}>Download</button>
-            </div>
-            }
+           <div className="w-ful  flex justify-center items-center mt-[30px]">
+                <button className="w-[280px] h-[55px] bg-[#31BF5C] rounded-sm text-white" onClick={()=>handleBuyC()}>BUY NOW</button>
+              </div>
+           
             <div className="text-[12px] flex flex-col ml-[20px] mt-[30px] gap-[5px] font-[200px]">
               <p className="text-[#071D2B] text-[14px] font-normal flex items-center gap-2"><FaCheck className="w-[12px] h-[12px] text-[#31BF5C]"/> Real Time Protection</p>
               <p className="text-[#071D2B] text-[14px] font-normal flex items-center gap-2"><FaCheck className="w-[12px] h-[12px] text-[#31BF5C]"/> Ransomware Protection</p>
@@ -492,14 +519,51 @@ function Price() {
 
       </div>
      
-       
+      <div className="w-full flex mt-10 flex-col items-center gap-8 mb-20">
+          <div className="w-[1150px]">
+                      <img src={head} alt="" className="h-[60px]"/>
+          </div>
+          <div className="text-[#374151] text-[14px] font-normal w-[1150px]">Explore our FAQ section to discover detailed answers to the most frequently asked questions.</div>
      
-      
-      {/* <div className="absolute bottom-4 right-4">
-        <button className="w-10 h-10 flex items-center justify-center text-white">
-          <img src={emogy}></img>
-        </button>
-      </div> */}
+      <div className="w-full flex flex-col justify-center items-center text-[#374151] font-normal text-[16px]">
+                        {Object.entries(faq).map(([key, {category, questions}]) => (
+                            <div key={key} className="mb-4 w-[1150px]">
+                                {/* Category */}
+                                <button
+                                    onClick={() => toggleCategory(category)}
+                                    className="w-full text-left border p-4  rounded-md flex justify-between hover:bg-gray-100"
+                                >
+                                    {category}
+                                    <div className="text-[#374151]">{openCategory === category ? <FaChevronUp /> : <FaChevronDown />}</div>
+                                </button>
+
+                                {/* Questions*/}
+                                {openCategory === category && (
+                                    <div className="mt-2 border rounded-md bg-gray-50">
+                                        {questions.map((q, index) => (
+                                            <div key={index} className="border-b last:border-b-0">
+                                                <button
+                                                    onClick={() => toggleQuestion(index)}
+                                                    className="w-full text-left p-4  flex justify-between bg-white hover:bg-gray-100"
+                                                >
+                                                    {q.question}
+                                                    <div className="text-[#374151]">{openQuestion === index ? <FaChevronUp /> : <FaChevronDown />}</div>
+                                                </button>
+
+                                                {/* Answer */}
+                                                {openQuestion === index && (
+                                                    <div className="p-4 bg-gray-50 text-gray-700">
+                                                        {q.answer}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+          </div> 
      
     </div>
   );

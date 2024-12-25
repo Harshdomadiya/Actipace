@@ -2,9 +2,38 @@ import React from 'react'
 import section from './image/Frame 857.svg'
 import comp from './image/comp.svg'
 import actipace_a from "../home/image/actipace-a.png"
-import { Link } from 'react-router-dom'
+
+
+  
+
+const handleTS = async(e)=>{
+        e.preventDefault()
+        const anchor = document.createElement("a");
+        anchor.href="https://actipace.com/download/ActipaceTotalSecuritySetup.zip";
+        anchor.download="file.zip";
+        anchor.click();
+}
+const handleIS = async(e)=>{
+        e.preventDefault()
+        const anchor = document.createElement("a");
+        anchor.href="https://actipace.com/download/ActipaceInternetSecuritySetup.zip";
+        anchor.download="file.zip";
+        anchor.click();
+}
+const handleBD = async(e)=>{
+        e.preventDefault()
+        const anchor = document.createElement("a");
+        anchor.href="https://actipace.com/download/ActipaceBasicDefenseSetup.zip";
+        anchor.download="file.zip";
+        anchor.click();
+}
 
 function ExtraPage() {
+        
+
+
+
+
     return (
         <div>
             <div className="w-full mt-10 flex flex-col items-center">
@@ -25,9 +54,9 @@ function ExtraPage() {
                     <div className="w-[200px] text-center text-[28px] font-[400px]">
                         <h1>Antipace Total Security</h1>
                     </div>
-                    <Link to="/price"><div className="h-[50px] w-[150px] bg-[#071D2B] flex justify-center rounded-[28px] font-[500px]">
-                        <button className="text-white text-[15px]">Download</button>
-                    </div></Link>
+                    <div className="h-[50px] w-[150px] bg-[#071D2B] flex justify-center rounded-[28px] font-[500px]">
+                        <button className="text-white text-[15px]" onClick={(e)=>handleTS(e)}>Download</button>
+                    </div>
                     <div>
                         <img className="w-[400px] h-[240px]" src={comp} alt=""/>
                     </div>
@@ -42,9 +71,9 @@ function ExtraPage() {
                             </h1>
                         </div>
                         <div className="h-[50px] w-[130px] bg-[#071D2B] flex items-center justify-center rounded-[28px]">
-                        <Link to="/price"> <button className="text-white text-[14px] font-[500px]">
+                        <button className="text-white text-[14px] font-[500px]" onClick={(e)=>handleIS(e)}>
                                 Download
-                            </button></Link>
+                            </button>
                         </div>
                         <div>
                             <img className="w-[300px] h-[200px]" src={comp} alt="Computer Display"/>
@@ -58,11 +87,11 @@ function ExtraPage() {
                                 Actipace Antivirus Basic Defense
                             </h1>
                         </div>
-                        <Link to="/price"> <div className="h-[50px] w-[130px] bg-[#071D2B] flex items-center justify-center rounded-[28px]">
-                         <button className="text-white text-[14px] font-[500px]">
+                        <div className="h-[50px] w-[130px] bg-[#071D2B] flex items-center justify-center rounded-[28px]">
+                         <button className="text-white text-[14px] font-[500px]" onClick={(e)=>handleBD(e)}>
                                 Download
                             </button>
-                        </div></Link>
+                        </div>
                         <div>
                             <img className="w-[300px] h-[200px]" src={comp} alt="Computer Display"/>
                         </div>
@@ -96,6 +125,7 @@ function ExtraPage() {
                     <p>Windows XP (32-bit & 64-bit)</p>
                 </div>
             </div>
+           
 
 
         </div>

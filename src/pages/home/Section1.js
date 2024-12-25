@@ -1,7 +1,7 @@
 import React from "react";
-import bg1 from "./image/bg1.jpg";
+import bg1 from "./image/cleanup_bg.jpg.svg";
 import Heading1 from "./image/Heading1.png";
-import HomeEmg from "./image/HomeEmg.png";
+import HomeEmg from "./image/Home.svg";
 import Clip from "./image/Clip.png";
 import image1 from "./image/Image1.png";
 import Frame851 from "./image/Frame851.png";
@@ -48,7 +48,7 @@ function Section1() {
             <div className="flex justify-center h-50vh mb-[580px] mr-[190px] absolute">
               {/* green errows over center image */}
               {/* harsh */}
-              <img src={Clip} alt="C" className="mr-[500px]"></img>
+              <img src={Clip} alt="C" className="mr-[430px]"></img>
             </div>
             {/* black window over green image */}
             <div className="flex items-center justify-center h-50vh absolute  left-50 mb-[130px]">

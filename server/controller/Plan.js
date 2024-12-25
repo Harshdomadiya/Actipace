@@ -7,7 +7,7 @@ exports.getplan =async (req,res) =>{
         const{device,year,id} = req.body
         
         const amount = await prisma.softwarePlan.findFirst({where:{devices:Number(device),year:Number(year),software_id:id}})
-        console.log(amount);
+        //console.log(amount);
 
         return res.status(200).json({
             success:true,

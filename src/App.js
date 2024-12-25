@@ -18,10 +18,11 @@ import Award from "./pages/Award/Award";
 
 // import About from "./About/About";
 
-import Price from "./pages/Price/Price";
+
 import ExtraPage from "./pages/ExtraPage/ExtraPage";
 import SmartsuppChat from "./SmartsuppChat";
 const Home = lazy(()=> import ("./pages/home/Home"));
+const Price = lazy(()=> import ("./pages/Price/Price"));
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/award" element={<Award />} />
         <Route path="/extrapage" element={<ExtraPage />} />
-        <Route path="/price" element={<Price />} />
+        <Route path="/price" element={<Suspense fallback={"loding...."}><Price /></Suspense>} />
         {/* <Route path="/contact" element={<ContactPage />} />  */}
       </Routes>
       <Footer className="absolute bottom-0 w-full" />
