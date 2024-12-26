@@ -9,8 +9,9 @@ import image2 from "./image/Image2.png";
 import Frame840 from "./image/Frame840.png";
 import Background from "./image/Background.png";
 import Background1 from "./image/Background(1).png";
-import Container from "./image/Container.png";
 import actipace_a from "./image/actipace-a.png";
+import heading2 from "./image/Heading 2.svg";
+import frame1 from "./image/Frame 1.svg"
 import { Link } from "react-router-dom";
 import { IoGridSharp } from "react-icons/io5";
 
@@ -89,9 +90,12 @@ function Section1() {
           </div>
         </div>
        
-        <div className="absolute flex items-center justify-center w-full">
+        <div className="absolute flex items-center flex-col justify-center w-full mt-[50px] gap-5">
           {/* level up your quality work */}
-          <img src={Container} alt="C" className="h-[600px] w-[800px]" />
+          
+          <img src={heading2} alt="C" className="h-[70px] w-[800px]" />
+          <img src={frame1} alt="" className=" w-[800px] h-[410px] border rounded-[10px] shadow-custom3 object-cover"/>
+          
         </div>
 
         {/* </div> */}
