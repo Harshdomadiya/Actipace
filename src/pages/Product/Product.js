@@ -3,13 +3,14 @@ import a from "../home/image/actipace-a.png"
 import rm from "./image/Frame 848.png"
 import tex from "./image/Group 77.svg"
 import { Link } from "react-router-dom";
+import WhyChooseUs from "../home/slider/WhyChooseUs";
 
 const Product = () => {
     return (
-      <div className="relative w-full h-full">
-        <div className="absolute">
-                        <img src={a} alt="" className="ml-[1238px] w-[280px] h-[350px] mt-[-50px]"/>
-          </div>
+      <div className="relative w-full">
+        <div className="w-full absolute h-[350px] flex justify-end mt-[-40px]">
+            <img src={a} alt="a" className="absolute w-[280px] h-[350px]" />
+        </div>
         <div className="w-full h-[500px]">
             
             <div className="flex  justify-center gap-20 mt-[50px]">
@@ -50,6 +51,9 @@ const Product = () => {
                         />
                 </div>
             </div>
+        </div>
+        <div className="w-full h-[850px] flex justify-center bg-[#ECFDF1]">
+        <WhyChooseUs t1={"Why"} t2={"Choose Us"}/>
         </div>
         </div>
     );

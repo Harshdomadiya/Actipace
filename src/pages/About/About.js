@@ -7,10 +7,14 @@ import ic4 from "./image/icon-4.svg";
 import ic5 from "./image/icon.svg.svg";
 import ic6 from "./image/icon.svg-2.svg";
 import ic7 from "./image/icon.svg-3.svg";
+import a from "../home/image1/actipace-a.png"
 
 const About = () => {
     return (
-        <div className="bg-white">
+        <div className="bg-white relative">
+            <div className="w-full absolute  h-[350px] flex justify-end">
+            <img src={a} alt="a" className="absolute w-[280px] h-[350px]" />
+        </div>
             {/* Hero Section */}
             <div className="text-center py-12 px-4 bg-white">
                 <img

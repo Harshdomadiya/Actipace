@@ -21,8 +21,10 @@ import Award from "./pages/Award/Award";
 
 import ExtraPage from "./pages/ExtraPage/ExtraPage";
 import SmartsuppChat from "./SmartsuppChat";
+import actipace_a from "../src/pages/home/image1/actipace-a.png"
 const Home = lazy(()=> import ("./pages/home/Home"));
 const Price = lazy(()=> import ("./pages/Price/Price"));
+
 
 function App() {
   return (

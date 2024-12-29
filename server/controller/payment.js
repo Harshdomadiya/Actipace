@@ -9,11 +9,11 @@ const axios = require('axios');
 exports.capturePayment = async (req,res) =>{
     try{
 
-        const {device,year,id} = req.body;
+        const {device,year,id,curr,amount} = req.body;
         //console.log("capturepayment......",req.user.userId);
         const user_id = req.user.userId;
-
-        if(!device || !year || !id){
+        //console.log(req.body);
+        if(!device || !year || !id || !curr || !amount){
             return res.json({
                 success:false,
                 message:"please provide valid plan id"
@@ -55,27 +55,28 @@ exports.capturePayment = async (req,res) =>{
         }
 
         //order create
-        const amount = plan.price;
-        const currency = "INR"
-
         //option
-        
+        let amu;
+        if(curr === "INR")
+        {
+            amu = Math.round(amount*100)
+        }
+        else amu = amount*100;
         const option ={
-            amount:Math.round(amount*100),
-            currency,
+            amount:amu,
+            currency:curr,
             receipt:Math.random(Date.now()).toString(),
             notes:{
-                PlanId:plan.plan_id,
                 user_id
             }
         }
        
-        //console.log(option);
+        //console.log("option",option);
         //payment
         try{
            
             const paymentResponse = await instance.orders.create(option);
-           
+            //console.log("res",paymentResponse)
 
            
 

@@ -6,14 +6,12 @@ import emogy from "./image/emogy.png";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { categories } from "../../services/Api";
-import { useRecoilState } from "recoil";
-import {TokenAtoms} from "../../Atoms";
 
 
 const Login = () => {
   const navigate = useNavigate();
-  const [token,setToken] = useRecoilState(TokenAtoms)
-  console.log("tooooo",token);
+  //const [token,setToken] = useRecoilState(TokenAtoms)
+  //console.log("tooooo",token);
 
    // const {token} = useSelector((state) => state.auth)
     //console.log(token);
@@ -65,7 +63,7 @@ const Login = () => {
       const toastId = toast.loading("loading....")
       try{
           const result = await axios.post(categories.LOGIN_API,formData);
-          setToken(result.data.token)
+          //setToken(result.data.token)
           //dispatch(setToken(JSON.stringify(result.data.token)))
           //console.log("api token",result.data.token);
           //console.log("slice tokne",token)

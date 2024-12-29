@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import sec1 from "./image/Section1.png";
 
-import actipace_a from "./image/actipace-a.png";
+import actipace_a from "../home/image1/actipace-a.png";
 import axios from "axios";
 import { categories } from "../../services/Api";
 import { useNavigate } from "react-router-dom";
@@ -18,11 +18,18 @@ import faq from "./faq"
 import head from "./image/Group 79.svg"
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
+import { useRecoilValue } from "recoil";
+import { Currency } from "../../Atoms";
+import toast from "react-hot-toast";
+import { PiCurrencyInr } from "react-icons/pi";
+import { IoLogoUsd } from "react-icons/io5";
 
 function Price() {
 
   // i need token here
     const navigate  = useNavigate();
+
+    const curr = useRecoilValue(Currency)
 
     // const [ft,setft] = useState("");
     // const [fI,setfI] = useState("");
@@ -38,139 +45,23 @@ function Price() {
     const [amountB,setamountB] = useState(0)
     const [amountC,setamountC] = useState(0)
 
-    // let checkplanA = useRef();
-    // let checkplanB = useRef();
-    // let checkplanC = useRef();
 
-  //   useEffect(()=>{
-        
-  //          checkplanA.current = async () =>{
-  //           try{
-  //               const payload = {
-  //                 software_id:1
-  //               }
-
-  //               const data = await axios.post(categories.CHECKPLAN,payload,{
-  //                                             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-  //                                             });
-  //                                             //console.log("data",data)
-  //               if (data.data.success) {
-  //                 const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
-  //                 //console.log(data.data.response.expiresAt);
-  //                 const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
-  //                 const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
-  //                 //console.log("exp",expirationTimeInUTC)
-  //                 if(data.data.success &&  expirationTimeInUTC > Date.now() )
-  //                 {
-  //                     setft(data.data.response.software.description)
-  //                 }
-  //                 else{
-  //                   setft("");
-  //                 }
-                  
-  //               }
-  //             }catch(e){
-                
-  //           }
-                
-  //         }
-
-  //         checkplanA.current();
-  //   },[])
-
-
-  //   useEffect(()=>{
-      
-  //      checkplanB.current = async () =>{
-  //         try{
-  //               const payload = {
-  //                 software_id:2
-  //               }
-
-  //               const data = await axios.post(categories.CHECKPLAN,payload,{
-  //                                           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-  //                                           });
-  //                 //console.log("data2",data);
-  //                 if (data.data.success) {
-  //                   const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
-
-  //                   const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
-  //                   const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
-
-  //                 if(data.data.success &&  expirationTimeInUTC > Date.now())
-  //                 {
-  //                     setfI(data.data.response.software.description)
-  //                 }
-  //                 else{
-  //                   setfI("")
-  //                 }
-  //               //toast.error(data.data.message)
-  //             }   
-            
-  //         }catch(e){
-  //             //console.log(e);
-  //         }
-
-  //     }
-  //     checkplanB.current();
-  // },[])
-
-  //   useEffect(()=>{
-      
-  //       checkplanC.current = async () =>{
-  //         try{
-  //             const payload = {
-  //               software_id:3
-  //             }
-
-  //             const data = await axios.post(categories.CHECKPLAN,payload,{
-  //                                           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-  //                                           });
-
-  //             if (data.data.success) {
-  //               const expirationTimeInIST = new Date(data.data.response.expiresAt).getTime();
-  //               //console.log(data.data.response.expiresAt)
-  //               const IST_OFFSET = 5.5 * 60 * 60 * 1000;  // 5 hours 30 minutes in milliseconds
-  //               const expirationTimeInUTC = expirationTimeInIST - IST_OFFSET; 
-  //               //console.log("exp",expirationTimeInUTC)
-  //               if(data.data.success &&  expirationTimeInUTC > Date.now())
-  //               {
-  //                   setfL(data.data.response.software.description)
-  //               }
-  //               else{
-  //                 setfL("");
-  //               }
-  //             }  
-  //           }catch(e){
-  //             //console.log(e);
-  //         }
-         
-  //       }
-
-  //       checkplanC.current();
-      
-  //   },[])
-  //const [currency, setCurrency] = useState("INR");
-
-  // async function getExchangeRate() {
-  //   const apiKey = '526d1b2a015cacdbfeba76ee'; // Replace with your API key
-  //   const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/INR`;
+  async function getExchangeRate() {
+    //const apiKey = '526d1b2a015cacdbfeba76ee'; // Replace with your API key
+    const url = `https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_H5FBpyiy3efpGkdKkFiSupjBg5baZySVMFP7hTz5`;
   
-  //   try {
-  //     const response = await axios.get(url);
-  //     const usdRate = response.data.conversion_rates.USD;
-  //     //console.log(typeof(usdRate));
-  //     return usdRate;
-  //   } catch (error) {
-  //     toast.error('Error fetching exchange rates:', error.message);
-  //   }
-  // }
+    try {
+      const response = await axios.get(url);
+      console.log(response)
+      const usdRate = response.data.data.INR;
+      //console.log(typeof(usdRate));
+      return usdRate;
+    } catch (error) {
+      toast.error('Error fetching exchange rates:', error.message);
+    }
+  }
 
-  // const handleCurrencyChange = (event) => {
-  //   setCurrency(event.target.value);
-  //   console.log("Selected currency:", event.target.value);
-  // };
-
+  
     useEffect(()=>{
       const data = {
         device:LiteD,
@@ -180,20 +71,23 @@ function Price() {
       const amountfetch = async ()=>{
         try{
         const amount = await axios.post(categories.GETPLAN_API,data)
-          // if(currency === "USD")
-          // {
-          //     const value=getExchangeRate();
-          //     setamountA(Number(amount.data.amount.price)*value)
-          // }else{
+          if(curr === "USD")
+          {
+              const val= await getExchangeRate();
+              //console.log(val)
+              const vl = amount.data.amount.price/val
+              //console.log(vl)
+              setamountA(vl.toFixed(2))
+          }else{
             setamountA(Number(amount.data.amount.price))
-         // }
+         }
         }catch(e){
           //console.log(e);
         }
       }
       amountfetch();
 
-    },[LiteD,LiteY]);
+    },[LiteD,LiteY,curr]);
 
     useEffect(()=>{
       const data = {
@@ -204,14 +98,23 @@ function Price() {
       const amountfetch = async ()=>{
         try{
         const amount = await axios.post(categories.GETPLAN_API,data)
-        setamountB(amount.data.amount.price)
+        if(curr === "USD")
+          {
+              const val= await getExchangeRate();
+              //console.log(val)
+              const vl = amount.data.amount.price/val
+              //console.log(vl)
+              setamountB(vl.toFixed(2))
+          }else{
+            setamountB(Number(amount.data.amount.price))
+         }
         }catch(e){
           //console.log(e);
         }
       }
       amountfetch();
       
-    },[TotalD,TotalY]);
+    },[TotalD,TotalY,curr]);
 
     useEffect(()=>{
       const data = {
@@ -222,20 +125,31 @@ function Price() {
       const amountfetch = async ()=>{
         try{
         const amount = await axios.post(categories.GETPLAN_API,data)
-        setamountC(amount.data.amount.price)
+        if(curr === "USD")
+          {
+              const val= await getExchangeRate();
+              //console.log(val)
+              const vl = amount.data.amount.price/val
+              //console.log(vl)
+              setamountC(vl.toFixed(2))
+          }else{
+            setamountC(Number(amount.data.amount.price))
+         }
         }catch(e){
           //console.log(e);
         }
       }
       amountfetch();
       
-    },[InterD,InterY]);
+    },[InterD,InterY,curr]);
 
     const handleBuyA = async()=>{
         const data = {
           device:TotalD,
           year:TotalY,
           id:1,
+          curr,
+          amount:amountB
           //token:localStorage.getItem("token")
         }
         // console.log("price page",data.token);
@@ -247,6 +161,8 @@ function Price() {
         device:InterD,
         year:InterY,
         id:2,
+        curr,
+        amount:amountC
         //token:localStorage.getItem("token")
       }
       // console.log("price page",data.token);
@@ -258,6 +174,8 @@ function Price() {
         device:LiteD,
         year:LiteY,
         id:3,
+        curr,
+        amount:amountA
         //token:localStorage.getItem("token")
       }
       // console.log("price page",data.token);
@@ -343,10 +261,12 @@ function Price() {
   
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      <div className="w-full absolute  h-[350px] flex justify-end mt-[-40px]">
+            <img src={actipace_a} alt="a" className="absolute w-[280px] h-[350px]" />
+        </div>
       <div className="flex items-center justify-center container mt-[50px]">
         <img src={sec1} alt="" className="w-2/3" />
-        <img src={actipace_a} alt="" className="w-1/6 absolute ml-[1260px]" />
       </div>
 
       {/* <div className="currency-selector">
@@ -367,7 +287,10 @@ function Price() {
         <div className="w-[320px] h-[790px] flex flex-col shadow-2xl">
             <div className="bg-[#31BF5C] h-[5px]"></div>
             <div className="text-[24px] mt-[15px] ml-[15px] font-bold">Total Security</div>
-            <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter">{amountB} ₹</div>
+            <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter font-bold">
+              {curr === "USD"?<IoLogoUsd className="h-[30px] w-[30px] mt-[17px]"/>:<PiCurrencyInr className="h-[30px] w-[30px] mt-[17px]"/>}
+              <p>{amountB}</p>
+              </div>
 
             <div className="flex justify-center items-center gap-10 mt-5">
             <div className="flex flex-col justify-center items-center gap-2">
@@ -418,7 +341,10 @@ function Price() {
         <div className="w-[320px] h-[790px] flex flex-col shadow-2xl">
             <div className="bg-[#31BF5C] h-[5px]"></div>
             <div className="text-[24px] mt-[15px] ml-[15px] font-bold">Internet Security</div>
-            <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter">{amountC} ₹</div>
+             <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter font-bold">
+              {curr === "USD"?<IoLogoUsd className="h-[30px] w-[30px] mt-[17px]"/>:<PiCurrencyInr className="h-[30px] w-[30px] mt-[17px]"/>}
+              <p>{amountC}</p>
+              </div>
 
             <div className="flex justify-center items-center gap-10 mt-5">
             <div className="flex flex-col justify-center items-center gap-2">
@@ -469,7 +395,10 @@ function Price() {
         <div className="w-[320px] h-[790px] flex flex-col shadow-2xl">
             <div className="bg-[#31BF5C] h-[5px]"></div>
             <div className="text-[24px] mt-[15px] ml-[15px] font-bold">Basic Defense</div>
-            <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter">{amountA} ₹</div>
+            <div className="h-10 text-[50px] mt-[20px] mb-[50px] justify-center flex text-[#31BF5C] font-inter font-bold">
+              {curr === "USD"?<IoLogoUsd className="h-[30px] w-[30px] mt-[17px]"/>:<PiCurrencyInr className="h-[30px] w-[30px] mt-[17px]"/>}
+              <p>{amountA}</p>
+              </div>
 
             <div className="flex justify-center items-center gap-10 mt-5">
               <div className="flex flex-col justify-center items-center gap-2">

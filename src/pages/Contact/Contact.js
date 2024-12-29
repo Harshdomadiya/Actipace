@@ -6,8 +6,10 @@ import acti from "../home/image/actipace-a.png"
 
 const Contact = () => {
   return (
-    <div>
-      <img src={acti} alt="" className="absolute w-[260px] h-[350px] mb-[50px] ml-[1257px] z-10"/>
+    <div className="relative">
+      <div className=" z-10 w-full absolute h-[350px] flex justify-end">
+            <img src={acti} alt="a" className="absolute w-[260px] h-[350px]" />
+        </div>
       <div className="w-full h-full flex justify-center gap-20 items-center my-3 relative">
         
         <div className="">

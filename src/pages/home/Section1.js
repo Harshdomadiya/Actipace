@@ -12,12 +12,18 @@ import Background1 from "./image/Background(1).png";
 import actipace_a from "./image/actipace-a.png";
 import heading2 from "./image/Heading 2.svg";
 import frame1 from "./image/Frame 1.svg"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoGridSharp } from "react-icons/io5";
+import WhyChooseUs from "./slider/WhyChooseUs"
 
 function Section1() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-full relative">
+      <div className="w-full absolute  h-[350px] flex justify-end">
+        <img src={actipace_a} alt="a" className="absolute w-[280px] h-[350px]" />
+        </div>
       <div className="flex justify-center h-[430px] items-center">
         {/* Free antivirus is your ... heading*/}
         <div className="space-y-10 flex justify-between flex-col items-center">
@@ -40,7 +46,6 @@ function Section1() {
           </div>
         </div>
         
-        <img src={actipace_a} alt="a" className="absolute ml-[1238px] w-[280px] h-[350px] mb-[50px]" />
       </div>
       
       <div className="relative">
@@ -62,7 +67,8 @@ function Section1() {
           {/* actipace total security image */}
           <div className="flex items-center  justify-center h-10 bottom-0 absolute">
             <div className="flex items-center  justify-center mb-[600px] absolute">
-              <img src={Frame851} alt="851" className="h-[600px] w-[1000px]" />
+              <WhyChooseUs className="h-[600px] w-[1000px]" t1={"Actipace"} t2={"Total Security"}/>
+              {/* <img src={Frame851} alt="851" className="h-[600px] w-[1000px]" /> */}
             </div>
             {/* half green image */}
             <img src={image2} alt="i2" className="mb-[100px]" />
@@ -72,9 +78,14 @@ function Section1() {
         </div>
       </div>
       {/* level up  your quality  of work */}
-      <div className="flex items-end justify-end ">
+      <div className="flex items-end justify-end">
         <img src={Frame840} alt="840" className="w-full h-13 -my-14 " />
         
+        <button onClick={()=>navigate("/extrapage")} className="absolute  text-[#31BF5C] bg-white font-Roboto rounded-[400px] w-[220px] h-[60px] flex justify-center font-semibold items-center gap-3 text-[14px] mb-[47px] mr-[650px]">
+            <IoGridSharp className="w-[25px] h-[25px]"/>
+            Free Download
+          </button>
+          
       </div>
       
       {/* harsh */}
