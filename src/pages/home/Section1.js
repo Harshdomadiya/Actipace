@@ -5,12 +5,12 @@ import HomeEmg from "./image/Home.svg";
 import Clip from "./image/Clip.png";
 import image1 from "./image/Image1.png";
 import image2 from "./image/Image2.png";
-import Frame840 from "./image/Frame840.png";
+import Frame840 from "./image/Frame 840.svg";
 import Background from "./image/Background.png";
 import Background1 from "./image/Background(1).png";
 import actipace_a from "./image/actipace-a.png";
 import heading2 from "./image/Heading 2.svg";
-import frame1 from "./image/Frame 1.svg"
+import frame1 from "./image/video_homepage.webm.png"
 import { Link, useNavigate } from "react-router-dom";
 import { IoGridSharp } from "react-icons/io5";
 import WhyChooseUs from "./slider/WhyChooseUs"
@@ -101,7 +101,7 @@ function Section1() {
           {/* level up your quality work */}
           
           <img src={heading2} alt="C" className="h-[70px] w-[800px]" />
-          <img src={frame1} alt="" className=" w-[800px] h-[410px] border rounded-[10px] shadow-custom3 object-cover"/>
+          <img src={frame1} alt="" className="h-[450px] w-[800px] rounded-[10px]  object-cover"/>
           
         </div>
 

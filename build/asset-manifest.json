@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.581a61af.css",
-    "main.js": "/static/js/main.c2596502.js",
-    "static/js/842.78100d66.chunk.js": "/static/js/842.78100d66.chunk.js",
-    "static/js/858.c0b81e94.chunk.js": "/static/js/858.c0b81e94.chunk.js",
+    "main.css": "/static/css/main.a763cc88.css",
+    "main.js": "/static/js/main.27b012ca.js",
+    "static/js/865.48a0d969.chunk.js": "/static/js/865.48a0d969.chunk.js",
+    "static/js/858.54df63d5.chunk.js": "/static/js/858.54df63d5.chunk.js",
     "static/js/453.3ff124d9.chunk.js": "/static/js/453.3ff124d9.chunk.js",
-    "static/js/150.052291f5.chunk.js": "/static/js/150.052291f5.chunk.js",
-    "static/media/Frame 840.svg": "/static/media/Frame 840.f82b31693c3cb802550635642c592521.svg",
-    "static/media/Frame840.png": "/static/media/Frame840.67296a1b521969d11ef5.png",
+    "static/js/369.a613fd88.chunk.js": "/static/js/369.a613fd88.chunk.js",
+    "static/media/Frame 840.svg": "/static/media/Frame 840.e029be9a018c159f54090520e3c47ff6.svg",
+    "static/media/Frame840.png": "/static/media/Frame840.8f30be899de9d205ebcf.png",
     "static/media/comp.svg": "/static/media/comp.42bf2760c9925dad8e6ad5c2f5b2b55c.svg",
     "static/media/Home.svg": "/static/media/Home.e7c09255d0c2becef016c872ba5836ef.svg",
     "static/media/Frame 848.png": "/static/media/Frame 848.9dacf3c8edfd082029b2.png",
-    "static/media/Frame 1.svg": "/static/media/Frame 1.751de452455bc0eab1ee43912baa6ad1.svg",
     "static/media/acticipace_logo.png": "/static/media/acticipace_logo.d6cc9601f16b42b6f0e0.png",
     "static/media/Section.png": "/static/media/Section.9824884b0c7105d46b95.png",
     "static/media/Group 78.svg": "/static/media/Group 78.7cb6c6ebf3c1e4d08c9dc3f3a642267e.svg",
+    "static/media/Flag_of_the_United_States.png": "/static/media/Flag_of_the_United_States.9a465cad7da86da165d9.png",
+    "static/media/video_homepage.webm.png": "/static/media/video_homepage.webm.213966094882c79feb6e.png",
     "static/media/Frame 857.svg": "/static/media/Frame 857.35e4fbb356df0c7c31800c929a563a4a.svg",
     "static/media/Heading 2.svg": "/static/media/Heading 2.025533d2ff129fb4f4b4132dbf3a259a.svg",
     "static/media/Section2.png": "/static/media/Section2.7776866f8a0e38a76203.png",
@@ -56,15 +57,15 @@
     "static/media/Link-4.svg": "/static/media/Link-4.c0502dfa74a2ce610c560b275470ffcd.svg",
     "index.html": "/index.html",
     "static/media/Link.svg": "/static/media/Link.bc813ac975982e29a6751921a1686124.svg",
-    "main.581a61af.css.map": "/static/css/main.581a61af.css.map",
-    "main.c2596502.js.map": "/static/js/main.c2596502.js.map",
-    "842.78100d66.chunk.js.map": "/static/js/842.78100d66.chunk.js.map",
-    "858.c0b81e94.chunk.js.map": "/static/js/858.c0b81e94.chunk.js.map",
+    "main.a763cc88.css.map": "/static/css/main.a763cc88.css.map",
+    "main.27b012ca.js.map": "/static/js/main.27b012ca.js.map",
+    "865.48a0d969.chunk.js.map": "/static/js/865.48a0d969.chunk.js.map",
+    "858.54df63d5.chunk.js.map": "/static/js/858.54df63d5.chunk.js.map",
     "453.3ff124d9.chunk.js.map": "/static/js/453.3ff124d9.chunk.js.map",
-    "150.052291f5.chunk.js.map": "/static/js/150.052291f5.chunk.js.map"
+    "369.a613fd88.chunk.js.map": "/static/js/369.a613fd88.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.581a61af.css",
-    "static/js/main.c2596502.js"
+    "static/css/main.a763cc88.css",
+    "static/js/main.27b012ca.js"
   ]
 }

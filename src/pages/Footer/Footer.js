@@ -56,7 +56,7 @@ const Footer = () => {
           <div className="mb-8 md:mb-0">
             <h3 className="text-lg font-bold mb-4">Developed By</h3>
             <div className="font-Helvetic text-sm mb-4">
-              <p>G-100, HTC Market, Anjana</p>
+              <p>G-103, HTC Market, Anjana</p>
               <p>Farm, Mithi Khadi Road, Surat,</p>
               <p>Gujarat, India</p>
             </div>

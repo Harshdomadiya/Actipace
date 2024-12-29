@@ -1,12 +1,30 @@
-import React from "react";
+import {React,useState} from "react";
 import logo from "./pages/home/image/acticipace_logo.png";
 import { IoGridSharp } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import {Currency} from "./Atoms"
+import ID from "./pages/Support/India.png"
+import UD from "./pages/Support/Flag_of_the_United_States.png"
+import { FaChevronDown } from "react-icons/fa"; 
+
 function Navbar() {
+
   const location = useLocation();
   const [curr,setCurr] = useRecoilState(Currency)
+  const [isOpen, setIsOpen] = useState(false); 
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const handleOptionClick = (value) => {
+    setCurr(value); // Update the selected value
+    setIsOpen(false); // Close the dropdown
+  };
+
+  const options = [
+    { value: "INR", label: "INR", img:ID }, // Replace `ID` with the image URL for INR
+    { value: "USD", label: "USD", img:UD }, // Replace `UD` with the image URL for USD
+  ];
   //console.log(curr);
 
   return (
@@ -69,35 +87,38 @@ function Navbar() {
         </button>
         </Link>
 
-        <div className="relative inline-block ">
-              <select
+        <div className="relative inline-block">
+      {/* Selected Option */}
+      <button
+        className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md focus:outline-none focus:ring-1 focus:ring-[#31BF5C] focus:border-[#31BF5C] flex items-center justify-between"
+        onClick={toggleDropdown}
+      >
+        <img
+          src={options.find((o) => o.value === curr)?.img}
+          alt={curr}
+          className="w-6 h-6 mr-2"
+        />
+        {curr}
+        <FaChevronDown className="text-gray-500"/>
+      </button>
 
-                  className="appearance-none w-[80px] border border-[#31BF5C]  px-4 py-2 text-gray-700 bg-white shadow-md focus:outline-none focus:ring-1 focus:ring-[#31BF5C] focus:border-[#31BF5C]"
-                  id="options"
-                  value={curr}
-                  onChange={(e) => setCurr(e.target.value)}
-              >
-                <option value="INR"> INR</option>
-                <option value="USD"> USD</option>
-              </select>
-              <div className="absolute inset-y-0 right-0  flex items-center  pointer-events-none pr-2">
-                <svg
-                    className="w-4 h-4 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                  <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-        </div>
-        </div>
+      {/* Dropdown Options */}
+      {isOpen && (
+        <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">
+          {options.map((option) => (
+            <li
+              key={option.value}
+              className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleOptionClick(option.value)}
+            >
+              <img src={option.img} alt={option.label} className="w-6 h-6 mr-2" />
+              {option.label}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+      </div>
       </div>
     </nav>
   );

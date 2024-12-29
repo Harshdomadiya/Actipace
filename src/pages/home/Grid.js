@@ -11,7 +11,7 @@ function Grid() {
     <>
       {/* <div className="grid grid-cols-1"> */}
       <div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-x-1 w-full max-w-[1000px] container mx-auto px-4 space-x-1">
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-x-1 w-full max-w-[1000px] container mx-auto px-4 space-x-1 mt-[30px]">
               {features.map((feature, index) => (
                   <div
                       key={index}

@@ -34,10 +34,10 @@ const Product = () => {
 
 
                     <div className="flex gap-6 ml-[30px] mt-4 z-10">
-                       <Link to="/price"> <button type="submit" className="px-6 py-3 bg-green-600 text-white font-semibold  hover:bg-green-700 rounded-[400px] w-[220px] h-[50px] shadow-custom2">
+                       <Link to="/price"> <button type="submit" className="px-6 py-3 bg-green-600 text-white font-semibold  hover:bg-green-700 rounded-[400px] w-[250px] h-[50px] shadow-custom2">
                             Actipace Total Security
                         </button></Link><Link to="/price">
-                        <button className="px-6 py-3 bg-green-600 text-white font-semibold  hover:bg-green-700 rounded-[400px] w-[220px] h-[50px] shadow-custom2">
+                        <button className="px-6 py-3 bg-green-600 text-white font-semibold  hover:bg-green-700 rounded-[400px] w-[250px] h-[50px] shadow-custom2">
                             Actipace Antivirus
                         </button></Link>
                     </div>
