@@ -7,8 +7,8 @@ import acti from "../home/image/actipace-a.png"
 const Contact = () => {
   return (
     <div className="relative">
-      <div className=" z-10 w-full absolute h-[350px] flex justify-end">
-            <img src={acti} alt="a" className="absolute w-[260px] h-[350px]" />
+      <div className="w-full absolute h-[350px] flex justify-end">
+            <img src={acti} alt="a" className="absolute w-[240px] h-[350px]" />
         </div>
       <div className="w-full h-full flex justify-center gap-20 items-center my-3 relative">
         

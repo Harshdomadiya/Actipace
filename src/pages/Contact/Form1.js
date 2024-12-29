@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
-
+import axios from "axios";
+import { categories } from "../../services/Api";
 
 function Form1() {
   const [email, setEmail] = useState("");
@@ -10,23 +12,42 @@ function Form1() {
 
   const handleContact = (e) => {
     e.preventDefault();
-    setEmail("");
-    setComment("");
-    setName("");
-    setNumber(""); // Prevent form submission refresh
+    const data = {
+      name,email,number,comment
+    }
+
+    const backendcalling = async () =>{
+      const toastId = toast.loading("loading....")
+      try{
+          const result = await axios.post(categories.CONTACT,data);
+          toast.success(`${result.data.message}`,{id:toastId});
+
+          setEmail("");
+          setComment("");
+          setName("");
+          setNumber("");
+      }catch(e){
+          toast.error(e.response.data.message,{id:toastId});
+          return;
+      }
+    }
+
+    backendcalling();
+    
+     // Prevent form submission refresh
     // Here you can validate inputs before navigation
     // navigate("/newpassword"); // Navigate to the home page
   };
   return (
-    <div className="">
+    <div className="z-12">
       <div className="flex items-center h-[600px]">
         <div className=""></div>
         <div className="h-[546px] w-[576px] p-10 bg-white rounded-lg mt-8 mr-10">
-          <form>
+          <form onSubmit={handleContact}>
             <div className="grid grid-cols-2 gap-4">
               <div className="mb-4 flex flex-col gap-2">
                 <label
-                  htmlFor="dealerCode"
+                  htmlFor="name"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Name*
@@ -36,7 +57,7 @@ function Form1() {
                   type="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Your Email"
+                  placeholder="name"
                   className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px] h-[50px]"
                 />
               </div>
@@ -59,7 +80,7 @@ function Form1() {
             </div>
             <div className="mb-4 flex flex-col gap-2">
               <label
-                htmlFor="dealerCode"
+                htmlFor="number"
                 className="block text-sm font-medium text-gray-700"
               >
                 Phone*
@@ -68,29 +89,27 @@ function Form1() {
                 id="number"
                 type="number"
                 value={number}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Your Email"
+                onChange={(e) => setNumber(e.target.value)}
+                placeholder="number"
                 className="w-full px-4 py-2 mt-2 bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px] h-[50px]"
               />
             </div>
-            <div className="mb-4 flex flex-col gap-4">
+            <div className="mb-4 flex flex-col gap-4 h-full w-full">
               <label
-                htmlFor="dealerCode"
+                htmlFor="comment"
                 className="block text-sm font-medium text-gray-700"
               >
                 Comment*
               </label>
-              <input
+              <textarea
                 id="comment"
-                type="text"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder=""
-                className="w-full h-[160px]  bg-[#F3F4F6] text-sm  focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px]"
-              />
+                className="resize-none w-full px-4 py-2 mt-2 h-[160px] bg-[#F3F4F6] text-sm focus:ring focus:ring-green-200 focus:outline-none border-[0px] rounded-[4px]"
+              ></textarea>
             </div>
             <button
-              onClick={handleContact}
               className="px-4 py-2 text-white bg-green-500 rounded-[4px] hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300 w-[170px] h-[50px]"
             >
               Submit Message

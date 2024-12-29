@@ -5,6 +5,8 @@ const { capturePayment, verifySignature } = require('../controller/payment');
 const { auth } = require('../middlewares/auth');
 const { getplan } = require('../controller/Plan');
 const { checkplan } = require('../controller/checkplan');
+const { contact } = require('../controller/contact');
+const { support } = require('../controller/support');
 const router = express.Router();
 
 router.post("/otpsender",otpSender);
@@ -20,6 +22,10 @@ router.post("/capturePayment",auth,capturePayment);
 router.post("/verifySignature",auth,verifySignature);
 
 router.post("/getplan",getplan);
+
+router.post("/contact",contact);
+
+router.post("/support",support);
 
 router.post("/checkplan",auth,checkplan);
 

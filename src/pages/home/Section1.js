@@ -4,7 +4,6 @@ import Heading1 from "./image/Heading1.png";
 import HomeEmg from "./image/Home.svg";
 import Clip from "./image/Clip.png";
 import image1 from "./image/Image1.png";
-import Frame851 from "./image/Frame851.png";
 import image2 from "./image/Image2.png";
 import Frame840 from "./image/Frame840.png";
 import Background from "./image/Background.png";
@@ -48,7 +47,7 @@ function Section1() {
         
       </div>
       
-      <div className="relative">
+      <div className="relative  z-10">
         <div className="flex items-center justify-center my-12 top-14 relative">
           <div className="flex items-center justify-center  h-50vh absolute -top-11">
             <div className="flex justify-center h-50vh mb-[580px] mr-[190px] absolute">
@@ -77,18 +76,15 @@ function Section1() {
           <img src={image1} alt="i1" className="mt-[100px]" />
         </div>
       </div>
-      {/* level up  your quality  of work */}
-      <div className="flex items-end justify-end">
-        <img src={Frame840} alt="840" className="w-full h-13 -my-14 " />
-        
-        <button onClick={()=>navigate("/extrapage")} className="absolute  text-[#31BF5C] bg-white font-Roboto rounded-[400px] w-[220px] h-[60px] flex justify-center font-semibold items-center gap-3 text-[14px] mb-[47px] mr-[650px]">
-            <IoGridSharp className="w-[25px] h-[25px]"/>
-            Free Download
-          </button>
-          
+      <div className="w-full h-[510px] bg-red-600 relative z-8 mt-[-50px]" >
+          <img src={Frame840} alt="840" className="absolute h-[550px] w-full object-cover" />
+          <div className="absolute z-11 flex justify-center items-center w-full mt-[441px]">
+              <button onClick={()=>navigate("/extrapage")} className="absolute   text-[#31BF5C] bg-white font-Roboto rounded-[400px] w-[220px] h-[55px] flex justify-center font-semibold items-center gap-3 text-[14px]">
+                <IoGridSharp className="w-[25px] h-[25px]"/>
+                Free Download
+              </button>
+          </div>
       </div>
-      
-      {/* harsh */}
       <div className="relative h-[650px]">
         {/* <div className=" flex justify-end items-end"> */}
         <div className="flex absolute ml-[250px]">
@@ -101,7 +97,7 @@ function Section1() {
           </div>
         </div>
        
-        <div className="absolute flex items-center flex-col justify-center w-full mt-[50px] gap-5">
+        <div className="absolute flex items-center flex-col justify-center w-full mt-[65px] gap-7">
           {/* level up your quality work */}
           
           <img src={heading2} alt="C" className="h-[70px] w-[800px]" />

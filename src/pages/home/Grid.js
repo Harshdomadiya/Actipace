@@ -1,29 +1,34 @@
 import React from "react";
-import Border1 from "./image/Border1.png";
-import Border2 from "./image/Border2.png";
-import Border3 from "./image/Border3.png";
-import Border4 from "./image/Border4.png";
-import Border5 from "./image/Border5.png";
-import Border6 from "./image/Border6.png";
 import Section from "./image/Section.png";
 import SectionErrow from "./image/SectionErrow.png";
 import Section2 from "./image/Section2.png";
 import Section3 from "./image/Section3.png";
 import secondaryarrow from "./image/secondaryarrow.png";
 import { Link } from "react-router-dom";
-
+import features from "./Feature"
 function Grid() {
   return (
     <>
       {/* <div className="grid grid-cols-1"> */}
-      <div className="grid  grid-cols-3 gap-8 w-[1000px]  container mx-64  px-4">
-        <img src={Border1} alt=""></img>
-        <img src={Border2} alt=""></img>
-        <img src={Border3} alt=""></img>
-        <img src={Border4} alt=""></img>
-        <img src={Border5} alt=""></img>
-        <img src={Border6} alt=""></img>
-      </div>
+      <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-x-1 w-full max-w-[1000px] container mx-auto px-4 space-x-1">
+              {features.map((feature, index) => (
+                  <div
+                      key={index}
+                      className="flex flex-col items-center justify-center bg-white text-black rounded-2xl p-6 border h-64 w-64"
+                  >
+                      <div className="w-16 h-16 flex items-center justify-center mb-4">
+                          <img
+                              src={feature.icon}
+                              alt={feature.title}
+                              className="w-full h-full object-contain"
+                          />
+                      </div>
+                      <h3 className="text-[15px] font-semibold mb-2">{feature.title}</h3>
+                      <p className="text-[12px] text-center">{feature.description}</p>
+                  </div>
+              ))}
+          </div>
       <div className="w-2/3 container mx-48 px-4">
         <img src={SectionErrow} alt="" className="w-24"></img>
       </div>

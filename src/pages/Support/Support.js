@@ -6,17 +6,12 @@ import mail from "./image/icn_mail.svg.svg";
 import call from "./image/icn_call.svg.svg";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import toast from "react-hot-toast";
+
+import axios from "axios";
+import { categories } from "../../services/Api";
 
 function Support() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ firstName, lastName, email, number, message });
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setNumber("");
-    setMessage("");
-  };
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -24,6 +19,36 @@ function Support() {
   const [number, setNumber] = useState("");
   const [message, setMessage] = useState("");
 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data ={
+      firstName,lastName,email,number,message
+    }
+
+    const backendcalling = async () =>{
+      const toastId = toast.loading("loading....")
+      try{
+          const result = await axios.post(categories.SUPPORT,data);
+          toast.success(`${result.data.message}`,{id:toastId});
+
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setNumber("");
+          setMessage("");
+      }catch(e){
+          toast.error(e.response.data.message,{id:toastId});
+          return;
+      }
+    }
+
+    backendcalling();
+    
+  };
+
+  
   return (
       <div className="relative w-full h-full">
         <div className="h-[850px]">
