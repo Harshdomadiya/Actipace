@@ -103,6 +103,7 @@ const Login = () => {
                 name="email"
                 value={formData.email}
                 onChange={changehandler}
+                required
                 placeholder="Email"
                 className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
               />
@@ -121,6 +122,7 @@ const Login = () => {
                   name="password"
                   value={formData.password}
                   onChange={changehandler}
+                  required
                   placeholder="Password"
                   className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
                 />
@@ -180,6 +182,7 @@ const Login = () => {
               id="code"
               type="text"
               name="otp"
+              required
               value={formData.otp}
               onChange={changehandler}
               placeholder="otp"

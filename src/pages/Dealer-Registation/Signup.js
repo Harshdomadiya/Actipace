@@ -119,6 +119,7 @@ const Signup = () => {
               id="email"
               type="email"
               name="email"
+              required
               value={formData.email}
               onChange={changehandler}
               placeholder="Email"
@@ -138,6 +139,7 @@ const Signup = () => {
               id="mobile"
               type="text"
               name="mobileNo"
+              required
               value={formData.mobileNo}
               onChange={changehandler}
               placeholder="Mobile No"
@@ -158,6 +160,7 @@ const Signup = () => {
               id="password"
               type={showPassword ? "text" : "password"}
               name="password"
+              required
               value={formData.password}
               onChange={changehandler}
               placeholder="Password"
@@ -185,6 +188,7 @@ const Signup = () => {
               id="address"
               type="text"
               name="address"
+              required
               value={formData.address}
               onChange={changehandler}
               placeholder="Address"
@@ -205,6 +209,7 @@ const Signup = () => {
                 id="city"
                 type="text"
                 name="city"
+                required
               value={formData.city}
               onChange={changehandler}
                 placeholder="City"
@@ -222,6 +227,7 @@ const Signup = () => {
                 id="state"
                 type="text"
                 name="state"
+                required
               value={formData.state}
               onChange={changehandler}
                 placeholder="State"
@@ -243,6 +249,7 @@ const Signup = () => {
                 id="country"
                 type="text"
                 name="country"
+                required
               value={formData.country}
               onChange={changehandler}
                 placeholder="Country"
@@ -260,6 +267,7 @@ const Signup = () => {
                 id="pinCode"
                 type="number"
                 name="pincode"
+                required
               value={formData.pincode}
               onChange={changehandler}
                 placeholder="PIN Code"
@@ -295,6 +303,7 @@ const Signup = () => {
               id="code"
               type="text"
               value={text}
+              required
               onChange={(e) => setText(e.target.value)}
               placeholder="Code"
               className="w-full px-4 py-2 mt-2 text-sm border rounded-md focus:ring focus:ring-green-200 focus:outline-none"
@@ -347,6 +356,7 @@ const Signup = () => {
               id="code"
               type="text"
               name="otp"
+              required
               value={formData.otp}
               onChange={changehandler}
               placeholder="otp"

@@ -116,7 +116,7 @@ function Support() {
                           Email
                         </label>
                       </div>
-                      <div className=" z-0 w-full group mt-1 border-0 border-b-2 border-[#9DA9B0] ">
+                      <div className=" z-10 w-full group mt-1 border-0 border-b-2 border-[#9DA9B0] ">
                         <PhoneInput
                             country={"in"}
                             value={number}
