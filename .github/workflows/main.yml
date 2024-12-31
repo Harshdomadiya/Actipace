@@ -34,7 +34,7 @@ jobs:
         run: npm install -g pm2
 
       - name: Prisma connect
-        run: npx prisma migrate dev --name init
+        run: cd server && npx prisma migrate dev --name init
 
       # - name: Setup Enviroment Variables
       #   run: |
