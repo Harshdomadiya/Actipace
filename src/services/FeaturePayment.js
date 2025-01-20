@@ -53,7 +53,7 @@ export async function buycourse(data,navigate) {
             handler: function(response){
                 //verifypayment
                 console.log("hello");
-                verifyPayment(response,navigate);
+                verifyPayment(response,navigate,orderResponse);
             }
 
         }
@@ -66,19 +66,20 @@ export async function buycourse(data,navigate) {
         // console.log("PAYMENT IN ERROR....",e);
         // console.log("could not make payment")
         toast.error(e.response.data.message)
-        navigate("/login")
+        //navigate("/login")
         
     } 
     toast.dismiss(toastId)
 }
 
 
-async function verifyPayment(response,navigate) {
+async function verifyPayment(response,navigate,orderResponse) {
 
 
     const toastId = toast.loading("loading..")
     try{
         
+        console.log(orderResponse);
         const reasponse = await axios.post(categories.VERIFYSIGNATURE_API,response,{
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
@@ -89,7 +90,7 @@ async function verifyPayment(response,navigate) {
         }
         else{
             toast.success("payment Successfull")
-            navigate("/extrapage")
+            navigate("/login")
         }
         
         
@@ -99,5 +100,6 @@ async function verifyPayment(response,navigate) {
         console.log("PAYMENT VERIFY ERROR....",e);
         toast.error(e.response.data.message)
     }
+
     toast.dismiss(toastId)   
 }

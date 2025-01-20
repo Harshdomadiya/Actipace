@@ -14,4 +14,5 @@ export const categories = {
     CHECKPLAN:BASE_URL + "/checkplan",
     CONTACT:BASE_URL + "/contact",
     SUPPORT:BASE_URL + "/support",
+    DASHBOARD:BASE_URL + "/dashboard"
 }

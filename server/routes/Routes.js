@@ -7,6 +7,7 @@ const { getplan } = require('../controller/Plan');
 const { checkplan } = require('../controller/checkplan');
 const { contact } = require('../controller/contact');
 const { support } = require('../controller/support');
+const { dashboard } = require('../controller/dashboard');
 const router = express.Router();
 
 router.post("/otpsender",otpSender);
@@ -18,8 +19,8 @@ router.post("/resetPasswordToken",resetPasswordToken);
 router.post("/resetPassword",resetPassword);
 
 
-router.post("/capturePayment",auth,capturePayment);
-router.post("/verifySignature",auth,verifySignature);
+router.post("/capturePayment",capturePayment);
+router.post("/verifySignature",verifySignature);
 
 router.post("/getplan",getplan);
 
@@ -28,5 +29,7 @@ router.post("/contact",contact);
 router.post("/support",support);
 
 router.post("/checkplan",auth,checkplan);
+
+router.get("/dashboard",auth,dashboard);
 
 module.exports = router;

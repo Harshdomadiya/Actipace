@@ -22,6 +22,8 @@ import Award from "./pages/Award/Award";
 import ExtraPage from "./pages/ExtraPage/ExtraPage";
 import SmartsuppChat from "./SmartsuppChat";
 import actipace_a from "../src/pages/home/image1/actipace-a.png"
+import Checkout from "./pages/CheckOut/Checkout";
+import UserDashboard from "./pages/dashboard/UserDashboard";
 const Home = lazy(()=> import ("./pages/home/Home"));
 const Price = lazy(()=> import ("./pages/Price/Price"));
 
@@ -46,6 +48,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/award" element={<Award />} />
         <Route path="/extrapage" element={<ExtraPage />} />
+        <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/dashboard" element={<UserDashboard/>}/>
         <Route path="/price" element={<Suspense fallback={"loding...."}><Price /></Suspense>} />
         {/* <Route path="/contact" element={<ContactPage />} />  */}
       </Routes>

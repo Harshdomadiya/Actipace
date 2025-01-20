@@ -21,7 +21,6 @@ model User {
   resetPasswordExpires DateTime?
   createdAt            DateTime   @default(now())
   updatedAt            DateTime   @updatedAt
-  purchases            Purchase[]
 }
 
 model Otp {
@@ -53,21 +52,30 @@ model SoftwarePlan {
 
 model Purchase {
   purchase_id   Int           @id @default(autoincrement())
-  user_id       Int
+  email         String        
   software_id   Int
   plan_id       Int
   paymentId     String?
   orderId       String?
   purchase_date DateTime?
   expiresAt     DateTime?
+  city            String?  // Optional
+  company         String?  // Optional
+  country         String
+  fullName        String
+  gstin           String
+  phoneNumber     String
+  policyAccepted  Boolean
+  state           String?  // Optional
+  termsAccepted   Boolean
+  zipCode         String? 
   status        PaymentStatus @default(PENDING)
   softwarePlan  SoftwarePlan  @relation(fields: [plan_id], references: [plan_id])
   software      Software      @relation(fields: [software_id], references: [software_id])
-  user          User          @relation(fields: [user_id], references: [user_id])
 }
 
 enum PaymentStatus {
   SUCCESS
   FAILED
   PENDING
-}
+} 

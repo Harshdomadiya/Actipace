@@ -1,17 +1,43 @@
 const {instance} = require("../config/razorpay");
 const { PrismaClient } = require('@prisma/client');
 const { mailSender } = require('../utils/mailSender');
+const fs = require('fs');
 const prisma = new PrismaClient();
 const crypto = require("crypto");
 require("dotenv").config();
 const axios = require('axios');
+const path = require('path');
 
 exports.capturePayment = async (req,res) =>{
     try{
 
-        const {device,year,id,curr,amount} = req.body;
+        const {device,year,id,curr,amount ,confirmEmail,
+            country,
+            email,
+            fullName,
+            gstin,
+            phoneNumber,
+            policyAccepted,
+            termsAccepted,} = req.body;
+
+            if(email !== confirmEmail)
+            {
+                return res.json({
+                    success:false,
+                    message:"email and comfirmemail is differ"
+                })
+            }
+
+            if(!policyAccepted || !termsAccepted)
+            {
+                return res.json({
+                    success:false,
+                    message:"Please acccept the terms and policiy"
+                })
+            }
+        //console.log(req.body)
         //console.log("capturepayment......",req.user.userId);
-        const user_id = req.user.userId;
+        // const user_id = req.user.userId;
         //console.log(req.body);
         if(!device || !year || !id || !curr || !amount){
             return res.json({
@@ -67,7 +93,7 @@ exports.capturePayment = async (req,res) =>{
             currency:curr,
             receipt:Math.random(Date.now()).toString(),
             notes:{
-                user_id
+                email:email
             }
         }
        
@@ -102,7 +128,13 @@ exports.capturePayment = async (req,res) =>{
 
             const purchaseed =await prisma.purchase.create({
                                     data: {
-                                        user_id,
+                                        email,
+                                        fullName,
+                                        phoneNumber,
+                                        gstin,
+                                        country,
+                                        policyAccepted,
+                                        termsAccepted,
                                         plan_id: plan.plan_id,
                                         software_id: plan.software_id,
                                         orderId: paymentResponse.id,
@@ -127,7 +159,7 @@ exports.capturePayment = async (req,res) =>{
                 currency:paymentResponse.currency,
                 amount:paymentResponse.amount/100,
                 plan,
-                user_id
+                email
             })
 
         }catch(e){
@@ -150,7 +182,7 @@ exports.capturePayment = async (req,res) =>{
 
 exports.verifySignature = async (req,res) =>{
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
-    const user_id = req.user.userId;
+    console.log(req.body);
 
     if(!razorpay_order_id || !razorpay_payment_id || !razorpay_signature){
         return res.status(400).json({
@@ -173,11 +205,11 @@ exports.verifySignature = async (req,res) =>{
     {
         console.log("payment is  Authorised");
 
-        //const {PlanId,user_id} = req.body.payload.payment.entity.notes;
+        //const {email} = req.body.payload.payment.entity.notes;
 
         try{
             //action fullfilment
-            // const compelet = await prisma.purchase.findUnique({where:{user_id,plan_id:PlanId}});
+            // const compelet = await prisma.purchase.findUnique({where:{orderId:razorpay_order_id}});
             // console.log(compelet);
             // const purchase_id=compelet.purchase_id
 
@@ -187,44 +219,73 @@ exports.verifySignature = async (req,res) =>{
 
             //successfull
             const currentPurchase = await prisma.purchase.findFirst({
-                where: { orderId: razorpay_order_id, user_id },
-                include:{softwarePlan:true,user:true,software:true}
+                where: { orderId: razorpay_order_id},
+                include:{softwarePlan:true,software:true}
             });
-            //console.log("cureent purchase.......",currentPurchase)
+            console.log("cureent purchase.......",currentPurchase)
 
             if (!currentPurchase) {
-                return res.status(404).json({
-                    success: false,
-                    message: "Purchase record not found",
-                });
-            }
+                            return res.status(404).json({
+                                success: false,
+                                message: "Purchase record not found",
+                            });
+                        }
 
-            let pr="";
-            if(currentPurchase.software.software_id === 1)
-            {
-                pr="ts"
-            }
-            else if(currentPurchase.software.software_id === 2)
-            {
-                pr="is"
-            }
-            else
-            {
-                pr="bd"
-            }
-            //client api calling 
+                        let pr="";
+                        if(currentPurchase.software.software_id === 1)
+                        {
+                            pr="ts"
+                        }
+                        else if(currentPurchase.software.software_id === 2)
+                        {
+                            pr="is"
+                        }
+                        else
+                        {
+                            pr="bd"
+                        }
+                        //client api calling 
 
-            const parts = await axios.get(`https://actipace.com/091224/api.php?orderid=${razorpay_order_id}&product=${pr}&devices=${currentPurchase.softwarePlan.devices}&validity=${currentPurchase.softwarePlan.year*365}`)
+                        const parts = await axios.get(`https://actipace.com/091224/api.php?orderid=${razorpay_order_id}&product=${pr}&devices=${currentPurchase.softwarePlan.devices}&validity=${currentPurchase.softwarePlan.year*365}`)
 
-            //console.log(keys.data);
+                        // console.log(keys.data);
 
-            const ky = parts.data.split("@")
+                        const ky = parts.data.split("@")
             //const count = parseInt(ky[0], 10);
-            const codes = ky.slice(1);
+                        const codes = ky.slice(1);
+                        console.log("codes",codes);
+
+                        const emailTemplatePath = path.join(__dirname, '../templet/mailtemplet.html');
+                        const emailTemplate = fs.readFileSync(emailTemplatePath, 'utf8');
+
+                        let price = currentPurchase.softwarePlan.price;
+
+                        price = Number(price);
+                        price = Number((price * 1.18).toFixed(2));
+
+                        const orderDetails = {
+                            date: new Date().toLocaleDateString(),
+                            orderNumber: currentPurchase.purchase_id,
+                            product: currentPurchase.software.name,
+                            amount: price,
+                            validity: `${currentPurchase.softwarePlan.year} year`,
+                            licenseKeys: codes,
+                          };
     
+                          const licenseKeysHtml = orderDetails.licenseKeys
+                                                    .map((key) => `<li>${key}</li>`)
+                                                    .join('');
+
+                            const populatedTemplate = emailTemplate
+                            .replace('{{date}}', orderDetails.date)
+                            .replace('{{orderNumber}}', orderDetails.orderNumber)
+                            .replace('{{product}}', orderDetails.product)
+                            .replace('{{amount}}', orderDetails.amount)
+                            .replace('{{validity}}', orderDetails.validity)
+                            .replace('{{licenseKeys}}', licenseKeysHtml);
            // console.log("ky",ky);
 
-            await mailSender(currentPurchase.user.email,"your device licence keys",codes)
+                        await mailSender(currentPurchase.email,"your device licence keys",populatedTemplate);
 
             const IST_OFFSET = 5.5 * 60 * 60 * 1000; // IST offset in milliseconds
             const currentDate = new Date(); // Current UTC time
@@ -255,11 +316,12 @@ exports.verifySignature = async (req,res) =>{
             });
 
         }catch(e){
-            //console.log(e);
+            console.log(e);
             return res.status(500).json({
+
                 success:false,
                 message:"action is not fulfiled"
-            })
+            })            
 
         }
     }

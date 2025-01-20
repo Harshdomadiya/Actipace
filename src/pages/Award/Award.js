@@ -5,30 +5,31 @@ function Award() {
     return (
         <div className="h-[90vh]">
 
+            
             <section
-                className="relative h-1/2 md:h-1/2 bg-cover bg-center flex items-center justify-center text-center"
+                className="relative h-1/2 bg-cover bg-center flex items-center justify-center text-center"
                 style={{
-                  backgroundImage: `url('${Frame}')`, // Dynamic URL 
+                    backgroundImage: `url('${Frame}')`,
                 }}
             >
-                <div className="bg-[#071D2B] bg-opacity-[20%] w-full h-full absolute top-0 left-0"></div>
-                <div className="relative z-10 text-white px-4">
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5">
+                <div className="bg-[#071D2B] bg-opacity-20 w-full h-full absolute top-0 left-0"></div>
+                <div className="relative z-10 text-white px-4 sm:px-6 md:px-8">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5">
                         Awards & Recognition
                     </h1>
-                    <p className="font-normal text-l max-w-3xl mx-auto px-4 w-[670px]">
+                    <p className="font-normal text-xs sm:text-sm md:text-base lg:text-lg max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto px-4">
                         We know the importance of what we protect. That’s why we welcome outside
                         evaluations of all our products – so you don’t just have to take our word for it.
                     </p>
                 </div>
             </section>
 
-
-            <section className="py-16 sm:py-24 bg-white text-center flex flex-col items-center justify-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+           
+            <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white text-center flex flex-col items-center justify-center">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
                     Top PC and Mac security awards
                 </h2>
-                <p className="font-normal text-l max-w-3xl mx-4 md:mx-auto">
+                <p className="font-normal text-xs sm:text-sm md:text-base lg:text-lg max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-4 md:mx-auto">
                     Our flagship security software keeps getting faster and easier to use, while
                     still giving best-in-class protection that won’t slow you down.
                 </p>
@@ -38,3 +39,4 @@ function Award() {
 }
 
 export default Award;
+                
