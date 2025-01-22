@@ -139,7 +139,7 @@ const About = () => {
             {/* Vision and Mission */}
 
 
-            <div className="flex flex-col justify-center items-center py-12 px-4 w-full gap-[30px]">
+            <div className="flex flex-col justify-center h-auto lg:h-[300px]  items-center py-12 px-4 w-full gap-[30px]">
                 {/* Vision Section */}
                 <div
                     className="flex flex-col md:flex-row items-center md:items-start justify-start gap-6 md:gap-12 lg:gap-24 w-full px-4">

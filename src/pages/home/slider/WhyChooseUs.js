@@ -39,24 +39,24 @@ const WhyChooseUs = ({ t1, t2 }) => {
 
     return (
         <div
-            className="flex flex-col items-center gap-y-20 lg:justify-between mt-14 relative w-full h-[700px] max-w-[970px] mx-auto">
-            <div className="flex w-full justify-between items-center">
-                <h1 className="text-[30px] lg:text-[40px] font-semibold mb-4 text-[#151C26] font-roboto ">
+            className="flex flex-col items-center lg:gap-y-20 lg:justify-between  lg:mt-14 relative lg:w-full lg:h-[700px] lg:max-w-[970px] lg:mx-auto">
+            <div className="flex w-full  justify-between items-center">
+                <h1 className="text-[22px] lg:text-[40px] font-semibold lg:mb-4 text-[#151C26] font-roboto ">
                     <span className="text-[#31BF5C]">{t1} </span>{t2}
                 </h1>
 
                 <div className="flex gap-4">
                     <button
                         onClick={prevHandler}
-                        className="w-[50px] h-[50px] bg-[#31BF5C] flex justify-center items-center text-[#FFFFFF]"
+                        className="w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] bg-[#31BF5C] flex justify-center items-center text-[#FFFFFF]"
                     >
-                        <FiArrowLeft className="w-[30px] h-[30px]"/>
+                        <FiArrowLeft className="lg:w-[30px] lg:h-[30px]"/>
                     </button>
                     <button
                         onClick={nextHandler}
-                        className="w-[50px] h-[50px] bg-[#31BF5C] flex justify-center items-center text-[#FFFFFF]"
+                        className="w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] bg-[#31BF5C] flex justify-center items-center text-[#FFFFFF]"
                     >
-                        <FiArrowRight className="w-[30px] h-[30px]"/>
+                        <FiArrowRight className="lg:w-[30px] lg:h-[30px]"/>
                     </button>
                 </div>
             </div>

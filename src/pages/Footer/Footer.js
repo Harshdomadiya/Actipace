@@ -9,8 +9,8 @@ import actipace from "./Layer_1.png";
 const Footer = () => {
     return (
         <footer className="bg-gray-900 py-16 w-full h-auto text-white">
-            <div className="container mx-auto px-2">
-                <div className="flex flex-col lg:flex-row justify-around">
+            <div className="container mx-auto px-16">
+                <div className="flex flex-col lg:flex-row justify-between">
                     {/* First Column */}
                     <div className="mb-8 md:mb-0 h-auto flex flex-col items-center md:items-center">
                         <a href="/" className="text-2xl font-bold">
@@ -50,7 +50,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                        <div className="mb-8 md:mb-0">
+                        <div className="mb-8 md:mb-0 text-center">
                             <h3 className="text-lg font-bold mb-4">Developed By</h3>
                             <div className="font-Helvetic text-sm mb-4">
                                 <p>G-103, HTC Market, Anjana</p>
@@ -60,7 +60,7 @@ const Footer = () => {
                         </div>
 
 
-                        <div className="mb-8 md:mb-0">
+                        <div className="mb-8 md:mb-0 text-center">
                             <h3 className="text-lg font-bold mb-4">Support</h3>
                             <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
                                 <li>
@@ -76,7 +76,7 @@ const Footer = () => {
                         </div>
 
 
-                        <div className="mb-8 md:mb-0">
+                        <div className="mb-8 md:mb-0 text-center">
                             <h3 className="text-lg font-bold mb-4">About</h3>
                             <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
                                 <li>

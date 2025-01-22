@@ -11,13 +11,13 @@ function Grid() {
     <>
       {/* <div className="grid grid-cols-1"> */}
       <div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-x-1 w-full max-w-[1000px] container mx-auto px-4 space-x-1 mt-[30px]">
+              className="mt-[300px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-x-1 w-full max-w-[1000px] container mx-auto px-4 space-x-1 lg:mt-[30px]">
               {features.map((feature, index) => (
                   <div
                       key={index}
-                      className="flex flex-col items-center justify-center bg-white text-black rounded-2xl p-6 border h-64 w-64"
+                      className="flex flex-col items-center justify-center bg-white text-black rounded-2xl p-6 border lg:h-64 lg:w-64"
                   >
-                      <div className="w-16 h-16 flex items-center justify-center mb-4">
+                      <div className="lg:w-16 lg:h-16 flex items-center justify-center mb-4">
                           <img
                               src={feature.icon}
                               alt={feature.title}
@@ -29,14 +29,14 @@ function Grid() {
                   </div>
               ))}
           </div>
-      <div className="w-2/3 container mx-48 px-4">
-        <img src={SectionErrow} alt="" className="w-24"></img>
+      <div className="w-2/3 container  px-4">
+        <img src={SectionErrow} alt="" className="w-16 mt-2 lg:ml-[170px] lg:mt-0 lg:w-24"></img>
       </div>
-      <div className="relative h-[800px]">
+      <div className="relative h-[330px] lg:h-[800px]">
         <div className="flex items-center justify-center flex-col">
-          <img src={Section} alt="" className="w-[1100px]"></img>
-          <div className="absolute mr-[250px] mt-[700px]">
-            <img src={Section2} alt=""></img>
+          <img src={Section} alt="" className="h-[180px]  px-5 lg:px-0 lg:h-full lg:w-[1100px]"></img>
+          <div className="absolute mr-[30px] mt-[270px] lg:mr-[250px] lg:mt-[700px]">
+            <img src={Section2} alt="" className="h-[140px] lg:h-full "></img>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@ function Grid() {
         </div>
         <div className="flex  flex-col items-center gap-4 mt-[30px] mb-[30px]">
           <div className="">
-            <Link to="/extrapage"><button className="bg-[#31BF5C] text-white font-Roboto py-3 px-3  rounded-md">
+            <Link to="/extrapage"><button className="bg-[#31BF5C] text-[10px] p-2 lg:text-[14px] text-white font-Roboto lg:py-3 lg:px-3  rounded-md">
               Start now - It's free
             </button></Link>
           </div>

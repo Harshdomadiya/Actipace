@@ -53,7 +53,7 @@ function Support() {
         <div className="w-full min-h-screen h-full">
             <div className="lg:h-[850px]">
                 <div className="absolute mt-0">
-                    <img src={Frame840} alt="" className=""/>
+                    <img  src={Frame840} alt="" className="h-[200px] lg:h-auto"/>
                 </div>
 
                 <div className=" w-full flex justify-center absolute lg:mt-[290px]">
@@ -165,7 +165,7 @@ function Support() {
                                 </form>
                             </div>
                         </div>
-                        <div className=" bg-[#071D2B] w-[350px] rounded-r-[4px] lg:h-full ">
+                        <div className=" bg-[#071D2B] w-[350px] rounded-r-[4px] h-[400px]  lg:h-full mt-28 lg:mt-0">
                             <div className="text-[#FFFFFF] flex flex-col gap-6 mt-8 ml-7 ">
                                 <div className="text-[24px] font-[600px] mb-3">Technical support</div>
                                 <div className="flex gap-4">
@@ -181,7 +181,7 @@ function Support() {
                                     <p className="text-[14px] font-[500px]">info@actipace.com</p>
                                 </div>
                             </div>
-                            <img src={acti} alt="" className="hidden lg:block absolute w-[180px] h-[220px] mt-[14px] ml-[150px]"/>
+                            <img src={acti} alt="" className="absolute w-[180px] h-[220px]  lg:mt-[14px] ml-[170px] lg:ml-[150px]"/>
                         </div>
                     </div>
                 </div>
