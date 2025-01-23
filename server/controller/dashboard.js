@@ -6,7 +6,7 @@ exports.dashboard = async (req, res) => {
   try {
     const { email } = req.user;
 
-    console.log(email);
+    // console.log(email);
 
     const data = await prisma.purchase.findMany({
       where: {
@@ -18,11 +18,16 @@ exports.dashboard = async (req, res) => {
       },
     });
 
+      if(!data){
+        return res.status(401).json({
+            success:false,
+            message:"You don't have any purchase plan"
+        })
+      }
     //console.log(data);
     const apidata = await axios.get(
       `https://actipace.com/ts/deviceget.php?email=${email}`
     );
-
 
     const licenses = [];
     let count=0;

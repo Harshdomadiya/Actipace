@@ -71,7 +71,7 @@ const Login = () => {
           //console.log("storage token",localStorage.getItem("token"));
           
           toast.success(`${result.data.message}`,{id:toastId});
-          navigate("/home")
+          navigate("/")
       }catch(e){
           toast.error(e.response.data.message,{id:toastId});
           return;

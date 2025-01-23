@@ -3,7 +3,7 @@ import a from "../home/image/actipace-a.png"
 import rm from "./image/Frame 848.png"
 import tex from "./image/Group 77.svg"
 import { Link } from "react-router-dom";
-import WhyChooseUs from "../home/slider/WhyChooseUs";
+import WhyChooseUs from "./slider/WhyChooseUs";
 
 const Product = () => {
     return (
