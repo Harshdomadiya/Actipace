@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import actipace from "./image/actipace.png";
 
-import emogy from "./image/emogy.png";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { categories } from "../../services/Api";
@@ -62,11 +61,7 @@ const ResetPassword = () => {
           </button>
         </form>
       </div>
-      <div className="absolute bottom-14 right-4">
-        <button className="w-10 h-10 flex items-center justify-center text-white">
-          <img src={emogy} alt=""></img>
-        </button>
-      </div>
+      
     </div>
   );
 };

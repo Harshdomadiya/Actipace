@@ -49,9 +49,14 @@ function Navbar() {
 
         toast.dismiss();
       } catch (e) {
-
-        toast.dismiss(); // Remove the loading toast
-        if (e.response && e.response.data && e.response.data.message) {
+        console.log(e)
+        toast.dismiss();
+        if(e.status === 401)
+        {
+            navigate("/login")
+            toast.error(e.response.data.message);
+        } // Remove the loading toast
+        else if (e.response && e.response.data && e.response.data.message) {
           toast.error(e.response.data.message); // Show error message from response
         } else {
           toast.error("An error occurred"); // Show generic error message

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import eye from "./image/eye.png";
 import actipace from "./image/actipace.png";
 import  {useNavigate } from "react-router-dom";
-import emogy from "./image/emogy.png";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { categories } from "../../services/Api";
@@ -155,11 +154,6 @@ const Login = () => {
               Sign up now
             </a>
           </p>
-        </div>
-        <div className="absolute bottom-4 right-4">
-          <button className="w-10 h-10 flex items-center justify-center text-white">
-            <img src={emogy} alt=""></img>
-          </button>
         </div>
       </>:<>
       <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">

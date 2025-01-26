@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "../slider/Card";
-import Data from "../slider/Data";
+import Data from "../../Product/slider/Data";
 import { FiArrowLeft } from "react-icons/fi";
 import { FiArrowRight } from "react-icons/fi";
 

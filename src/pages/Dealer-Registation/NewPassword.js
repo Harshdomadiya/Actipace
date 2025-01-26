@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import actipace from "./image/actipace.png";
 import { useParams } from "react-router-dom";
-import emogy from "./image/emogy.png";
 import axios from "axios";
 import { categories } from "../../services/Api";
 import toast from "react-hot-toast";
@@ -86,11 +85,7 @@ const NewPassword = () => {
           </button>
         </form>
       </div>
-      <div className="absolute bottom-14 right-4">
-        <button className="w-10 h-10 flex items-center justify-center text-white">
-          <img src={emogy} alt=""></img>
-        </button>
-      </div>
+      
     </div>
   );
 };

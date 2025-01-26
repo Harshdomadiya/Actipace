@@ -5,6 +5,7 @@ import twitter from "./twitter.png";
 import youtube from "./youtube.png";
 import flag from "./flag.png";
 import actipace from "./Layer_1.png";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -35,13 +36,13 @@ const Footer = () => {
                             </svg>
                         </div>
                         <div className="flex mt-4 gap-4 justify-center md:justify-center">
-                            <a href="/" className="mr-4">
+                            <a  className="mr-4">
                                 <img src={fecebook} alt="Facebook" className="w-6 h-6"/>
                             </a>
                             <a href="/" className="mr-4">
                                 <img src={insta} alt="Instagram" className="w-6 h-6"/>
                             </a>
-                            <a href="/" className="mr-4">
+                            <a href="https://www.x.com/actipace" target="_blank" className="mr-4">
                                 <img src={twitter} alt="Twitter" className="w-6 h-6"/>
                             </a>
                             <a href="/" className="mr-4">
@@ -64,13 +65,13 @@ const Footer = () => {
                             <h3 className="text-lg font-bold mb-4">Support</h3>
                             <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
                                 <li>
-                                    <a href="/">Customer Service</a>
+                                    <Link to="/support">Customer Service</Link>
                                 </li>
                                 <li>
-                                    <a href="/">FAQs</a>
+                                    <Link to="/price" >FAQs</Link>
                                 </li>
                                 <li>
-                                    <a href="/">Renewals</a>
+                                    <a href="/price">Renewals</a>
                                 </li>
                             </ul>
                         </div>
@@ -80,19 +81,19 @@ const Footer = () => {
                             <h3 className="text-lg font-bold mb-4">About</h3>
                             <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
                                 <li>
-                                    <a href="/about">About</a>
+                                    <Link to="/about" >About</Link>
                                 </li>
                                 <li>
                                     <a href="/">Careers</a>
                                 </li>
                                 <li>
-                                    <a href="/">Contact Us</a>
+                                    <Link to="/contact">Contact Us</Link>
                                 </li>
                                 <li>
-                                    <a href="/">Your Privacy</a>
+                                    <Link to="">Your Privacy</Link>
                                 </li>
                                 <li>
-                                    <a href="/">Download</a>
+                                    <Link to="/extrapage">Download</Link>
                                 </li>
                             </ul>
                         </div>

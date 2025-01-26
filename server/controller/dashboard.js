@@ -4,13 +4,21 @@ const axios = require("axios");
 
 exports.dashboard = async (req, res) => {
   try {
+    // Extract the email from the authenticated user object
     const { email } = req.user;
 
-    // console.log(email);
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: "User email is missing.",
+      });
+    }
 
+    // Fetch purchase data from the database
     const data = await prisma.purchase.findMany({
       where: {
         email: email,
+        status:"SUCCESS",
       },
       include: {
         software: true,
@@ -18,56 +26,58 @@ exports.dashboard = async (req, res) => {
       },
     });
 
-      if(!data){
-        return res.status(401).json({
-            success:false,
-            message:"You don't have any purchase plan"
-        })
-      }
-    //console.log(data);
-    const apidata = await axios.get(
+    // Check if no purchase plans exist for the user
+    if (!data || data.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "You don't have any purchase plans.",
+      });
+    }
+
+    // Fetch license data from the external API
+    const apiResponse = await axios.get(
       `https://actipace.com/ts/deviceget.php?email=${email}`
     );
 
     const licenses = [];
-    let count=0;
+    let count = 0;
 
-    if(apidata.data){
-        const apdata = apidata.data.split("$@");
+    if (apiResponse.data) {
+      const apiData = apiResponse.data.split("$@");
 
-    // Extract count
-        count = Number(apdata[0]);
+      // Extract count (first element in the API response)
+      count = Number(apiData[0]);
 
-        // Initialize licenses array
-       
-
-        // Process license details
-        for (let i = 1; i < apdata.length; i += 3) {
+      // Process and parse license details
+      for (let i = 1; i < apiData.length; i += 3) {
         licenses.push({
-            licenseKey: apdata[i],
-            computerName: apdata[i + 1],
-            operatingSystem: apdata[i + 2],
+          licenseKey: apiData[i],
+          computerName: apiData[i + 1],
+          operatingSystem: apiData[i + 2],
         });
-        }
+      }
     }
-    
 
-    // Combine into final JSON
+    // Combine the purchase data and license details
     const jsonResult = {
       count,
       licenses,
     };
 
+    // Send success response
     return res.status(200).json({
       success: true,
-      data,
-      jsonResult
+      data, // Purchase data from the database
+      jsonResult, // License data from the API
     });
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    // Log error for debugging
+    console.error("Error in dashboard:", error.message);
+
+    // Send error response
     return res.status(500).json({
       success: false,
-      message: "error in getting plan",
+      message: "An error occurred while retrieving the dashboard data.",
     });
   }
 };

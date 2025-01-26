@@ -1,28 +1,27 @@
 import React from 'react'
 import section from './image/Frame 857.svg'
 import comp from './image/comp.svg'
-import actipace_a from "../home/image/actipace-a.png"
 import acti from "../home/image/actipace-a.png";
 
 
 const handleTS = async (e) => {
     e.preventDefault()
     const anchor = document.createElement("a");
-    anchor.href = "https://actipace.com/download/ActipaceTotalSecuritySetup.zip";
+    anchor.href = "https://actipace.com/api/v1/download/totalsecurity";
     anchor.download = "file.zip";
     anchor.click();
 }
 const handleIS = async (e) => {
     e.preventDefault()
     const anchor = document.createElement("a");
-    anchor.href = "https://actipace.com/download/ActipaceInternetSecuritySetup.zip";
+    anchor.href = "https://actipace.com/api/v1/download/internetsecurity";
     anchor.download = "file.zip";
     anchor.click();
 }
 const handleBD = async (e) => {
     e.preventDefault()
     const anchor = document.createElement("a");
-    anchor.href = "https://actipace.com/download/ActipaceBasicDefenseSetup.zip";
+    anchor.href = "https://actipace.com/api/v1/download/basicdefence";
     anchor.download = "file.zip";
     anchor.click();
 }
@@ -51,7 +50,7 @@ function ExtraPage() {
             <div className="w-full flex flex-col  lg:flex-row justify-center mt-10 gap-x-4">
                 <div className="lg:w-[450px] lg:h-[800px] bg-[#F3F4F6] flex flex-col items-center pt-28 gap-8 rounded-[16px]">
                     <div className="lg:w-[200px] text-center text-[28px] font-[400px]">
-                        <h1>Antipace Total Security</h1>
+                        <h1>Actipace Total Security</h1>
                     </div>
                     <div className="h-[50px] w-[150px] bg-[#071D2B] flex justify-center rounded-[28px] font-[500px]">
                         <button className="text-white text-[15px]" onClick={(e) => handleTS(e)}>Download</button>
