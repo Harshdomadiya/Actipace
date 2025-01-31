@@ -5,16 +5,16 @@
     {
       "src": "actipace_favicon.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/svg+xml"
+      "type": "image/x-icon"
     },
     {
       "src": "actipace_favicon.svg",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
       "src": "actipace_favicon.svg",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],
