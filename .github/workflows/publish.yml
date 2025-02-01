@@ -35,7 +35,7 @@ jobs:
           echo "RAZORPAY_SECRET=${{ secrets.RAZORPAY_SECRET }}" >> .env
 
           # Copy the .env file from ~/.env to the current directory
-          cp ~/.env ./ .env
+          cp ~/.env ./
 
       - name: install pm2
         run: npm install -g pm2
