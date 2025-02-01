@@ -24,15 +24,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
+      - name: Setup Enviroment Variables
+        run: |
+          echo ${{ secrets.ENV }} > .env
+
       - name: install pm2
         run: npm install -g pm2
 
       - name: Prisma connect
         run: cd server && npx prisma migrate dev --name init
-
-      - name: Setup Enviroment Variables
-        run: |
-          echo ${{ secrets.ENV }} > .env
 
       - name: Deploy & Release
         run: pm2 start npm --name "Actipace" -- start
