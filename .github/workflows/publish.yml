@@ -24,9 +24,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Setup Enviroment Variables
+      - name: Inject Environment Variables from GitHub Secrets
         run: |
-          echo ${{ secrets.ENV }} > .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
+          echo "MAIL_HOST=${{ secrets.MAIL_HOST }}" >> .env
+          echo "MAIL_PASS=${{ secrets.MAIL_PASS }}" >> .env
+          echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> .env
+          echo "RAZORPAY_KEY=${{ secrets.RAZORPAY_KEY }}" >> .env
+          echo "RAZORPAY_SECRET=${{ secrets.RAZORPAY_SECRET }}" >> .env
 
       - name: install pm2
         run: npm install -g pm2
