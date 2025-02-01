@@ -5,7 +5,7 @@ name: Node.js CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Inject Environment Variables from GitHub Secrets
         run: |
@@ -33,6 +33,9 @@ jobs:
           echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> .env
           echo "RAZORPAY_KEY=${{ secrets.RAZORPAY_KEY }}" >> .env
           echo "RAZORPAY_SECRET=${{ secrets.RAZORPAY_SECRET }}" >> .env
+
+          # Copy the .env file from ~/.env to the current directory
+          cp ~/.env ./ .env
 
       - name: install pm2
         run: npm install -g pm2
