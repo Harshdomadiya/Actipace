@@ -24,6 +24,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
+      - name: Switch to backend
+        run: cd server
+
       - name: Inject Environment Variables from GitHub Secrets
         run: |
           echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> .env
@@ -34,15 +37,15 @@ jobs:
           echo "RAZORPAY_KEY=${{ secrets.RAZORPAY_KEY }}" >> .env
           echo "RAZORPAY_SECRET=${{ secrets.RAZORPAY_SECRET }}" >> .env
 
-          # Copy the .env file from ~/.env to the current directory
+          cat .env
           cp ~/.env ./
           cat .env
-
+          
       - name: install pm2
         run: npm install -g pm2
 
       - name: Prisma connect
-        run: cd server && npx prisma migrate dev --name init
+        run: npx prisma migrate dev --name init
 
       - name: Deploy & Release
         run: pm2 start npm --name "Actipace" -- start
