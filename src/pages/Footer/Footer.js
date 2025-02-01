@@ -36,7 +36,7 @@ const Footer = () => {
                             </svg>
                         </div>
                         <div className="flex mt-4 gap-4 justify-center md:justify-center">
-                            <a  className="mr-4">
+                            <a className="mr-4">
                                 <img src={fecebook} alt="Facebook" className="w-6 h-6"/>
                             </a>
                             <a href="/" className="mr-4">
@@ -51,73 +51,77 @@ const Footer = () => {
                         </div>
                     </div>
 
-                        <div className="mb-8 md:mb-0 text-center">
-                            <h3 className="text-lg font-bold mb-4">Developed By</h3>
-                            <div className="font-Helvetic text-sm mb-4">
-                                <p>G-103, HTC Market, Anjana</p>
-                                <p>Farm, Mithi Khadi Road, Surat,</p>
-                                <p>Gujarat, India</p>
-                            </div>
-                        </div>
-
-
-                        <div className="mb-8 md:mb-0 text-center">
-                            <h3 className="text-lg font-bold mb-4">Support</h3>
-                            <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
-                                <li>
-                                    <Link to="/support">Customer Service</Link>
-                                </li>
-                                <li>
-                                    <Link to="/price" >FAQs</Link>
-                                </li>
-                                <li>
-                                    <a href="/price">Renewals</a>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                        <div className="mb-8 md:mb-0 text-center">
-                            <h3 className="text-lg font-bold mb-4">About</h3>
-                            <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
-                                <li>
-                                    <Link to="/about" >About</Link>
-                                </li>
-                                <li>
-                                    <a href="/">Careers</a>
-                                </li>
-                                <li>
-                                    <Link to="/contact">Contact Us</Link>
-                                </li>
-                                <li>
-                                    <Link to="">Your Privacy</Link>
-                                </li>
-                                <li>
-                                    <Link to="/extrapage">Download</Link>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://actipace.com/terms" >Terms and conditions</a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://actipace.com/privacy/" >Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a target="_blank" href="https://actipace.com/refund/" >Cancellation and Refund</a>
-                                </li>
-                                <li>
-                                    <a href="https://actipace.com/refund" target="_blank">Shipping and Exchange
-                                    </a>
-                                </li>
-                            </ul>
+                    <div className="mb-8 md:mb-0 text-center">
+                        <h3 className="text-lg font-bold mb-4">Developed By</h3>
+                        <div className="font-Helvetic text-sm mb-4">
+                            <p>G-103, HTC Market, Anjana</p>
+                            <p>Farm, Mithi Khadi Road, Surat,</p>
+                            <p>Gujarat, India</p>
                         </div>
                     </div>
+
+
+                    <div className="mb-8 md:mb-0 text-center">
+                        <h3 className="text-lg font-bold mb-4">Support</h3>
+                        <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
+                            <li>
+                                <Link to="/support">Customer Service</Link>
+                            </li>
+                            <li>
+                                <Link to="/price">FAQs</Link>
+                            </li>
+                            <li>
+                                <a href="/price">Renewals</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="mb-8 md:mb-0 text-center">
+                        <h3 className="text-lg font-bold mb-4">Policy</h3>
+                        <ul className=" font-Helvetic text-sm mb-4 flex flex-col gap-2">
+                            <li>
+                                <a target="_blank" href="https://actipace.com/terms">Terms and conditions</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://actipace.com/privacy/">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://actipace.com/refund/">Cancellation and Refund</a>
+                            </li>
+                            <li>
+                                <a href="https://actipace.com/refund" target="_blank">Shipping and Exchange
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="mb-8 md:mb-0 text-center">
+                        <h3 className="text-lg font-bold mb-4">About</h3>
+                        <ul className="font-Helvetic text-sm mb-4 flex flex-col gap-2">
+                            <li>
+                                <Link to="/about">About</Link>
+                            </li>
+                            <li>
+                                <a href="/">Careers</a>
+                            </li>
+                            <li>
+                                <Link to="/contact">Contact Us</Link>
+                            </li>
+                            <li>
+                                <Link to="/extrapage">Download</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+
                 </div>
-                <div className="w-full flex justify-center items-center mt-8">
-                    <div className="w-full sm:w-[1280px] bg-[#0E2C40] h-[1px]"></div>
-                </div>
-                <div className="text-center mt-5">
-                    <p>&copy; Copyright 2024 Actipace Security - All Rights Reserved</p>
-                </div>
+            </div>
+            <div className="w-full flex justify-center items-center mt-8">
+                <div className="w-full sm:w-[1280px] bg-[#0E2C40] h-[1px]"></div>
+            </div>
+            <div className="text-center mt-5">
+                <p>&copy; Copyright 2024 Actipace Security - All Rights Reserved</p>
+            </div>
         </footer>
     );
 };
