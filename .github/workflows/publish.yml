@@ -40,9 +40,15 @@ jobs:
           cat .env
           cp ~/.env ./
           cat .env
-          
+
       - name: install pm2
         run: npm install -g pm2
+
+      - name: Packges intall
+        run: npm install
+
+      - name: Prisma generate
+        run: npx prisma generate
 
       - name: Prisma connect
         run: npx prisma migrate dev --name init
