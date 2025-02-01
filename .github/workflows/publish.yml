@@ -53,5 +53,8 @@ jobs:
       - name: Prisma connect
         run: npx prisma migrate dev --name init
 
+      - name: Prisma deploy
+        run: npx prisma deploy
+
       - name: Deploy & Release
         run: pm2 start npm --name "Actipace" -- start
