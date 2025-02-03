@@ -21,6 +21,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
+      # Install packages
+      - name: Install React Dependancies
+        run: npm ci
+
+      # Create production build
+      - name: Production Build
+        run: npm run build
+
       # Inject environment variables from GitHub Secrets directly into .env file
       - name: Inject Environment Variables from GitHub Secrets
         run: |
