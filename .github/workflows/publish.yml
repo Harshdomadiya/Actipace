@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
       - name: Checkout code
@@ -22,12 +22,12 @@ jobs:
           cache: "npm"
 
       # Install packages
-      - name: Install React Dependancies
-        run: npm ci
+      # - name: Install React Dependancies
+      #   run: npm ci
 
-      # Create production build
-      - name: Production Build
-        run: npm run build
+      # # Create production build
+      # - name: Production Build
+      #   run: npm run build
 
       # Inject environment variables from GitHub Secrets directly into .env file
       - name: Inject Environment Variables from GitHub Secrets
