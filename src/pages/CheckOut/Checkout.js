@@ -225,7 +225,7 @@ const Checkout = () => {
                                 onChange={handleChange}
                             />
                             <label htmlFor="policyAccepted" className="ml-2 text-[#111827]">
-                                I acknowlede that I have read and I agree to the <a className="text-[#31BF5C]" target="_blank" href="https://actipace.com/agreement/lic.txt"> End-User License Agreement</a>,<a target="_blank" className="text-[#31BF5C]" href="https://actipace.com/refund/"> Payment
+                                I acknowledge that I have read and I agree to the <a className="text-[#31BF5C]" target="_blank" href="https://actipace.com/agreement/lic.txt"> End-User License Agreement</a>,<a target="_blank" className="text-[#31BF5C]" href="https://actipace.com/refund/"> Payment
                                 Terms and Conditions</a>, <a target="_blank" className="text-[#31BF5C]" href="https://actipace.com/privacy/">Privacy Policy and website Terms of Use </a>
                             </label>
                         </div>
