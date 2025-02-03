@@ -68,6 +68,9 @@ jobs:
       #   working-directory: ./server
       #   run: npx prisma migrate deploy
 
+      - name: Delete all previous process
+        run: pm2 delete all
+
       # Start the app using PM2
       - name: Deploy & Release
         working-directory: ./server
