@@ -51,14 +51,14 @@ jobs:
         run: npx prisma generate
 
       # Apply Prisma migrations
-      - name: Prisma migrate dev
-        working-directory: ./server
-        run: npx prisma migrate dev --name init
+      # - name: Prisma migrate dev
+      #   working-directory: ./server
+      #   run: npx prisma migrate dev --name init
 
-      # Deploy Prisma schema
-      - name: Prisma deploy
-        working-directory: ./server
-        run: npx prisma migrate deploy
+      # # Deploy Prisma schema
+      # - name: Prisma deploy
+      #   working-directory: ./server
+      #   run: npx prisma migrate deploy
 
       # Start the app using PM2
       - name: Deploy & Release
