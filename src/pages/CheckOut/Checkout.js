@@ -22,7 +22,7 @@ const Checkout = () => {
         city: '',
         state: '',
         zipCode: '',
-        gstin: '',
+        gstin: '0',
         termsAccepted: false,
         policyAccepted: false,
     });
