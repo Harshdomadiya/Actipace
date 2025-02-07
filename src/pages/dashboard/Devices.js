@@ -16,7 +16,7 @@ const Devices = ({expiresAt,licenseKey,computerName}) => {
 
   return (
     <div>
-        <div className="bg-white rounded-xs h-[150px]  w-[350px]  flex justify-between ">
+        <div className="bg-white rounded-xs h-[150px]  w-[350px]  flex justify-between items-center">
           <div className="h-full ml-4">
             <div className="bg-gray-200 w-[130px] mt-10 text-center rounded-xl">
               <p className="text-xs">Expiry: {formattedDate}</p>
