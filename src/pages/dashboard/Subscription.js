@@ -3,11 +3,19 @@ import a from "./Frame 904.svg"
 
 const Subscription = ({expiresAt,name,devices}) => {
 
-    const date = new Date(expiresAt);
+    let formattedDate = "No expiration date"; // Default fallback
 
-// Format the date
-const options = { day: "2-digit", month: "long", year: "numeric" };
-const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
+    if (expiresAt) {
+        const date = new Date(expiresAt);
+        if (!isNaN(date)) {
+            const options = { day: "2-digit", month: "long", year: "numeric" };
+            formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
+        } else {
+            formattedDate = "Invalid date"; // Handle malformed dates
+        }
+    }
+
+
   return (
     <div>
       <div className="bg-white rounded-lg h-[170px] px-10 flex flex-col pt-6 mt-4 gap-3 ">
