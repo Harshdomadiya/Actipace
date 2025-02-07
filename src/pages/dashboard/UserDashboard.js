@@ -43,7 +43,7 @@ function UserDashboard() {
 
             <div className="w-full mb-16">
                 <div className="flex-col m-10">
-                    {Data[0].length > 0 && (
+                    {Data.length > 0 && (
                     <>
                     <div>
                         <h1 className="font-bold text-2xl">My Subscriptions</h1>
