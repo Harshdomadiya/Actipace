@@ -52,7 +52,7 @@ function UserDashboard() {
                     )}
                     {
                         Data.map((data,items)=>(
-                            <Subscription expiresAt={data.expiresAt} name ={data.software.name} devices={data.softwarePlan.devices} />
+                            <Subscription  expiresAt={data.expiresAt} name ={data.software.name} devices={data.softwarePlan.devices} />
                         ))
                     }
 
@@ -64,7 +64,7 @@ function UserDashboard() {
                     <div className="flex flex-wrap gap-5">
                     {
                         dev.map((data,items)=>(
-                            <Devices expiresAt={time} licenseKey={data.licenseKey} computerName={data.computerName} />
+                            <Devices expiresAt={time} licenseKey={data.licenseKey} computerName={data.computerName} expiry={data.expiry}/>
                         ))
                     }
                     </div>
