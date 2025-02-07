@@ -6,7 +6,18 @@ const Devices = ({expiresAt,licenseKey,computerName,expiry}) => {
 
     if (expiresAt) {
         const date = new Date(expiresAt);
-        if (!isNaN(date)) {
+        if (!isNaN(date)) { // Ensure valid date
+            const options = { day: "2-digit", month: "long", year: "numeric" };
+            formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
+        } else {
+            formattedDate = "Invalid date"; // Handle malformed dates
+        }
+    }
+    else if (expiry) { // Ensure expiry exists
+        const [day, month, year] = expiry.split("-"); // Extract day, month, year
+        const date = new Date(`${year}-${month}-${day}`); // Convert to YYYY-MM-DD
+
+        if (!isNaN(date)) { // Ensure valid date
             const options = { day: "2-digit", month: "long", year: "numeric" };
             formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
         } else {
@@ -14,12 +25,11 @@ const Devices = ({expiresAt,licenseKey,computerName,expiry}) => {
         }
     }
     else {
-        const[day,month,year] = expiry.split("-");
-        const date = new Date(`${day} ${month} ${year}`);
-        formattedDate = expiry(date);
+        formattedDate = "No expiration date"; // Default fallback
     }
 
-  return (
+
+    return (
     <div>
         <div className="bg-white rounded-xs h-[150px]  w-[350px]  flex justify-between ">
           <div className="h-full ml-4 flex flex-col justify-center">
