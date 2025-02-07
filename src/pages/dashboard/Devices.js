@@ -1,7 +1,7 @@
 import React from "react";
 import comp from "./Group 76.svg"
 
-const Devices = ({expiresAt,licenseKey,computerName}) => {
+const Devices = ({expiresAt,licenseKey,computerName,expiry}) => {
     let formattedDate = "No expiration date"; // Default fallback
 
     if (expiresAt) {
@@ -12,6 +12,11 @@ const Devices = ({expiresAt,licenseKey,computerName}) => {
         } else {
             formattedDate = "Invalid date"; // Handle malformed dates
         }
+    }
+    else {
+        const[day,month,year] = expiry.split("-");
+        const date = new Date(`${day} ${month} ${year}`);
+        formattedDate = expiry(date);
     }
 
   return (
