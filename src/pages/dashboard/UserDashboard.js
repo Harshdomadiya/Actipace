@@ -43,10 +43,13 @@ function UserDashboard() {
 
             <div className="w-full mb-16">
                 <div className="flex-col m-10">
+                    {Data[0].length > 0 && (
+                    <>
                     <div>
                         <h1 className="font-bold text-2xl">My Subscriptions</h1>
                     </div>
-
+                    </>
+                    )}
                     {
                         Data.map((data,items)=>(
                             <Subscription expiresAt={data.expiresAt} name ={data.software.name} devices={data.softwarePlan.devices} />
