@@ -2,12 +2,17 @@ import React from "react";
 import comp from "./Group 76.svg"
 
 const Devices = ({expiresAt,licenseKey,computerName}) => {
-    const date = new Date(expiresAt);
+    let formattedDate = "No expiration date"; // Default fallback
 
-    // Format the date
-    const options = { day: "2-digit", month: "long", year: "numeric" };
-    const formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
-
+    if (expiresAt) {
+        const date = new Date(expiresAt);
+        if (!isNaN(date)) {
+            const options = { day: "2-digit", month: "long", year: "numeric" };
+            formattedDate = new Intl.DateTimeFormat("en-GB", options).format(date);
+        } else {
+            formattedDate = "Invalid date"; // Handle malformed dates
+        }
+    }
 
   return (
     <div>
