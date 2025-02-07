@@ -21,7 +21,7 @@ function UserDashboard() {
 
     useEffect(() => {
         // Initialize state only when `data` is available
-        if (data && data.data) {
+        if (data) {
             setData(data.data || []); // Ensure it’s an array
             setTime(data.data?.[0]?.expiresAt || ""); // Safeguard against missing data
             setDev(data.jsonResult?.licenses || []);
