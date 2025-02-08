@@ -23,8 +23,8 @@ function UserDashboard() {
 
     async function handleLogout() {
         try {
-            await axios.post(categories.LOGOUT_API);
-            const response = localStorage.removeItem("token");
+            const response = await axios.post(categories.LOGOUT_API);
+            localStorage.removeItem("token");
 
             if (response.status === 200) {
                 navigate("/home");
