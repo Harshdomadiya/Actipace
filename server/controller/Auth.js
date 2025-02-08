@@ -81,6 +81,17 @@ exports.signUp = async (req,res) =>{
             })
         }
 
+        const existingMobileUser = await prisma.User.findUnique({
+            where: { mobileNo }
+        });
+
+        if (existingMobileUser) {
+            return res.status(409).json({
+                success: false,
+                message: "User already exists"
+            });
+        }
+
         const user = await prisma.Otp.findUnique({where:{email}});
 
         if (!user) throw new Error('User not found');
