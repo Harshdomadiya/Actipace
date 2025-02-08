@@ -30,7 +30,7 @@ function UserDashboard() {
   
 
     return (
-        <div className="flex bg-gray-200 w-[100vw] h-[100vh]">
+        <div className="flex bg-gray-200 w-full h-[100vh]">
             <div className="hidden lg:block w-[15%] bg-[#071D2B]  lg:flex-col items-center ">                               
                 <div className="flex mt-10 gap-x-2 ml-6">
                     <div className="flex justify-center items-center">
@@ -43,19 +43,6 @@ function UserDashboard() {
 
             <div className="w-full mb-16">
                 <div className="flex-col m-10">
-                    {Data.length > 0 && (
-                    <>
-                    <div>
-                        <h1 className="font-bold text-2xl">My Subscriptions</h1>
-                    </div>
-                    </>
-                    )}
-                    {
-                        Data.map((data,items)=>(
-                            <Subscription  expiresAt={data.expiresAt} name ={data.software.name} devices={data.softwarePlan.devices} />
-                        ))
-                    }
-
                     <div className="my-10">
                         <h1 className="font-bold text-2xl ">My Devices</h1>
                     </div>
@@ -64,7 +51,7 @@ function UserDashboard() {
                     <div className="flex flex-wrap gap-5">
                     {
                         dev.map((data,items)=>(
-                            <Devices expiresAt={time} licenseKey={data.licenseKey} computerName={data.computerName} expiry={data.expiry}/>
+                            <Devices expiresAt={time} licenseKey={data.licenseKey} computerName={data.computerName} expiry={data.expiry} plan={data.plan1}/>
                         ))
                     }
                     </div>
