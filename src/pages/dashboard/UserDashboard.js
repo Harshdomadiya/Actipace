@@ -31,6 +31,7 @@ function UserDashboard() {
             }
         }
         catch(e) {
+            console.log(e);
             toast.error("something went wrong!");
         }
     }
