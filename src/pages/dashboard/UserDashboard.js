@@ -27,11 +27,10 @@ function UserDashboard() {
             localStorage.removeItem("token");
 
             if (response.status === 200) {
-                navigate("/home");
+                navigate("/");
             }
         }
         catch(e) {
-            console.log(e);
             toast.error("something went wrong!");
         }
     }
