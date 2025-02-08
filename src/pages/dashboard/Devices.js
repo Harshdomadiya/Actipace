@@ -1,7 +1,7 @@
 import React from "react";
 import comp from "./Group 76.svg"
 
-const Devices = ({expiresAt,licenseKey,computerName,expiry,plan1}) => {
+const Devices = ({expiresAt,licenseKey,computerName,expiry,plan}) => {
     let formattedDate = "No expiration date"; // Default fallback
 
     if (expiresAt) {
@@ -37,7 +37,7 @@ const Devices = ({expiresAt,licenseKey,computerName,expiry,plan1}) => {
               <p className="text-xs">Expiry: {formattedDate}</p>
             </div>
             <div className="my-3">
-              <h1 className="text-bold">{computerName}({plan1})</h1>
+              <h1 className="text-bold">{computerName}({plan})</h1>
             </div>
             <p className="text-xs text-[#5E5E5E]">Licence Key : {licenseKey}</p>
           </div>
