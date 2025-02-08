@@ -81,11 +81,13 @@ exports.signUp = async (req,res) =>{
             })
         }
 
-        const existingMobileUser = await prisma.User.findUnique({
-            where: { mobileNo }
+        const existingUser = await prisma.User.findFirst({
+            where: {
+                OR: [{ email }, { mobileNo }]
+            }
         });
 
-        if (existingMobileUser) {
+        if (existingUser) {
             return res.status(409).json({
                 success: false,
                 message: "User already exists"
