@@ -49,7 +49,7 @@ exports.internetsecurity = (req, res) => {
      // console.log("File path:", filePath);
   
       // Send the file as a download
-      res.download(filePath, "ActipaceInternetSecuritySetup.zipp", (err) => {
+      res.download(filePath, "ActipaceInternetSecuritySetup.zip", (err) => {
         if (err) {
           console.error("Error downloading file:", err);
           res.status(500).send("Error downloading file");
