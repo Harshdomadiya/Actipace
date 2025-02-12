@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import eye from "./image/eye.png";
 import actipace from "./image/actipace.png";
-import  {useNavigate } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { categories } from "../../services/Api";
@@ -9,6 +9,8 @@ import { categories } from "../../services/Api";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const data = location.state;
   //const [token,setToken] = useRecoilState(TokenAtoms)
   //console.log("tooooo",token);
 
@@ -70,7 +72,35 @@ const Login = () => {
           //console.log("storage token",localStorage.getItem("token"));
           
           toast.success(`${result.data.message}`,{id:toastId});
-          navigate("/dashboard")
+
+          async function dataFetch(){
+              toast.loading("loading....")
+
+              try{
+                  const response = await axios.get(categories.DASHBOARD, {
+                      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+                  });
+
+                  const { data } = response;
+                  if (data && data.data) {
+                      navigate("./dashboard", { state: data }); // Ensure it's an array
+                  }
+                  else {
+                      toast.error("No data found");
+                  }
+                  toast.dismiss();
+              }
+              catch (e){
+                  if (e.response && e.response.data && e.response.data.message) {
+                      toast.error(e.response.data.message); // Show error message from response
+                  } else {
+                      toast.error("An error occurred"); // Show generic error message
+                  }
+              }
+          }
+
+          dataFetch();
+
       }catch(e){
           toast.error(e.response.data.message,{id:toastId});
           return;

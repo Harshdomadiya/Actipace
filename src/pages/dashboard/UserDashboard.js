@@ -10,10 +10,10 @@ import Subscription from "./Subscription";
 import Devices from "./Devices";
 import {useLocation, useNavigate} from "react-router-dom";
 
-function UserDashboard() {
+ function UserDashboard() {
     const location = useLocation();
-    const data = location.state; // Received data from navigation state
-    console.log(data);
+    const data = location.state;
+
 
     const navigate = useNavigate();
 
@@ -29,8 +29,7 @@ function UserDashboard() {
             if (response.status === 200) {
                 navigate("/");
             }
-        }
-        catch(e) {
+        } catch (e) {
             toast.error("something went wrong!");
         }
     }
@@ -44,6 +43,7 @@ function UserDashboard() {
             setDev(data.jsonResult?.licenses || []);
         }
     }, [data]);
+
 
 
     return (
