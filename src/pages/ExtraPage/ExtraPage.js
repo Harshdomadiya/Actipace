@@ -1,6 +1,8 @@
 import React from 'react'
 import section from './image/Frame 857.svg'
-import comp from './image/comp.svg'
+import bd from './image/bd.png'
+import is from './image/is.png'
+import ts from './image/ts.png'
 import acti from "../home/image/actipace-a.png";
 
 
@@ -56,7 +58,7 @@ function ExtraPage() {
                         <button className="text-white text-[15px]" onClick={(e) => handleTS(e)}>Download</button>
                     </div>
                     <div>
-                        <img className="w-[300px] lg:w-[400px] lg:h-[240px]" src={comp} alt=""/>
+                        <img className="w-[300px] lg:w-[400px] lg:h-[240px]" src={ts} alt=""/>
                     </div>
                 </div>
 
@@ -76,7 +78,7 @@ function ExtraPage() {
                             </button>
                         </div>
                         <div>
-                            <img className="w-[300px] h-[200px]" src={comp} alt="Computer Display"/>
+                            <img className="w-[300px] h-[200px]" src={is} alt="Computer Display"/>
                         </div>
                     </div>
 
@@ -95,7 +97,7 @@ function ExtraPage() {
                             </button>
                         </div>
                         <div>
-                            <img className="w-[300px] h-[200px]" src={comp} alt="Computer Display"/>
+                            <img className="w-[300px] h-[200px]" src={bd} alt="Computer Display"/>
                         </div>
                     </div>
                 </div>
