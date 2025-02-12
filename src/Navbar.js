@@ -99,16 +99,16 @@ function Navbar() {
             >
               Product
             </Link>
-            <Link
-                to="/login"
-                className={`hover:text-gray-400 ${
-                    location.pathname === "/login"
-                        ? "text-[#31BF5C]"
-                        : "text-[#071D2B]"
-                }`}
-            >
-              Dealer Registration
-            </Link>
+            {/*<Link*/}
+            {/*    to="/login"*/}
+            {/*    className={`hover:text-gray-400 ${*/}
+            {/*        location.pathname === "/login"*/}
+            {/*            ? "text-[#31BF5C]"*/}
+            {/*            : "text-[#071D2B]"*/}
+            {/*    }`}*/}
+            {/*>*/}
+            {/*  Dealer Registration*/}
+            {/*</Link>*/}
             <Link
                 to="/support"
                 className={`hover:text-gray-400 ${
@@ -268,19 +268,19 @@ function Navbar() {
                 Product
               </Link>
             </li>
-            <li>
-              <Link
-                  to="/login"
-                  onClick={toggleMenu}
-                  className={`hover:text-gray-400 ${
-                      location.pathname === "/login"
-                          ? "text-[#31BF5C]"
-                          : "text-[#071D2B]"
-                  }`}
-              >
-                Dealer Registration
-              </Link>
-            </li>
+            {/*<li>*/}
+            {/*  <Link*/}
+            {/*      to="/login"*/}
+            {/*      onClick={toggleMenu}*/}
+            {/*      className={`hover:text-gray-400 ${*/}
+            {/*          location.pathname === "/login"*/}
+            {/*              ? "text-[#31BF5C]"*/}
+            {/*              : "text-[#071D2B]"*/}
+            {/*      }`}*/}
+            {/*  >*/}
+            {/*    Dealer Registration*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             <li>
               <Link
                   to="/support"
