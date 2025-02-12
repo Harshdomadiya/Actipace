@@ -9,8 +9,8 @@ import { categories } from "../../services/Api";
 
 const Login = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const data = location.state;
+
+
   //const [token,setToken] = useRecoilState(TokenAtoms)
   //console.log("tooooo",token);
 
@@ -83,7 +83,7 @@ const Login = () => {
 
                   const { data } = response;
                   if (data && data.data) {
-                      navigate("./dashboard", { state: data }); // Ensure it's an array
+                      navigate("/dashboard", { state: data }); // Ensure it's an array
                   }
                   else {
                       toast.error("No data found");
