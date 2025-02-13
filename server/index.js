@@ -18,12 +18,7 @@ const sslOptions = {
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-    cors({
-        origin: "https://www.actipace.com/",
-        credentials: true,
-    })
-);
+app.use(cors());
 
 // Routes
 const signup = require("./routes/Routes");
