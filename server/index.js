@@ -39,6 +39,6 @@ app.get("*", (req, res) => {
 
 
 // Create HTTPS server
-const server = app.listen(PORT, sslOptions, () => {
+const server = https.createServer(sslOptions, app).listen(PORT, () => {
     console.log(`App is running successfully on port ${PORT}`);
 });
