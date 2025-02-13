@@ -77,8 +77,9 @@ function Navbar() {
       <nav className="bg-white text-[#071D2B] w-full shadow-md relative">
         <div className="container mx-auto flex items-center justify-between px-4 py-4 lg:px-8 lg:py-4">
           {/* Logo */}
+          <Link to="/">
           <img src={logo} alt="Logo" className="w-[140px] h-auto"/>
-
+          </Link>
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-8">
             <Link
