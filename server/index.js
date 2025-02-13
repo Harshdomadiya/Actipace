@@ -1,38 +1,49 @@
-const path = require("path")
-const express = require("express")
+const path = require("path");
+const express = require("express");
 const app = express();
-const coockiePaser = require("cookie-parser")
-const cors = require("cors")
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const https = require("https");
 require("dotenv").config();
+const fs = require("fs");
 
+const PORT = process.env.PORT || 4000;
 
-const PORT = process.env.PORT || 4000
+// SSL Certificate settings
+const sslOptions = {
+    key: fs.readFileSync("/etc/letsencrypt/live/www.actipace.com/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/www.actipace.com/fullchain.pem"),
+};
 
-
-
+// Middlewares
 app.use(express.json());
-app.use(coockiePaser());
+app.use(cookieParser());
 app.use(
     cors({
-        origin:"http://localhost:3000",
-        credentials:true,
+        origin: "http://localhost:3000",
+        credentials: true,
     })
-)
+);
 
+// Routes
 const signup = require("./routes/Routes");
+app.use("/api/v1", signup);
 
-app.use("/api/v1",signup);
-
-//Serve the static files from the React app
-app.use(express.static(path.join(__dirname, "..",'build')));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "..", "build")));
 
 // Catch-all route to serve the React app for any unknown routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, "..",'build', 'index.html'));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "build", "index.html"));
 });
 
+// Create HTTPS server
+const server = https.createServer(sslOptions, app);
 
-app.listen(PORT,()=>{
-    console.log("app is running successfully",PORT)
-})
+server.listen(PORT, () => {
+    console.log(`App is running successfully on port ${PORT}`);
+});
 
+server.on("error", (err) => {
+    console.error("Error starting server:", err);
+});
