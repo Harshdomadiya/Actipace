@@ -107,7 +107,7 @@ const Footer = () => {
                 <li>
                   <Link to="/contact">Contact Us</Link>
                 </li>
-                <li>
+                <li> 
                   <Link to="/extrapage">Download</Link>
                 </li>
               </ul>
