@@ -43,7 +43,7 @@ function Navbar() {
           navigate("./dashboard", { state: data }); // Ensure it's an array
         }
         else {
-          toast.error("No data found");
+          toast.error("No data found"); 
         }
 
 
