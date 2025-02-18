@@ -9,21 +9,21 @@ import acti from "../home/image/actipace-a.png";
 const handleTS = async (e) => {
     e.preventDefault()
     const anchor = document.createElement("a");
-    anchor.href = "https://actipace.com/api/v1/download/totalsecurity";
+    anchor.href = "https://www.actipace.com/api/v1/download/totalsecurity";
     anchor.download = "file.zip";
     anchor.click();
 }
 const handleIS = async (e) => {
     e.preventDefault()
     const anchor = document.createElement("a");
-    anchor.href = "https://actipace.com/api/v1/download/internetsecurity";
+    anchor.href = "https://www.actipace.com/api/v1/download/internetsecurity";
     anchor.download = "file.zip";
     anchor.click();
 }
 const handleBD = async (e) => {
     e.preventDefault()
     const anchor = document.createElement("a");
-    anchor.href = "https://actipace.com/api/v1/download/basicdefence";
+    anchor.href = "https://www.actipace.com/api/v1/download/basicdefence";
     anchor.download = "file.zip";
     anchor.click();
 }
