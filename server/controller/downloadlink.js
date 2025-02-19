@@ -3,8 +3,7 @@ const path = require("path");
 
 exports.totalsecurity = (req, res) => {
   try {
-    const filePath = path.join(__dirname, "download", "ActipaceTotalSecuritySetup.zip");
-
+    const filePath = path.join("/home/dev", "ActipaceTotalSecuritySetup.zip");
     // Check if the file exists
     if (!fs.existsSync(filePath)) {
       console.error("File not found:", filePath);
@@ -35,7 +34,7 @@ exports.totalsecurity = (req, res) => {
 
 exports.internetsecurity = (req, res) => {
     try {
-      const filePath = path.join(__dirname, "download", "ActipaceInternetSecuritySetup.zip");
+      const filePath = path.join("/home/dev", "ActipaceInternetSecuritySetup.zip");
   
       // Check if the file exists
       if (!fs.existsSync(filePath)) {
@@ -67,7 +66,7 @@ exports.internetsecurity = (req, res) => {
   
 exports.basicdefence = (req, res) => {
     try {
-      const filePath = path.join(__dirname, "download", "ActipaceBasicDefenceSetup.zip");
+      const filePath = path.join("/home/dev", "ActipaceBasicDefenceSetup.zip");
   
       // Check if the file exists
       if (!fs.existsSync(filePath)) {
