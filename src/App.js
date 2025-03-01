@@ -47,7 +47,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/award" element={<Award />} />
-        <Route path="/extrapage" element={<ExtraPage />} />
+        <Route path="/download" element={<ExtraPage />} />
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/dashboard" element={<UserDashboard/>}/>
         <Route path="/price" element={<Suspense fallback={"loding...."}><Price /></Suspense>} />
