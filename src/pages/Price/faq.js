@@ -45,7 +45,7 @@ const faq = {
             },
             {
                 question: "How do I download and install Actipace antivirus?",
-                answer: "Visit the following link <a href='https://actipace.com/download' class='text-blue-600 underline'>https://actipace.com/download</a>"
+                answer: "Visit the following link <a href='https://actipace.com/download' target='_blank' class='text-blue-600 underline'>https://actipace.com/download</a>"
             },
             {
                 question: "How can I identify whether my operating system is 32-bit or 64-bit?",
