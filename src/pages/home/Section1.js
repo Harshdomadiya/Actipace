@@ -36,7 +36,7 @@ function Section1() {
              </p>
           </div>
           <div>
-          <Link to={"/extrapage"}>
+          <Link to={"/download"}>
           <button className=" bg-[#31BF5C] text-white font-Roboto rounded-[400px] w-[200px] h-[50px] flex justify-center items-center gap-3 text-[14px] hover:scale-95 transition-all duration-200">
             <IoGridSharp className="w-[25px] h-[25px]"/>
             Free Download
@@ -79,7 +79,7 @@ function Section1() {
       <div className="w-full h-[320px] lg:h-[510px] relative z-8 mt-[-105px] lg:mt-[-50px] " >
           <img src={Frame840} alt="840" className="absolute h-[550px]  lg:w-full lg:object-cover" />
           <div className="absolute z-11 mt-[250px] flex justify-center items-center w-full lg:mt-[441px]">
-              <button onClick={()=>navigate("/extrapage")} className="text-[11px] absolute w-[120px]  h-[35px] text-[#31BF5C] bg-white font-Roboto rounded-[400px] lg:w-[220px] lg:h-[55px] flex justify-center font-semibold items-center gap-3 lg:text-[14px]">
+              <button onClick={()=>navigate("/download")} className="text-[11px] absolute w-[120px]  h-[35px] text-[#31BF5C] bg-white font-Roboto rounded-[400px] lg:w-[220px] lg:h-[55px] flex justify-center font-semibold items-center gap-3 lg:text-[14px]">
                 <IoGridSharp className="w-[20px] h-[20px] lg:w-[25px] lg:h-[25px]"/>
                 Free Download
               </button>

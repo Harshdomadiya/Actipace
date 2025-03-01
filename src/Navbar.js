@@ -198,7 +198,7 @@ function Navbar() {
           {/* Free Download Button (Desktop Only) */}
 
           <div className="hidden lg:flex lg:gap-3">
-            <Link to="/extrapage" className=" ">
+            <Link to="/download" className=" ">
               <button
                   className="bg-[#31BF5C] text-white font-Roboto px-4 py-2 rounded text-[14px] flex items-center gap-2">
                 <IoGridSharp className="w-5 h-5"/>
@@ -383,7 +383,7 @@ function Navbar() {
 
             <li>
               <Link
-                  to="/extrapage"
+                  to="/download"
                   onClick={toggleMenu}
                   className="bg-[#31BF5C] text-white px-4 py-2 rounded flex items-center gap-2"
               >

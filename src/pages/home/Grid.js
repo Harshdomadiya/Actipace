@@ -47,7 +47,7 @@ function Grid() {
         </div>
         <div className="flex  flex-col items-center gap-4 mt-[30px] mb-[30px]">
           <div className="">
-            <Link to="/extrapage"><button className="bg-[#31BF5C] text-[10px] p-2 lg:text-[14px] text-white font-Roboto lg:py-3 lg:px-3  rounded-md">
+            <Link to="/download"><button className="bg-[#31BF5C] text-[10px] p-2 lg:text-[14px] text-white font-Roboto lg:py-3 lg:px-3  rounded-md">
               Start now - It's free
             </button></Link>
           </div>
