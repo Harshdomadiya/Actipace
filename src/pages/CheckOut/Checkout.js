@@ -57,7 +57,7 @@ const Checkout = () => {
             <div className="lg:w-1/2 bg-white flex  items-center justify-center">
                 <div className="w-[500px] lg:ml-[60px] mx-4">
                     <h2 className="text-2xl  text-[#111827] mt-10 font-roboto text-[35px] font-normal mb-6">Checkout</h2>
-                    <form id="checkoutForm"  className="space-y-4 font-roboto text-[14px]">
+                    <form id="checkoutForm" onSubmit={handleSubmit} className="space-y-4 font-roboto text-[14px]">
                         <div>
                             <label htmlFor="fullName" className="block text-[#111827] font-medium">Full Name<span
                                 className="text-red-500"> *</span></label>
@@ -224,7 +224,7 @@ const Checkout = () => {
                                     website Terms of Use </a>.
                                 </label>
                             </div>
-                            <button onClick={handleSubmit} form="checkoutForm" type="submit"
+                            <button form="checkoutForm" type="submit"
                                     className='my-6 bg-[#31BF5C] text-white rounded-[10px] text-[16px] w-full font-semibold h-[50px] flex items-center justify-center'>pay
                                 now
                             </button>
