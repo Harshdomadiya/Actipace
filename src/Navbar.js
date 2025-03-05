@@ -161,38 +161,38 @@ function Navbar() {
               Contact
             </Link>
 
-            <div className="relative">
-              <button
-                  className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"
-                  onClick={toggleDropdown}
-              >
-                <img
-                    src={options.find((o) => o.value === curr)?.img}
-                    alt={curr}
-                    className="w-6 h-6 mr-2"
-                />
-                {curr}
-                <FaChevronDown className="text-gray-500"/>
-              </button>
-              {isOpen && (
-                  <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">
-                    {options.map((option) => (
-                        <li
-                            key={option.value}
-                            className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                            onClick={() => handleOptionClick(option.value)}
-                        >
-                          <img
-                              src={option.img}
-                              alt={option.label}
-                              className="w-6 h-6 mr-2"
-                          />
-                          {option.label}
-                        </li>
-                    ))}
-                  </ul>
-              )}
-            </div>
+            {/*<div className="relative">*/}
+            {/*  <button*/}
+            {/*      className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
+            {/*      onClick={toggleDropdown}*/}
+            {/*  >*/}
+            {/*    <img*/}
+            {/*        src={options.find((o) => o.value === curr)?.img}*/}
+            {/*        alt={curr}*/}
+            {/*        className="w-6 h-6 mr-2"*/}
+            {/*    />*/}
+            {/*    {curr}*/}
+            {/*    <FaChevronDown className="text-gray-500"/>*/}
+            {/*  </button>*/}
+            {/*  {isOpen && (*/}
+            {/*      <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">*/}
+            {/*        {options.map((option) => (*/}
+            {/*            <li*/}
+            {/*                key={option.value}*/}
+            {/*                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"*/}
+            {/*                onClick={() => handleOptionClick(option.value)}*/}
+            {/*            >*/}
+            {/*              <img*/}
+            {/*                  src={option.img}*/}
+            {/*                  alt={option.label}*/}
+            {/*                  className="w-6 h-6 mr-2"*/}
+            {/*              />*/}
+            {/*              {option.label}*/}
+            {/*            </li>*/}
+            {/*        ))}*/}
+            {/*      </ul>*/}
+            {/*  )}*/}
+            {/*</div>*/}
           </div>
 
           {/* Free Download Button (Desktop Only) */}
@@ -348,38 +348,38 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className="relative">
-              <button
-                  className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"
-                  onClick={toggleDropdown}
-              >
-                <img
-                    src={options.find((o) => o.value === curr)?.img}
-                    alt={curr}
-                    className="w-6 h-6 mr-2"
-                />
-                {curr}
-                <FaChevronDown className="text-gray-500" />
-              </button>
-              {isOpen && (
-                  <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">
-                    {options.map((option) => (
-                        <li
-                            key={option.value}
-                            className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                            onClick={() => handleOptionClick(option.value)}
-                        >
-                          <img
-                              src={option.img}
-                              alt={option.label}
-                              className="w-6 h-6 mr-2"
-                          />
-                          {option.label}
-                        </li>
-                    ))}
-                  </ul>
-              )}
-            </li>
+            {/*<li className="relative">*/}
+            {/*  <button*/}
+            {/*      className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
+            {/*      onClick={toggleDropdown}*/}
+            {/*  >*/}
+            {/*    <img*/}
+            {/*        src={options.find((o) => o.value === curr)?.img}*/}
+            {/*        alt={curr}*/}
+            {/*        className="w-6 h-6 mr-2"*/}
+            {/*    />*/}
+            {/*    {curr}*/}
+            {/*    <FaChevronDown className="text-gray-500" />*/}
+            {/*  </button>*/}
+            {/*  {isOpen && (*/}
+            {/*      <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">*/}
+            {/*        {options.map((option) => (*/}
+            {/*            <li*/}
+            {/*                key={option.value}*/}
+            {/*                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"*/}
+            {/*                onClick={() => handleOptionClick(option.value)}*/}
+            {/*            >*/}
+            {/*              <img*/}
+            {/*                  src={option.img}*/}
+            {/*                  alt={option.label}*/}
+            {/*                  className="w-6 h-6 mr-2"*/}
+            {/*              />*/}
+            {/*              {option.label}*/}
+            {/*            </li>*/}
+            {/*        ))}*/}
+            {/*      </ul>*/}
+            {/*  )}*/}
+            {/*</li>*/}
 
             <li>
               <Link
