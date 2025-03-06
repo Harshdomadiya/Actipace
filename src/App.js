@@ -5,7 +5,7 @@ import Header1 from "./Header1";
 import Footer from "./pages/Footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Product from "./pages/Product/Product";
-import About from "./pages/About/About";
+import About from "./pages/About/About"; 
 import Support from "./pages/Support/Support";
 import Login from "./pages/Dealer-Registation/Login";
 import Signup from "./pages/Dealer-Registation/Signup";
