@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
-      <footer className="bg-gray-900 py-16 w-full h-auto text-white">
+      <footer className="bg-[#2B2A29] py-16 w-full h-auto text-white">
         <div className="container mx-auto px-16">
           <div className="flex flex-col lg:flex-row justify-between">
             {/* First Column */}

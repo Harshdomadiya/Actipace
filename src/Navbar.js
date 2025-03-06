@@ -85,7 +85,7 @@ function Navbar() {
             <Link
                 to="/"
                 className={`hover:text-gray-400 ${
-                    location.pathname === "/" ? "text-[#31BF5C]" : "text-[#071D2B]"
+                    location.pathname === "/" ? "text-[#FA7223]" : "text-[#071D2B]"
                 }`}
             >
               Home
@@ -94,7 +94,7 @@ function Navbar() {
                 to="/product"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/product"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -104,7 +104,7 @@ function Navbar() {
             {/*    to="/login"*/}
             {/*    className={`hover:text-gray-400 ${*/}
             {/*        location.pathname === "/login"*/}
-            {/*            ? "text-[#31BF5C]"*/}
+            {/*            ? "text-[#FA7223]"*/}
             {/*            : "text-[#071D2B]"*/}
             {/*    }`}*/}
             {/*>*/}
@@ -114,7 +114,7 @@ function Navbar() {
                 to="/support"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/support"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -124,7 +124,7 @@ function Navbar() {
                 to="/about"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/about"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -134,7 +134,7 @@ function Navbar() {
                 to="/price"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/price"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -144,7 +144,7 @@ function Navbar() {
                 to="/award"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/award"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -154,7 +154,7 @@ function Navbar() {
                 to="/contact"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/contact"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -163,7 +163,7 @@ function Navbar() {
 
             {/*<div className="relative">*/}
             {/*  <button*/}
-            {/*      className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
+            {/*      className="appearance-none w-[120px] h-[47px] border border-[#FA7223] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
             {/*      onClick={toggleDropdown}*/}
             {/*  >*/}
             {/*    <img*/}
@@ -175,7 +175,7 @@ function Navbar() {
             {/*    <FaChevronDown className="text-gray-500"/>*/}
             {/*  </button>*/}
             {/*  {isOpen && (*/}
-            {/*      <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">*/}
+            {/*      <ul className="absolute w-[120px] border border-[#FA7223] bg-white shadow-md mt-2 z-10">*/}
             {/*        {options.map((option) => (*/}
             {/*            <li*/}
             {/*                key={option.value}*/}
@@ -200,7 +200,7 @@ function Navbar() {
           <div className="hidden lg:flex lg:gap-3">
             <Link to="/download" className=" ">
               <button
-                  className="bg-[#31BF5C] text-white font-Roboto px-4 py-2 rounded text-[14px] flex items-center gap-2">
+                  className="bg-[#FA7223] text-white font-Roboto px-4 py-2 rounded text-[14px] flex items-center gap-2">
                 <IoGridSharp className="w-5 h-5"/>
                 Free Download
               </button>
@@ -208,7 +208,7 @@ function Navbar() {
           </div>
           <button
               onClick={handlesubmit}
-              className="hidden w-10 h-10 rounded-full lg:mr-[-2%]  lg:flex items-center justify-center bg-[#31BF5C]"
+              className="hidden w-10 h-10 rounded-full lg:mr-[-2%]  lg:flex items-center justify-center bg-[#FA7223]"
           >
             <img src={user} alt="user" className="w-6 h-6 "/>
           </button>
@@ -250,7 +250,7 @@ function Navbar() {
                   to="/"
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
-                      location.pathname === "/" ? "text-[#31BF5C]" : "text-[#071D2B]"
+                      location.pathname === "/" ? "text-[#FA7223]" : "text-[#071D2B]"
                   }`}
               >
                 Home
@@ -262,7 +262,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/product"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -275,7 +275,7 @@ function Navbar() {
             {/*      onClick={toggleMenu}*/}
             {/*      className={`hover:text-gray-400 ${*/}
             {/*          location.pathname === "/login"*/}
-            {/*              ? "text-[#31BF5C]"*/}
+            {/*              ? "text-[#FA7223]"*/}
             {/*              : "text-[#071D2B]"*/}
             {/*      }`}*/}
             {/*  >*/}
@@ -288,7 +288,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/support"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -301,7 +301,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/about"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -314,7 +314,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/price"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -327,7 +327,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/award"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -340,7 +340,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/contact"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -350,7 +350,7 @@ function Navbar() {
 
             {/*<li className="relative">*/}
             {/*  <button*/}
-            {/*      className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
+            {/*      className="appearance-none w-[120px] h-[47px] border border-[#FA7223] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
             {/*      onClick={toggleDropdown}*/}
             {/*  >*/}
             {/*    <img*/}
@@ -362,7 +362,7 @@ function Navbar() {
             {/*    <FaChevronDown className="text-gray-500" />*/}
             {/*  </button>*/}
             {/*  {isOpen && (*/}
-            {/*      <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">*/}
+            {/*      <ul className="absolute w-[120px] border border-[#FA7223] bg-white shadow-md mt-2 z-10">*/}
             {/*        {options.map((option) => (*/}
             {/*            <li*/}
             {/*                key={option.value}*/}
@@ -385,7 +385,7 @@ function Navbar() {
               <Link
                   to="/download"
                   onClick={toggleMenu}
-                  className="bg-[#31BF5C] text-white px-4 py-2 rounded flex items-center gap-2"
+                  className="bg-[#FA7223] text-white px-4 py-2 rounded flex items-center gap-2"
               >
                 <IoGridSharp className="w-5 h-5" />
                 Free Download

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f042432-9be8-4eed-b3aa-7073d9a9c3ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/Group 75.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/Group 77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/Group 79.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/Group 80.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/Image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/Image2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/home/image/secondary_arrow_sm_01.svg fill.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/eg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Header1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/Grid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/Grid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/Section1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/Section1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Background(1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Background(1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame 840.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame 840.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame-2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame-2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame-3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame-3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame-4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame-4.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame-5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame-5.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame-6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame-6.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Frame.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Frame.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Heading 2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Heading1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Image1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Image2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Section.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/image/Section.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/Section3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/image/secondaryarrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/slider/WhyChooseUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/slider/WhyChooseUs.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2twAClmm3fdRnXLqACccO5QDm4N" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/home/image" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f042432-9be8-4eed-b3aa-7073d9a9c3ac" name="Changes" comment="" />
+      <created>1741252639802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741252639802</updated>
+      <workItem from="1741252640990" duration="4635000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
