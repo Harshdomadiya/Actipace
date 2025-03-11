@@ -33,7 +33,7 @@ const mailSender = async (email, title, body) => {
         console.log("Email sent successfully:", info);
     } catch (e) {
         console.error("Error sending email:", e.message);
-        throw error;
+        throw e;
     }
 };
 
