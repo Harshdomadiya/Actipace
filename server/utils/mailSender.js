@@ -7,7 +7,7 @@ const mailSender = async (email, title, body) => {
         let transporter = nodemailer.createTransport({
             host: process.env.MAIL_HOST,
             port: parseInt(process.env.MAIL_PORT) || 587,
-            secure: process.env.MAIL_PORT === 465,
+            secure: parseInt(process.env.MAIL_PORT) === 465,
             auth: {
                 user: process.env.MAIL_USER,
                 pass: process.env.MAIL_PASS,
@@ -16,7 +16,12 @@ const mailSender = async (email, title, body) => {
                 rejectUnauthorized: false,
             },
         });
-
+        console.log("SMTP CONFIG:", {
+            host: process.env.MAIL_HOST,
+            port: process.env.MAIL_PORT,
+            user: process.env.MAIL_USER,
+            from: process.env.MAIL_FROM,
+        });
 
         let info = await transporter.sendMail({
             from: `Actipace <${process.env.MAIL_FROM}>`,
