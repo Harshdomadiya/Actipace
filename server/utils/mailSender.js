@@ -16,12 +16,7 @@ const mailSender = async (email, title, body) => {
                 rejectUnauthorized: false,
             },
         });
-        console.log("SMTP CONFIG:", {
-            host: process.env.MAIL_HOST,
-            port: process.env.MAIL_PORT,
-            user: process.env.MAIL_USER,
-            from: process.env.MAIL_FROM,
-        });
+
 
         let info = await transporter.sendMail({
             from: `Actipace <${process.env.MAIL_FROM}>`,
