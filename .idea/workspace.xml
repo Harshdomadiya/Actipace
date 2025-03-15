@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/mailSender.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/mailSender.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <workItem from="1741616946662" duration="167000" />
       <workItem from="1741701954052" duration="4299000" />
       <workItem from="1741761967466" duration="575000" />
-      <workItem from="1742022592314" duration="335000" />
+      <workItem from="1742022592314" duration="1094000" />
     </task>
     <servers />
   </component>
