@@ -25,8 +25,6 @@ const mailSender = async (email, title, body) => {
             subject: title,
             htmlbody: body,
         });
-
-        console.log("Email sent successfully:", response);
         return response;
     } catch (e) {
         console.error("Error sending email:", e.message);

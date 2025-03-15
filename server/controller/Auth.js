@@ -58,7 +58,7 @@ exports.otpSender =  async (req,res) =>{
         await axios.post(`https://actipace.com/smsapi/send.php?mobile=${mobileNo}&otp=${otp}`);
         //console.log(resotp.data);
 
-        //await mailSender(email,"verification through otp",otp);
+        await mailSender(email,"Your One-Time Password (OTP) for Verification",otp);
 
         return res.status(200).json({ message: 'OTP sent successfully' });
 
@@ -176,7 +176,7 @@ exports.LoginOtp = async (req,res) =>{
 
             await axios.post(`https://actipace.com/smsapi/send.php?mobile=${info.mobileNo}&otp=${otp}`);
 
-            // await mailSender(email,"verification through otp",otp);
+            await mailSender(email,"Your One-Time Password (OTP) for Verification",otp);
 
             return res.status(200).json({ message: 'OTP sent successfully' });
 
