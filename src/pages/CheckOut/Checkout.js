@@ -9,7 +9,7 @@ import {Currency} from "../../Atoms";
 const Checkout = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const data = location.state;
+    const data = location.state ;
 
 
     const [formData, setFormData] = useState({
@@ -22,8 +22,8 @@ const Checkout = () => {
         city: '',
         state: '',
         zipCode: '',
-        gstin: '',
-        termsAccepted: false,
+        gstin: '0',
+        termsAccepted: true,
         policyAccepted: false,
     });
 
@@ -46,6 +46,7 @@ const Checkout = () => {
         data.amount = finalA
         const Data = {...formData, ...data};
         data.amount = amt;
+        console.log(data)
         await buycourse(Data, navigate);
     };
 
@@ -201,39 +202,42 @@ const Checkout = () => {
                             />
                         </div>
 
-                        <div className="flex items-center">
-                            <input
-                                type="checkbox"
-                                className="w-5 h-5 text-[#31BF5C]  rounded-[6px] bg-[#31BF5C] focus:ring-[#31BF5C]"
-                                id="termsAccepted"
-                                name="termsAccepted"
-                                checked={formData.termsAccepted}
-                                onChange={handleChange}
-                            />
-                            <label htmlFor="termsAccepted" className="ml-2 text-[#111827]">
-                                I have read and agree to the <a className="text-[#31BF5C]" target="_blank" href="https://actipace.com/terms">Terms and Conditions.</a>
-                            </label>
+                        <div className="flex-col">
+                            <div className="flex">
+                                <input
+                                    type="checkbox"
+                                    className="w-10 h-10 text-[#31BF5C] rounded-[6px] bg-[#31BF5C] focus:ring-[#31BF5C]"
+                                    id="policyAccepted"
+                                    name="policyAccepted"
+                                    checked={formData.policyAccepted}
+                                    onChange={handleChange}
+                                />
+                                <label htmlFor="policyAccepted" className="ml-2 text-[#111827]">
+                                    I acknowledge that I have read and I agree to the<a className="text-[#31BF5C]"
+                                                                                        target="_blank"
+                                                                                        href="https://actipace.com/terms">Terms
+                                    and Conditions</a>,<a className="text-[#31BF5C]" target="_blank"
+                                                          href="https://actipace.com/agreement/lic.txt"> End-User
+                                    License
+                                    Agreement</a>,<a target="_blank" className="text-[#31BF5C]"
+                                                     href="https://actipace.com/refund/"> Payment
+                                    Terms and Conditions</a>, <a target="_blank" className="text-[#31BF5C]"
+                                                                 href="https://actipace.com/privacy/">Privacy Policy and
+                                    website Terms of Use </a>.
+                                </label>
+                            </div>
+                            <button form="checkoutForm" type="submit"
+                                    className='my-6 bg-[#31BF5C] text-white rounded-[10px] text-[16px] w-full font-semibold h-[50px] flex items-center justify-center'>pay
+                                now
+                            </button>
                         </div>
 
-                        <div className="flex ">
-                            <input
-                                type="checkbox"
-                                className="w-5 h-5 text-[#31BF5C] rounded-[6px] bg-[#31BF5C] focus:ring-[#31BF5C]"
-                                id="policyAccepted"
-                                name="policyAccepted"
-                                checked={formData.policyAccepted}
-                                onChange={handleChange}
-                            />
-                            <label htmlFor="policyAccepted" className="ml-2 text-[#111827]">
-                                I acknowledge that I have read and I agree to the <a className="text-[#31BF5C]" target="_blank" href="https://actipace.com/agreement/lic.txt"> End-User License Agreement</a>,<a target="_blank" className="text-[#31BF5C]" href="https://actipace.com/refund/"> Payment
-                                Terms and Conditions</a>, <a target="_blank" className="text-[#31BF5C]" href="https://actipace.com/privacy/">Privacy Policy and website Terms of Use </a>
-                            </label>
-                        </div>
 
                     </form>
                 </div>
             </div>
-            <div className="lg:w-1/2 lg:mx-0 mx-4 bg-[#ECFDF1] flex justify-center text-[#111827] font-roboto font-normal">
+            <div
+                className="lg:w-1/2 lg:mx-0 mx-4 bg-[#ECFDF1] flex justify-center text-[#111827] font-roboto font-normal">
                 <div className='w-[500px] h-[450px] mt-10  flex flex-col gap-5'>
                     <div className='text-[35px]'>
                         Order Summary
@@ -243,7 +247,7 @@ const Checkout = () => {
                     </div>
                     <div className='h-[120px] flex justify-between '>
                         <div className='flex gap-5'>
-                            <div  className='w-[120px] h-[120px] bg-white border rounded-[10px]'/>
+                            <div className='w-[120px] h-[120px] bg-white border rounded-[10px]'/>
                             <div className='flex flex-col justify-between'>
                                 <div className='text-[18px] font-semibold'>
                                     {data.name}
@@ -285,10 +289,6 @@ const Checkout = () => {
                                 <PiCurrencyInr className="h-[14px] w-[14px]"/>}{finalmaount}</div>
                         </div>
                     </div>
-                    <button form="checkoutForm" type="submit"
-                            className='bg-[#31BF5C] text-white rounded-[10px] text-[16px] font-semibold h-[50px] flex items-center justify-center'>pay
-                        now
-                    </button>
                 </div>
             </div>
         </div>

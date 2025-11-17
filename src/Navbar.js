@@ -43,7 +43,7 @@ function Navbar() {
           navigate("./dashboard", { state: data }); // Ensure it's an array
         }
         else {
-          toast.error("No data found");
+          toast.error("No data found"); 
         }
 
 
@@ -77,14 +77,15 @@ function Navbar() {
       <nav className="bg-white text-[#071D2B] w-full shadow-md relative">
         <div className="container mx-auto flex items-center justify-between px-4 py-4 lg:px-8 lg:py-4">
           {/* Logo */}
+          <Link to="/">
           <img src={logo} alt="Logo" className="w-[140px] h-auto"/>
-
+          </Link>
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-8">
             <Link
                 to="/"
                 className={`hover:text-gray-400 ${
-                    location.pathname === "/" ? "text-[#31BF5C]" : "text-[#071D2B]"
+                    location.pathname === "/" ? "text-[#FA7223]" : "text-[#071D2B]"
                 }`}
             >
               Home
@@ -93,27 +94,27 @@ function Navbar() {
                 to="/product"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/product"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
               Product
             </Link>
-            <Link
-                to="/login"
-                className={`hover:text-gray-400 ${
-                    location.pathname === "/login"
-                        ? "text-[#31BF5C]"
-                        : "text-[#071D2B]"
-                }`}
-            >
-              Dealer Registration
-            </Link>
+            {/*<Link*/}
+            {/*    to="/login"*/}
+            {/*    className={`hover:text-gray-400 ${*/}
+            {/*        location.pathname === "/login"*/}
+            {/*            ? "text-[#FA7223]"*/}
+            {/*            : "text-[#071D2B]"*/}
+            {/*    }`}*/}
+            {/*>*/}
+            {/*  Dealer Registration*/}
+            {/*</Link>*/}
             <Link
                 to="/support"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/support"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -123,7 +124,7 @@ function Navbar() {
                 to="/about"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/about"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -133,7 +134,7 @@ function Navbar() {
                 to="/price"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/price"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -143,7 +144,7 @@ function Navbar() {
                 to="/award"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/award"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
@@ -153,53 +154,53 @@ function Navbar() {
                 to="/contact"
                 className={`hover:text-gray-400 ${
                     location.pathname === "/contact"
-                        ? "text-[#31BF5C]"
+                        ? "text-[#FA7223]"
                         : "text-[#071D2B]"
                 }`}
             >
               Contact
             </Link>
 
-            <div className="relative">
-              <button
-                  className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"
-                  onClick={toggleDropdown}
-              >
-                <img
-                    src={options.find((o) => o.value === curr)?.img}
-                    alt={curr}
-                    className="w-6 h-6 mr-2"
-                />
-                {curr}
-                <FaChevronDown className="text-gray-500"/>
-              </button>
-              {isOpen && (
-                  <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">
-                    {options.map((option) => (
-                        <li
-                            key={option.value}
-                            className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                            onClick={() => handleOptionClick(option.value)}
-                        >
-                          <img
-                              src={option.img}
-                              alt={option.label}
-                              className="w-6 h-6 mr-2"
-                          />
-                          {option.label}
-                        </li>
-                    ))}
-                  </ul>
-              )}
-            </div>
+            {/*<div className="relative">*/}
+            {/*  <button*/}
+            {/*      className="appearance-none w-[120px] h-[47px] border border-[#FA7223] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
+            {/*      onClick={toggleDropdown}*/}
+            {/*  >*/}
+            {/*    <img*/}
+            {/*        src={options.find((o) => o.value === curr)?.img}*/}
+            {/*        alt={curr}*/}
+            {/*        className="w-6 h-6 mr-2"*/}
+            {/*    />*/}
+            {/*    {curr}*/}
+            {/*    <FaChevronDown className="text-gray-500"/>*/}
+            {/*  </button>*/}
+            {/*  {isOpen && (*/}
+            {/*      <ul className="absolute w-[120px] border border-[#FA7223] bg-white shadow-md mt-2 z-10">*/}
+            {/*        {options.map((option) => (*/}
+            {/*            <li*/}
+            {/*                key={option.value}*/}
+            {/*                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"*/}
+            {/*                onClick={() => handleOptionClick(option.value)}*/}
+            {/*            >*/}
+            {/*              <img*/}
+            {/*                  src={option.img}*/}
+            {/*                  alt={option.label}*/}
+            {/*                  className="w-6 h-6 mr-2"*/}
+            {/*              />*/}
+            {/*              {option.label}*/}
+            {/*            </li>*/}
+            {/*        ))}*/}
+            {/*      </ul>*/}
+            {/*  )}*/}
+            {/*</div>*/}
           </div>
 
           {/* Free Download Button (Desktop Only) */}
 
           <div className="hidden lg:flex lg:gap-3">
-            <Link to="/extrapage" className=" ">
+            <Link to="/download" className=" ">
               <button
-                  className="bg-[#31BF5C] text-white font-Roboto px-4 py-2 rounded text-[14px] flex items-center gap-2">
+                  className="bg-[#FA7223] text-white font-Roboto px-4 py-2 rounded text-[14px] flex items-center gap-2">
                 <IoGridSharp className="w-5 h-5"/>
                 Free Download
               </button>
@@ -207,7 +208,7 @@ function Navbar() {
           </div>
           <button
               onClick={handlesubmit}
-              className="hidden w-10 h-10 rounded-full lg:mr-[-2%]  lg:flex items-center justify-center bg-[#31BF5C]"
+              className="hidden w-10 h-10 rounded-full lg:mr-[-2%]  lg:flex items-center justify-center bg-[#FA7223]"
           >
             <img src={user} alt="user" className="w-6 h-6 "/>
           </button>
@@ -249,7 +250,7 @@ function Navbar() {
                   to="/"
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
-                      location.pathname === "/" ? "text-[#31BF5C]" : "text-[#071D2B]"
+                      location.pathname === "/" ? "text-[#FA7223]" : "text-[#071D2B]"
                   }`}
               >
                 Home
@@ -261,33 +262,33 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/product"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
                 Product
               </Link>
             </li>
-            <li>
-              <Link
-                  to="/login"
-                  onClick={toggleMenu}
-                  className={`hover:text-gray-400 ${
-                      location.pathname === "/login"
-                          ? "text-[#31BF5C]"
-                          : "text-[#071D2B]"
-                  }`}
-              >
-                Dealer Registration
-              </Link>
-            </li>
+            {/*<li>*/}
+            {/*  <Link*/}
+            {/*      to="/login"*/}
+            {/*      onClick={toggleMenu}*/}
+            {/*      className={`hover:text-gray-400 ${*/}
+            {/*          location.pathname === "/login"*/}
+            {/*              ? "text-[#FA7223]"*/}
+            {/*              : "text-[#071D2B]"*/}
+            {/*      }`}*/}
+            {/*  >*/}
+            {/*    Dealer Registration*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             <li>
               <Link
                   to="/support"
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/support"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -300,7 +301,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/about"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -313,7 +314,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/price"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -326,7 +327,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/award"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -339,7 +340,7 @@ function Navbar() {
                   onClick={toggleMenu}
                   className={`hover:text-gray-400 ${
                       location.pathname === "/contact"
-                          ? "text-[#31BF5C]"
+                          ? "text-[#FA7223]"
                           : "text-[#071D2B]"
                   }`}
               >
@@ -347,44 +348,44 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className="relative">
-              <button
-                  className="appearance-none w-[120px] h-[47px] border border-[#31BF5C] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"
-                  onClick={toggleDropdown}
-              >
-                <img
-                    src={options.find((o) => o.value === curr)?.img}
-                    alt={curr}
-                    className="w-6 h-6 mr-2"
-                />
-                {curr}
-                <FaChevronDown className="text-gray-500" />
-              </button>
-              {isOpen && (
-                  <ul className="absolute w-[120px] border border-[#31BF5C] bg-white shadow-md mt-2 z-10">
-                    {options.map((option) => (
-                        <li
-                            key={option.value}
-                            className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                            onClick={() => handleOptionClick(option.value)}
-                        >
-                          <img
-                              src={option.img}
-                              alt={option.label}
-                              className="w-6 h-6 mr-2"
-                          />
-                          {option.label}
-                        </li>
-                    ))}
-                  </ul>
-              )}
-            </li>
+            {/*<li className="relative">*/}
+            {/*  <button*/}
+            {/*      className="appearance-none w-[120px] h-[47px] border border-[#FA7223] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
+            {/*      onClick={toggleDropdown}*/}
+            {/*  >*/}
+            {/*    <img*/}
+            {/*        src={options.find((o) => o.value === curr)?.img}*/}
+            {/*        alt={curr}*/}
+            {/*        className="w-6 h-6 mr-2"*/}
+            {/*    />*/}
+            {/*    {curr}*/}
+            {/*    <FaChevronDown className="text-gray-500" />*/}
+            {/*  </button>*/}
+            {/*  {isOpen && (*/}
+            {/*      <ul className="absolute w-[120px] border border-[#FA7223] bg-white shadow-md mt-2 z-10">*/}
+            {/*        {options.map((option) => (*/}
+            {/*            <li*/}
+            {/*                key={option.value}*/}
+            {/*                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"*/}
+            {/*                onClick={() => handleOptionClick(option.value)}*/}
+            {/*            >*/}
+            {/*              <img*/}
+            {/*                  src={option.img}*/}
+            {/*                  alt={option.label}*/}
+            {/*                  className="w-6 h-6 mr-2"*/}
+            {/*              />*/}
+            {/*              {option.label}*/}
+            {/*            </li>*/}
+            {/*        ))}*/}
+            {/*      </ul>*/}
+            {/*  )}*/}
+            {/*</li>*/}
 
             <li>
               <Link
-                  to="/extrapage"
+                  to="/download"
                   onClick={toggleMenu}
-                  className="bg-[#31BF5C] text-white px-4 py-2 rounded flex items-center gap-2"
+                  className="bg-[#FA7223] text-white px-4 py-2 rounded flex items-center gap-2"
               >
                 <IoGridSharp className="w-5 h-5" />
                 Free Download

@@ -1,15 +1,15 @@
 import React from "react";
 import bg1 from "./image/cleanup_bg.jpg.svg";
-import Heading1 from "./image/Heading1.png";
+import Heading1 from "./image/Group 75.svg";
 import HomeEmg from "./image/Home.svg";
 import Clip from "./image/Clip.png";
-import image1 from "./image/Image1.png";
-import image2 from "./image/Image2.png";
+import image1 from "./image/Image.svg";
+import image2 from "./image/Image2.svg";
 import Frame840 from "./image/Frame 840.svg";
 import Background from "./image/Background.png";
 import Background1 from "./image/Background(1).png";
 import actipace_a from "./image/actipace-a.png";
-import heading2 from "./image/Heading 2.svg";
+import heading2 from "./image/Group 77.png";
 import frame1 from "./image/video_homepage.webm.png"
 import { Link, useNavigate } from "react-router-dom";
 import { IoGridSharp } from "react-icons/io5";
@@ -36,8 +36,8 @@ function Section1() {
              </p>
           </div>
           <div>
-          <Link to={"/extrapage"}>
-          <button className=" bg-[#31BF5C] text-white font-Roboto rounded-[400px] w-[200px] h-[50px] flex justify-center items-center gap-3 text-[14px] hover:scale-95 transition-all duration-200">
+          <Link to={"/download"}>
+          <button className=" bg-[#FA7223] text-white font-Roboto rounded-[400px] w-[200px] h-[50px] flex justify-center items-center gap-3 text-[14px] hover:scale-95 transition-all duration-200">
             <IoGridSharp className="w-[25px] h-[25px]"/>
             Free Download
           </button>
@@ -79,7 +79,7 @@ function Section1() {
       <div className="w-full h-[320px] lg:h-[510px] relative z-8 mt-[-105px] lg:mt-[-50px] " >
           <img src={Frame840} alt="840" className="absolute h-[550px]  lg:w-full lg:object-cover" />
           <div className="absolute z-11 mt-[250px] flex justify-center items-center w-full lg:mt-[441px]">
-              <button onClick={()=>navigate("/extrapage")} className="text-[11px] absolute w-[120px]  h-[35px] text-[#31BF5C] bg-white font-Roboto rounded-[400px] lg:w-[220px] lg:h-[55px] flex justify-center font-semibold items-center gap-3 lg:text-[14px]">
+              <button onClick={()=>navigate("/download")} className="text-[11px] absolute w-[120px]  h-[35px] text-[#FA7223] bg-white font-Roboto rounded-[400px] lg:w-[220px] lg:h-[55px] flex justify-center font-semibold items-center gap-3 lg:text-[14px]">
                 <IoGridSharp className="w-[20px] h-[20px] lg:w-[25px] lg:h-[25px]"/>
                 Free Download
               </button>
@@ -99,10 +99,10 @@ function Section1() {
        
         <div className="absolute flex items-center flex-col gap-4 justify-center w-full mt-[35px] lg:mt-[65px] lg:gap-7">
           {/* level up your quality work */}
-          
+
           <img src={heading2} alt="C" className="w-[300px] lg:h-[70px] lg:w-[800px]" />
           <img src={frame1} alt="" className="w-[300px] lg:h-[450px] lg:w-[800px] rounded-[10px]  object-cover"/>
-          
+
         </div>
 
         {/* </div> */}

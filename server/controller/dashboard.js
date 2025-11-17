@@ -26,18 +26,22 @@ exports.dashboard = async (req, res) => {
       },
     });
 
+    const apiResponse = await axios.get(
+        `https://actipace.com/ts/deviceget.php?email=${email}`
+    );
+
     // Check if no purchase plans exist for the user
     if (!data || data.length === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "You don't have any purchase plans.",
-      });
+      if (!apiResponse.data || apiResponse.data.length === 0) {
+        return res.status(404).json({
+          success: false,
+          message: "You don't have any purchase plans.",
+        });
+      }
     }
 
     // Fetch license data from the external API
-    const apiResponse = await axios.get(
-      `https://actipace.com/ts/deviceget.php?email=${email}`
-    );
+
 
     const licenses = [];
     let count = 0;
@@ -49,11 +53,13 @@ exports.dashboard = async (req, res) => {
       count = Number(apiData[0]);
 
       // Process and parse license details
-      for (let i = 1; i < apiData.length; i += 3) {
+      for (let i = 1; i < apiData.length; i += 5) {
         licenses.push({
           licenseKey: apiData[i],
           computerName: apiData[i + 1],
           operatingSystem: apiData[i + 2],
+          expiry: apiData[i + 3],
+          plan1 : apiData[i + 4],
         });
       }
     }

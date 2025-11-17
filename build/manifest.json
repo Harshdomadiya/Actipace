@@ -3,17 +3,17 @@
   "name": "Actipace",
   "icons": [
     {
-      "src": "actipace_favicon.svg",
+      "src": "https://actipace.com/live/favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "actipace_favicon.svg",
+      "src": "https://actipace.com/live/favicon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "actipace_favicon.svg",
+      "src": "https://actipace.com/live/favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
