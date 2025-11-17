@@ -32,7 +32,7 @@ exports.resetPasswordToken = async(req,res) =>{
                                         }
                                 })
         
-        const url = `https://actipace.com/newpassword/${token}`;
+        const url = `http://localhost:3000/newpassword/${token}`;
 
         await mailSender(email,"Password Reset Link",`Password Reset Link: ${url}`)
 

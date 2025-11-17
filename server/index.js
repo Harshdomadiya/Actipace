@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(coockiePaser());
 app.use(
     cors({
-        origin:"https://www.actipace.com",
+        origin:"http://localhost:3000",
         credentials:true,
     })
 )
@@ -35,4 +35,3 @@ app.get('*', (req, res) => {
 app.listen(PORT,()=>{
     console.log("app is running successfully",PORT)
 })
-

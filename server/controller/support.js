@@ -18,7 +18,7 @@ exports.support = async (req,res) =>{
         {
             return res.status(402).json({
                 success:false,
-                message:"all fields are required"
+                message:"all fields are require"
             })
         }
 
@@ -39,7 +39,7 @@ exports.support = async (req,res) =>{
 
         return res.status(200).json({
             success:true,
-            message:"Our team will contact you soon...."
+            message:"Our team contact you soon...."
         })
 
     }catch(e){

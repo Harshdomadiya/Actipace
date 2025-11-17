@@ -65,7 +65,7 @@ export async function buycourse(data,navigate) {
     }catch(e){
         // console.log("PAYMENT IN ERROR....",e);
         // console.log("could not make payment")
-        toast.error(e.response.data.message);
+        toast.error(e.response.data.message)
         //navigate("/login")
         
     } 
