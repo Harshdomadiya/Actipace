@@ -2,8 +2,8 @@ import React from "react";
 import Section from "./image/Section.png";
 import SectionErrow from "./image/SectionErrow.png";
 import Section2 from "./image/Section2.png";
-import Section3 from "./image/Section3.png";
-import secondaryarrow from "./image/secondaryarrow.png";
+import Section3 from "./image/Group 80.svg";
+import secondaryarrow from "./image/secondary_arrow_sm_01.svg fill.svg";
 import { Link } from "react-router-dom";
 import features from "./Feature"
 function Grid() {
@@ -43,11 +43,11 @@ function Grid() {
 
       <div>
         <div className="flex items-center justify-center w-full">
-          <img src={Section3} alt="" className="w-[1000px]"></img>
+          <img src={Section3} alt="" className="w-[500px]"></img>
         </div>
         <div className="flex  flex-col items-center gap-4 mt-[30px] mb-[30px]">
           <div className="">
-            <Link to="/extrapage"><button className="bg-[#31BF5C] text-[10px] p-2 lg:text-[14px] text-white font-Roboto lg:py-3 lg:px-3  rounded-md">
+            <Link to="/download"><button className="bg-[#FA7223] text-[10px] p-2 lg:text-[14px] text-white font-Roboto lg:py-3 lg:px-3  rounded-md">
               Start now - It's free
             </button></Link>
           </div>

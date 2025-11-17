@@ -1,5 +1,5 @@
 const express = require('express');
-const { otpSender, signUp, LoginOtp, Login } = require('../controller/Auth');
+const { otpSender, signUp, LoginOtp, Login, logout} = require('../controller/Auth');
 const { resetPasswordToken, resetPassword } = require('../controller/resetpassword');
 const { capturePayment, verifySignature } = require('../controller/payment');
 const { auth } = require('../middlewares/auth');
@@ -15,6 +15,7 @@ router.post("/otpsender",otpSender);
 router.post("/signUp",signUp);
 router.post("/otplogin",LoginOtp);
 router.post("/login",Login);
+router.post("/logout",logout);
 
 router.post("/resetPasswordToken",resetPasswordToken);
 router.post("/resetPassword",resetPassword);
