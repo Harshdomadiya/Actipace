@@ -5,7 +5,7 @@ import Header1 from "./Header1";
 import Footer from "./pages/Footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Product from "./pages/Product/Product";
-import About from "./pages/About/About"; 
+import About from "./pages/About/About";
 import Support from "./pages/Support/Support";
 import Login from "./pages/Dealer-Registation/Login";
 import Signup from "./pages/Dealer-Registation/Signup";
@@ -47,7 +47,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/award" element={<Award />} />
-        <Route path="/download" element={<ExtraPage />} />
+        <Route path="/extrapage" element={<ExtraPage />} />
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/dashboard" element={<UserDashboard/>}/>
         <Route path="/price" element={<Suspense fallback={"loding...."}><Price /></Suspense>} />

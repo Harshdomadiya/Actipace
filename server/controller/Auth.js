@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 require("dotenv").config();
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
-const axios = require("axios");
 
 //otpsending
 exports.otpSender =  async (req,res) =>{
@@ -13,30 +12,19 @@ exports.otpSender =  async (req,res) =>{
         //fetch data from frontend
         const{
             email,
-            mobileNo
         } = req.body;
 
         if(!email)
         {
             return res.status(403).json({
                 success:false,
-                message:"All fields are required"
+                message:"All fields are required"   
             })
         }
 
         const user = await prisma.User.findUnique({where:{email}});
 
         if(user)
-        {
-            return res.status(401).json({
-                success:false,
-                message:"User already Registered"
-            })
-        }
-
-        const user1 = await prisma.User.findUnique({where:{mobileNo}});
-
-        if(user1)
         {
             return res.status(401).json({
                 success:false,
@@ -54,11 +42,8 @@ exports.otpSender =  async (req,res) =>{
             update: { otp, otpExpires },
             create: { email, otp, otpExpires },
         });
-        //console.log("otp",otp);
-        await axios.post(`https://actipace.com/smsapi/send.php?mobile=${mobileNo}&otp=${otp}`);
-        //console.log(resotp.data);
 
-        await mailSender(email,"Your One-Time Password (OTP) for Verification",otp);
+        await mailSender(email,"verification through otp",otp);
 
         return res.status(200).json({ message: 'OTP sent successfully' });
 
@@ -85,10 +70,10 @@ exports.signUp = async (req,res) =>{
 
         if(!email || !password || !mobileNo || !address || !state || !city || !country || !pincode || !otp)
         {
-            return res.status(406).json({
-                success:false,
-                message:"All fields are required"
-            })
+                return res.status(406).json({
+                    success:false,
+                    message:"All fields are required"   
+                })
         }
 
         const user = await prisma.Otp.findUnique({where:{email}});
@@ -99,7 +84,7 @@ exports.signUp = async (req,res) =>{
 
         if (new Date() > user.otpExpires) throw new Error('OTP expired');
 
-        const hashpassword = await bcrypt.hash(password,10);
+        const hashpassword = await bcrypt.hash(password,10); 
 
         const User = await prisma.User.create({
             data:{
@@ -150,7 +135,6 @@ exports.LoginOtp = async (req,res) =>{
         }
 
         const info =await  prisma.User.findUnique({where:{email}})
-        console.log("info",info);
 
         if(!info)
         {
@@ -173,13 +157,10 @@ exports.LoginOtp = async (req,res) =>{
                 create: { email, otp, otpExpires },
             });
 
-
-            await axios.post(`https://actipace.com/smsapi/send.php?mobile=${info.mobileNo}&otp=${otp}`);
-
-            await mailSender(email,"Your One-Time Password (OTP) for Verification",otp);
+            await mailSender(email,"verification through otp",otp);
 
             return res.status(200).json({ message: 'OTP sent successfully' });
-
+           
         }
         else
         {
@@ -211,12 +192,12 @@ exports.Login = async(req,res) =>{
         {
             return res.status(401).json({
                 success:false,
-                message:"All fields are required"
+                message:"All fields are required"   
             })
         }
 
         const user = await prisma.otp.findUnique({where:{email}});
-        // console.log(user)
+       // console.log(user)
 
         if (!user) throw new Error('User not found');
 
@@ -242,7 +223,7 @@ exports.Login = async(req,res) =>{
         info.password = undefined;
 
         const options = {
-            expires: new Date(Date.now() + 3*24*60*60*1000),
+            expires: new Date(Date.now() + 3*24*60*60*1000), 
             httpOnly:true
         }
 
@@ -263,21 +244,3 @@ exports.Login = async(req,res) =>{
     }
 }
 
-exports.logout = async(req,res) =>{
-    try {
-        res.clearCookie("token", {
-            httpOnly: true
-        });
-
-        return res.status(200).json({
-            success: true,
-            message: "Logged out successfully"
-        });
-    }
-    catch (e){
-        return res.status(500).json({
-            success:false,
-            message: "Logout failed"
-        })
-    }
-}

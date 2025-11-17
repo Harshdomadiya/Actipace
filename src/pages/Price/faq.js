@@ -8,7 +8,7 @@ const faq = {
             },
             {
                 question: "I set Password Protection in Actipace antivirus. But I have forgotten my password now. How can I retrieve my password?",
-                answer: "Click settings within Actipace, and you will be prompted to enter your password. On the same dialog box, you will find a Forgot password? button. Click this button to initiate the password retrieval process. Password Reset ID received via email when first time enable Product Protection. You can also reach out to our technical support team at, <a href='https://actipace.com/support-ticket/' target='_blank' class='text-blue-600 underline'>https://actipace.com/support-ticket/</a>"
+                answer: "Click settings within Actipace, and you will be prompted to enter your password. On the same dialog box, you will find a Forgot password? button. Click this button to initiate the password retrieval process. Password Reset ID received via email when first time enable Product Protection. You can also reach out to our technical support team at, https://actipace.com/support-ticket/"
             },
             {
                 question: "I want to change my contact details that I provided at the time of registration. How can I do this?",
@@ -45,7 +45,7 @@ const faq = {
             },
             {
                 question: "How do I download and install Actipace antivirus?",
-                answer: "Visit the following link <a href='https://actipace.com/download' target='_blank' class='text-blue-600 underline'>https://actipace.com/download</a>"
+                answer: "Visit the following link https://actipace.com/download"
             },
             {
                 question: "How can I identify whether my operating system is 32-bit or 64-bit?",

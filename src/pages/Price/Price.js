@@ -546,9 +546,9 @@ function Price() {
 
                                             {/* Answer */}
                                             {openQuestion === index && (
-                                                <div className="p-4 bg-gray-50 text-gray-700"
-                                                    dangerouslySetInnerHTML={{__html: q.answer}}
-                                                />
+                                                <div className="p-4 bg-gray-50 text-gray-700">
+                                                    {q.answer}
+                                                </div>
                                             )}
                                         </div>
                                     ))}

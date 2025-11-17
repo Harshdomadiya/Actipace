@@ -6,7 +6,6 @@ export const categories = {
     SIGNUP_API : BASE_URL + "/signup",
     OTPLOGIN_API : BASE_URL + "/otplogin",
     LOGIN_API : BASE_URL + "/login",
-    LOGOUT_API : BASE_URL + "/logout",
     RESETPASSWORDTOKEN_API : BASE_URL + "/resetPasswordToken",
     RESETPASSWORD_API : BASE_URL + "/resetPassword",
     CAPTUREPAYMENT_API : BASE_URL + "/capturePayment",
