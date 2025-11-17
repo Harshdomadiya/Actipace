@@ -35,7 +35,7 @@ exports.contact = async (req,res) =>{
 
         return res.status(200).json({
             success:true,
-            message:"Our team contact you soon...."
+            message:"Our team will contact you soon...."
         })
         
 

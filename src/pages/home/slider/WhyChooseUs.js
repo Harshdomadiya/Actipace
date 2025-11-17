@@ -42,19 +42,19 @@ const WhyChooseUs = ({ t1, t2 }) => {
             className="flex flex-col items-center lg:gap-y-20 lg:justify-between  lg:mt-14 relative lg:w-full lg:h-[700px] lg:max-w-[970px] lg:mx-auto">
             <div className="flex w-full  justify-between items-center">
                 <h1 className="text-[22px] lg:text-[40px] font-semibold lg:mb-4 text-[#151C26] font-roboto ">
-                    <span className="text-[#31BF5C]">{t1} </span>{t2}
+                    <span className="text-[#FA7223]">{t1} </span>{t2}
                 </h1>
 
                 <div className="flex gap-4">
                     <button
                         onClick={prevHandler}
-                        className="w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] bg-[#31BF5C] flex justify-center items-center text-[#FFFFFF]"
+                        className="w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] bg-[#FA7223] flex justify-center items-center text-[#FFFFFF]"
                     >
                         <FiArrowLeft className="lg:w-[30px] lg:h-[30px]"/>
                     </button>
                     <button
                         onClick={nextHandler}
-                        className="w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] bg-[#31BF5C] flex justify-center items-center text-[#FFFFFF]"
+                        className="w-[30px] h-[30px] lg:w-[50px] lg:h-[50px] bg-[#FA7223] flex justify-center items-center text-[#FFFFFF]"
                     >
                         <FiArrowRight className="lg:w-[30px] lg:h-[30px]"/>
                     </button>
@@ -78,7 +78,7 @@ const WhyChooseUs = ({ t1, t2 }) => {
                     <div
                         key={index}
                         className={`w-10 h-1 rounded-lg ${
-                            index === activeGroupIndex ? "bg-green-500" : "bg-gray-500"
+                            index === activeGroupIndex ? "bg-[#FA7223]" : "bg-gray-500"
                         }`}
                     ></div>
                 ))}
