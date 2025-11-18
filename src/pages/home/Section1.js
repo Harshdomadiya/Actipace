@@ -1,6 +1,6 @@
 import React from "react";
 import bg1 from "./image/cleanup_bg.jpg.svg";
-import Heading1 from "./image/inviedge transparent.png"; // This is your 'inviedge by actipace' image
+import Heading1 from "./image/IMG_3342.PNG";
 import HomeEmg from "./image/Home.svg";
 import Clip from "./image/Clip.png";
 import image1 from "./image/Image.svg";
@@ -44,7 +44,7 @@ function Section1() {
                     <img
                         src={Heading1}
                         alt="head"
-                        className="max-w-full h-auto object-contain lg:w-[700px] lg:h-13 lg:mx-20"
+                        className="max-w-full h-auto object-contain lg:w-[600px] px-10 lg:h-13 lg:mx-20"
                     />
 
                     {/* --- TEXT BELOW IMAGE (Set 1 | Setting a New Benchmark... | Kalam Regular | 24px) --- */}
