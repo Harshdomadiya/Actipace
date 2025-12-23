@@ -43,7 +43,7 @@ function Navbar() {
           navigate("./dashboard", { state: data }); // Ensure it's an array
         }
         else {
-          toast.error("No data found"); 
+          toast.error("No data found");
         }
 
 
@@ -161,7 +161,18 @@ function Navbar() {
               Contact
             </Link>
 
-            {/*<div className="relative">*/}
+              <a
+                  href="https://actipace.com/corporate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-400 text-[#071D2B]"
+              >
+                  Corporate
+              </a>
+
+
+
+              {/*<div className="relative">*/}
             {/*  <button*/}
             {/*      className="appearance-none w-[120px] h-[47px] border border-[#FA7223] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
             {/*      onClick={toggleDropdown}*/}
@@ -348,7 +359,21 @@ function Navbar() {
               </Link>
             </li>
 
-            {/*<li className="relative">*/}
+              <li>
+                  <a
+                      href="https://actipace.com/corporate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={toggleMenu}
+                      className="hover:text-gray-400 text-[#071D2B]"
+                  >
+                      Corporate
+                  </a>
+              </li>
+
+
+
+              {/*<li className="relative">*/}
             {/*  <button*/}
             {/*      className="appearance-none w-[120px] h-[47px] border border-[#FA7223] px-4 py-2 text-gray-700 bg-white shadow-md flex items-center justify-between"*/}
             {/*      onClick={toggleDropdown}*/}

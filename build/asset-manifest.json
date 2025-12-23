@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.18f3cb0d.css",
-    "main.js": "/static/js/main.c079ad43.js",
-    "static/js/123.826c17dc.chunk.js": "/static/js/123.826c17dc.chunk.js",
+    "main.css": "/static/css/main.1e700b1d.css",
+    "main.js": "/static/js/main.d785e78d.js",
+    "static/js/562.fe6155d6.chunk.js": "/static/js/562.fe6155d6.chunk.js",
     "static/js/715.53b3c54d.chunk.js": "/static/js/715.53b3c54d.chunk.js",
     "static/js/453.2279ccd9.chunk.js": "/static/js/453.2279ccd9.chunk.js",
     "static/js/180.55f32243.chunk.js": "/static/js/180.55f32243.chunk.js",
@@ -16,7 +16,6 @@
     "static/media/is.png": "/static/media/is.f5355c25f89adcf19824.png",
     "static/media/ts.png": "/static/media/ts.67ce01b9ce9b2e11e399.png",
     "static/media/bd.png": "/static/media/bd.01f113de14dcbe815347.png",
-    "static/media/inviedge transparent.png": "/static/media/inviedge transparent.e4ebdd80785b660a5aa4.png",
     "static/media/Group 78.svg": "/static/media/Group 78.7cb6c6ebf3c1e4d08c9dc3f3a642267e.svg",
     "static/media/Flag_of_the_United_States.png": "/static/media/Flag_of_the_United_States.9a465cad7da86da165d9.png",
     "static/media/video_homepage.webm.png": "/static/media/video_homepage.webm.213966094882c79feb6e.png",
@@ -25,6 +24,7 @@
     "static/media/Group 80.svg": "/static/media/Group 80.42fc1404c473d02bc6da3661fb0675eb.svg",
     "static/media/Section2.png": "/static/media/Section2.7776866f8a0e38a76203.png",
     "static/media/Section1.png": "/static/media/Section1.d9002040ad0ae5098cb5.png",
+    "static/media/IMG_3342.PNG": "/static/media/IMG_3342.2424d89144e613c6d78a.PNG",
     "static/media/Frame 820.png": "/static/media/Frame 820.c45ea65b1ba3f1030562.png",
     "static/media/Frame 778.png": "/static/media/Frame 778.69224e43ebe4230b2035.png",
     "static/media/Group 77.svg": "/static/media/Group 77.d2f2d7e636b668d26f6138f56a6f4f88.svg",
@@ -71,15 +71,15 @@
     "static/media/Image2.svg": "/static/media/Image2.9aa9b4ced9f5b076e2e173d126c92451.svg",
     "static/media/Vector (1).svg": "/static/media/Vector (1).6da97e255aafe18ce9e1c46106a0c2ce.svg",
     "static/media/Link.svg": "/static/media/Link.bc813ac975982e29a6751921a1686124.svg",
-    "main.18f3cb0d.css.map": "/static/css/main.18f3cb0d.css.map",
-    "main.c079ad43.js.map": "/static/js/main.c079ad43.js.map",
-    "123.826c17dc.chunk.js.map": "/static/js/123.826c17dc.chunk.js.map",
+    "main.1e700b1d.css.map": "/static/css/main.1e700b1d.css.map",
+    "main.d785e78d.js.map": "/static/js/main.d785e78d.js.map",
+    "562.fe6155d6.chunk.js.map": "/static/js/562.fe6155d6.chunk.js.map",
     "715.53b3c54d.chunk.js.map": "/static/js/715.53b3c54d.chunk.js.map",
     "453.2279ccd9.chunk.js.map": "/static/js/453.2279ccd9.chunk.js.map",
     "180.55f32243.chunk.js.map": "/static/js/180.55f32243.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18f3cb0d.css",
-    "static/js/main.c079ad43.js"
+    "static/css/main.1e700b1d.css",
+    "static/js/main.d785e78d.js"
   ]
 }
