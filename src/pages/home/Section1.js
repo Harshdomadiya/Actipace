@@ -88,10 +88,10 @@ function Section1() {
             <div className="relative  z-10">
                 <div className="flex items-center justify-center my-12 lg:top-14 relative">
                     <div className="flex items-center justify-center  h-50vh absolute -top-11">
-                        <div className="w-[70px] mb-[330px] ml-[160px] flex justify-center lg:w-full lg:h-50vh lg:mb-[580px] lg:mr-[190px] lg:ml-0 absolute">
+                        <div className="w-[70px] mb-[330px] ml-[160px] flex justify-center lg:w-full lg:h-50vh lg:mb-[580px] lg:mr-[190px] lg:ml-0 absolute pointer-events-none">
                             {/* green errows over center image */}
                             {/* harsh */}
-                            <img src={Clip} alt="C" className="mr-[430px]"></img>
+                            <img src={Clip} alt="C" className="mr-[430px] z-[-1]"></img>
                         </div>
                         {/* black window over green image */}
                         <div className="flex items-center justify-center h-50vh absolute  left-50 mb-[130px]">
@@ -116,7 +116,7 @@ function Section1() {
             </div>
             <div className="w-full h-[320px] lg:h-[510px] relative z-8 mt-[-105px] lg:mt-[-50px] " >
                 <img src={Frame840} alt="840" className="absolute h-[550px]  lg:w-full lg:object-cover" />
-                <div className="absolute z-11 mt-[250px] flex justify-center items-center w-full lg:mt-[441px]">
+                <div className="absolute z-10 mt-[250px] flex justify-center items-center w-full lg:mt-[441px]">
                     <button onClick={()=>navigate("/download")} className="text-[11px] absolute w-[120px]  h-[35px] text-[#FA7223] bg-white font-Roboto rounded-[400px] lg:w-[220px] lg:h-[55px] flex justify-center font-semibold items-center gap-3 lg:text-[14px]">
                         <IoGridSharp className="w-[20px] h-[20px] lg:w-[25px] lg:h-[25px]"/>
                         Free Download
