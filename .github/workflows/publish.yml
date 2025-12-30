@@ -33,8 +33,7 @@ jobs:
           echo "RAZORPAY_SECRET=${{ secrets.RAZORPAY_SECRET }}" >> ./server/.env
 
           cat ./server/.env
-          cp ~/.env ./server/
-          cat ./server/.env
+          
 
       # Install PM2 globally
       - name: Install PM2
